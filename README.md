@@ -43,14 +43,14 @@ La página es completamente estática: no necesita base de datos, instalación n
 5. Pulsa **Save**.
 
 GitHub mostrará la dirección pública después de unos minutos:
-
-`https://TU_USUARIO.github.io/ingenuity-72-vuelos/`
+[
+(https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/)
 
 ### 4. Ajustar la tarjeta de LinkedIn
 
 Antes de compartir la web, abre `index.html` dentro de GitHub, pulsa el lápiz de edición y sustituye las cuatro apariciones de:
 
-`https://TU_USUARIO.github.io/ingenuity-72-vuelos/`
+https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/
 
 por la dirección real que GitHub te haya proporcionado. Guarda con **Commit changes**.
 
@@ -71,7 +71,7 @@ Este cambio permite que LinkedIn encuentre correctamente la portada de 1200 × 6
 >
 > No representa la telemetría interna del helicóptero. Es una forma de recorrer toda la misión bajo un mismo criterio, comparar vuelos y distinguir entre observaciones, resultados reproducidos e hipótesis.
 >
-> **Explorar los 72 vuelos:** [PEGA AQUÍ LA DIRECCIÓN PÚBLICA]
+> **Explorar los 72 vuelos:** (https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/)
 
 ## Actualizaciones posteriores
 
