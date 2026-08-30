@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#faf7f1"/>
+      <stop offset="1" stop-color="#eee4d4"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#2b2015" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .sans{font-family:Arial,Helvetica,sans-serif}.serif{font-family:Georgia,'Times New Roman',serif}
+      .axis{font-family:Arial,Helvetica,sans-serif;font-size:15px;fill:#6d665d}
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="42" y="38" width="1116" height="554" rx="30" fill="#fffaf2" stroke="#d7c9b7" filter="url(#shadow)"/>
+  <rect x="42" y="38" width="12" height="554" rx="6" fill="#d95f38"/>
+  <text x="88" y="92" class="sans" font-size="21" font-weight="800" letter-spacing="3" fill="#b44e2b">VOLVIENDO A MARTE</text>
+  <text x="88" y="162" class="serif" font-size="58" font-weight="700" fill="#25221f">INGENUITY</text>
+  <text x="88" y="222" class="sans" font-size="38" font-weight="850" fill="#275f69">72 VUELOS</text>
+  <text x="88" y="266" class="sans" font-size="25" font-weight="700" fill="#25221f">Una cronología visual interactiva</text>
+  <text x="88" y="320" class="sans" font-size="19" fill="#6d665d">Log oficial NASA · montaje de Landru79</text>
+  <text x="88" y="350" class="sans" font-size="19" fill="#6d665d">análisis exploratorio de referencias visuales</text>
+  <rect x="88" y="397" width="142" height="74" rx="14" fill="#eee4d4"/>
+  <text x="159" y="428" text-anchor="middle" class="sans" font-size="26" font-weight="850" fill="#275f69">22.546</text>
+  <text x="159" y="454" text-anchor="middle" class="sans" font-size="15" fill="#6d665d">fotogramas</text>
+  <rect x="244" y="397" width="142" height="74" rx="14" fill="#eee4d4"/>
+  <text x="315" y="428" text-anchor="middle" class="sans" font-size="26" font-weight="850" fill="#275f69">75</text>
+  <text x="315" y="454" text-anchor="middle" class="sans" font-size="15" fill="#6d665d">pasos de sombra</text>
+  <rect x="400" y="397" width="142" height="74" rx="14" fill="#eee4d4"/>
+  <text x="471" y="428" text-anchor="middle" class="sans" font-size="26" font-weight="850" fill="#275f69">72</text>
+  <text x="471" y="454" text-anchor="middle" class="sans" font-size="15" fill="#6d665d">bloques de vuelo</text>
+  <text x="88" y="534" class="sans" font-size="18" font-weight="700" fill="#25221f">Pedro Ramón Montserrat Cabrera</text>
+  <text x="88" y="562" class="sans" font-size="15" fill="#6d665d">Información abierta · método trazable · resultados provisionales</text>
+
+  <rect x="614" y="102" width="514" height="405" rx="22" fill="#f6f1e8" stroke="#d7c9b7"/>
+  <text x="650" y="140" class="sans" font-size="18" font-weight="800" fill="#25221f">PUNTUACIÓN VISUAL RELATIVA POR VUELO</text>
+  <rect x="1089.3661971830986" y="165" width="25.633802816901408" height="280" fill="#d95f38" opacity="0.09"/>
+  <line x1="660" y1="445" x2="1115" y2="445" stroke="#d7c9b7" stroke-width="1"/><text x="642" y="450" text-anchor="end" class="axis">0</text><line x1="660" y1="375" x2="1115" y2="375" stroke="#d7c9b7" stroke-width="1"/><text x="642" y="380" text-anchor="end" class="axis">25</text><line x1="660" y1="305" x2="1115" y2="305" stroke="#d7c9b7" stroke-width="1"/><text x="642" y="310" text-anchor="end" class="axis">50</text><line x1="660" y1="235" x2="1115" y2="235" stroke="#d7c9b7" stroke-width="1"/><text x="642" y="240" text-anchor="end" class="axis">75</text><line x1="660" y1="165" x2="1115" y2="165" stroke="#d7c9b7" stroke-width="1"/><text x="642" y="170" text-anchor="end" class="axis">100</text>
+  <polyline points="660.0,183.2 666.4,188.8 672.8,368.8 679.2,350.6 685.6,360.7 692.0,325.4 698.5,270.8 704.9,264.7 711.3,408.9 717.7,198.9 724.1,214.8 730.5,441.1 736.9,356.2 743.3,303.0 749.7,247.3 756.1,223.2 762.5,307.2 768.9,211.2 775.4,238.4 781.8,264.7 788.2,312.8 794.6,308.1 801.0,366.0 807.4,345.9 813.8,427.4 820.2,387.0 826.6,293.0 833.0,399.6 839.4,445.0 845.8,423.2 852.3,408.6 858.7,396.6 865.1,277.8 871.5,234.2 877.9,278.7 884.3,373.0 890.7,247.3 897.1,319.8 903.5,345.3 909.9,192.7 916.3,325.4 922.7,169.5 929.2,227.7 935.6,248.4 942.0,382.0 948.4,334.1 954.8,241.4 961.2,339.7 967.6,186.6 974.0,307.2 980.4,312.8 986.8,223.2 993.2,259.4 999.6,203.9 1006.1,195.5 1012.5,178.2 1018.9,249.3 1025.3,427.4 1031.7,376.7 1038.1,301.9 1044.5,355.1 1050.9,258.5 1057.3,216.8 1063.7,210.6 1070.1,166.7 1076.5,268.6 1083.0,392.6 1089.4,392.6 1095.8,420.4 1102.2,437.2 1108.6,411.7 1115.0,427.9" fill="none" stroke="#275f69" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="660.0" cy="183.2" r="2.8" fill="#275f69"/><circle cx="666.4" cy="188.8" r="2.8" fill="#275f69"/><circle cx="672.8" cy="368.8" r="2.8" fill="#275f69"/><circle cx="679.2" cy="350.6" r="2.8" fill="#275f69"/><circle cx="685.6" cy="360.7" r="2.8" fill="#275f69"/><circle cx="692.0" cy="325.4" r="2.8" fill="#275f69"/><circle cx="698.5" cy="270.8" r="2.8" fill="#275f69"/><circle cx="704.9" cy="264.7" r="2.8" fill="#275f69"/><circle cx="711.3" cy="408.9" r="2.8" fill="#275f69"/><circle cx="717.7" cy="198.9" r="2.8" fill="#275f69"/><circle cx="724.1" cy="214.8" r="2.8" fill="#275f69"/><circle cx="730.5" cy="441.1" r="2.8" fill="#275f69"/><circle cx="736.9" cy="356.2" r="2.8" fill="#275f69"/><circle cx="743.3" cy="303.0" r="2.8" fill="#275f69"/><circle cx="749.7" cy="247.3" r="2.8" fill="#275f69"/><circle cx="756.1" cy="223.2" r="2.8" fill="#275f69"/><circle cx="762.5" cy="307.2" r="2.8" fill="#275f69"/><circle cx="768.9" cy="211.2" r="2.8" fill="#275f69"/><circle cx="775.4" cy="238.4" r="2.8" fill="#275f69"/><circle cx="781.8" cy="264.7" r="2.8" fill="#275f69"/><circle cx="788.2" cy="312.8" r="2.8" fill="#275f69"/><circle cx="794.6" cy="308.1" r="2.8" fill="#275f69"/><circle cx="801.0" cy="366.0" r="2.8" fill="#275f69"/><circle cx="807.4" cy="345.9" r="2.8" fill="#275f69"/><circle cx="813.8" cy="427.4" r="2.8" fill="#275f69"/><circle cx="820.2" cy="387.0" r="2.8" fill="#275f69"/><circle cx="826.6" cy="293.0" r="2.8" fill="#275f69"/><circle cx="833.0" cy="399.6" r="2.8" fill="#275f69"/><circle cx="839.4" cy="445.0" r="2.8" fill="#275f69"/><circle cx="845.8" cy="423.2" r="2.8" fill="#275f69"/><circle cx="852.3" cy="408.6" r="2.8" fill="#275f69"/><circle cx="858.7" cy="396.6" r="2.8" fill="#275f69"/><circle cx="865.1" cy="277.8" r="2.8" fill="#275f69"/><circle cx="871.5" cy="234.2" r="2.8" fill="#275f69"/><circle cx="877.9" cy="278.7" r="2.8" fill="#275f69"/><circle cx="884.3" cy="373.0" r="2.8" fill="#275f69"/><circle cx="890.7" cy="247.3" r="2.8" fill="#275f69"/><circle cx="897.1" cy="319.8" r="2.8" fill="#275f69"/><circle cx="903.5" cy="345.3" r="2.8" fill="#275f69"/><circle cx="909.9" cy="192.7" r="2.8" fill="#275f69"/><circle cx="916.3" cy="325.4" r="2.8" fill="#275f69"/><circle cx="922.7" cy="169.5" r="2.8" fill="#275f69"/><circle cx="929.2" cy="227.7" r="2.8" fill="#275f69"/><circle cx="935.6" cy="248.4" r="2.8" fill="#275f69"/><circle cx="942.0" cy="382.0" r="2.8" fill="#275f69"/><circle cx="948.4" cy="334.1" r="2.8" fill="#275f69"/><circle cx="954.8" cy="241.4" r="2.8" fill="#275f69"/><circle cx="961.2" cy="339.7" r="2.8" fill="#275f69"/><circle cx="967.6" cy="186.6" r="2.8" fill="#275f69"/><circle cx="974.0" cy="307.2" r="2.8" fill="#275f69"/><circle cx="980.4" cy="312.8" r="2.8" fill="#275f69"/><circle cx="986.8" cy="223.2" r="2.8" fill="#275f69"/><circle cx="993.2" cy="259.4" r="2.8" fill="#275f69"/><circle cx="999.6" cy="203.9" r="2.8" fill="#275f69"/><circle cx="1006.1" cy="195.5" r="2.8" fill="#275f69"/><circle cx="1012.5" cy="178.2" r="2.8" fill="#275f69"/><circle cx="1018.9" cy="249.3" r="2.8" fill="#275f69"/><circle cx="1025.3" cy="427.4" r="2.8" fill="#275f69"/><circle cx="1031.7" cy="376.7" r="2.8" fill="#275f69"/><circle cx="1038.1" cy="301.9" r="2.8" fill="#275f69"/><circle cx="1044.5" cy="355.1" r="2.8" fill="#275f69"/><circle cx="1050.9" cy="258.5" r="2.8" fill="#275f69"/><circle cx="1057.3" cy="216.8" r="2.8" fill="#275f69"/><circle cx="1063.7" cy="210.6" r="2.8" fill="#275f69"/><circle cx="1070.1" cy="166.7" r="2.8" fill="#275f69"/><circle cx="1076.5" cy="268.6" r="2.8" fill="#275f69"/><circle cx="1083.0" cy="392.6" r="2.8" fill="#275f69"/><circle cx="1089.4" cy="392.6" r="5" fill="#d95f38"/><circle cx="1095.8" cy="420.4" r="5" fill="#d95f38"/><circle cx="1102.2" cy="437.2" r="5" fill="#d95f38"/><circle cx="1108.6" cy="411.7" r="5" fill="#d95f38"/><circle cx="1115.0" cy="427.9" r="5" fill="#d95f38"/>
+  <text x="660" y="475" class="axis">Vuelo 1</text>
+  <text x="1115" y="475" text-anchor="end" class="axis">Vuelo 72</text>
+  <rect x="800" y="522" width="328" height="46" rx="23" fill="#275f69"/>
+  <text x="964" y="551" text-anchor="middle" class="sans" font-size="17" font-weight="800" fill="#ffffff">EXPLORAR LOS 72 VUELOS</text>
+</svg>
