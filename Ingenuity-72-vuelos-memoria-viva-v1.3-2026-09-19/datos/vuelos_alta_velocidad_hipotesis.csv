@@ -1,4 +1,0 @@
-vuelo;fecha;velocidad_max_suelo_ms;distancia_m;duracion_s;tipo;vueltas_aprox_a_2537rpm;porcentaje_tiempo_total;estado_evidencia;nota
-62;2023-10-12;10;268;121.1;Expansión de envolvente;5121;1.57;Confirmado;Primera demostración de 10 m/s a 18 m durante el vuelo horizontal
-68;2023-12-15;10;702;131.1;Sys-ID;5543;1.70;Confirmado;Vuelo largo de ida y vuelta con excitación dinámica deliberada
-69;2023-12-20;10;705;135.4;Sys-ID;5725;1.75;Confirmado;"Segundo ensayo; al menos un tramo debía superar 10 m/s respecto al aire"
