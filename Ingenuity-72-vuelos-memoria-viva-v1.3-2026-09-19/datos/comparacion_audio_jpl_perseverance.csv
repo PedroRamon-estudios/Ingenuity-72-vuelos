@@ -1,0 +1,6 @@
+registro,origen,formato_medido,frecuencia_paso_pala_hz,rpm_equivalente,inicio_tono_s,fin_tono_s,duracion_tono_aprox_s,armonicos_robustos,lectura
+ensayo_jpl,"JPLraw media reel nAQxNd3uBN0; captura aportada",AAC mono 48000 Hz,75.8813,2276.44,5.0,85.0,80.0,14,"14 picos ajustados; amplitud afectada por YouTube/captura móvil"
+vuelo_4,NASA PDS SuperCam p02,WAV mono float32 25000 Hz,84.3048,2529.1,21.5,143.4,121.9,2,"fundamental clara; segundo armónico débil; Doppler y modulación"
+vuelo_5,NASA PDS SuperCam p02,WAV mono float32 25000 Hz,84.4002,2532.0,14.3,130.0,115.7,2,"seis nulos reproducidos; 168 Hz débil"
+vuelo_6,NASA PDS SuperCam p02,WAV mono float32 25000 Hz,84.4002,2532.0,23.6,68.6,45.0,1,"señal se desvanece con la distancia; 168 Hz no robusto"
+vuelo_8,NASA PDS SuperCam p02,WAV mono float32 25000 Hz,84.4002,2532.0,29.7,55.3,25.6,2,"84 y 168 Hz; viento/EMI después del tramo tonal"
