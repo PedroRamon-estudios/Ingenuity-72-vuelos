@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Fotograma de vuelo</title>
+  <desc id="desc">Marcador temporal mientras se carga el fotograma del vuelo seleccionado.</desc>
+  <rect width="960" height="540" fill="#eee4d4"/>
+  <circle cx="480" cy="244" r="64" fill="none" stroke="#d7c9b7" stroke-width="8"/>
+  <path d="M480 199v90M435 244h90" stroke="#b44e2b" stroke-width="8" stroke-linecap="round"/>
+  <text x="480" y="360" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#6d665d">Cargando vuelo seleccionado</text>
+</svg>

@@ -1,11 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
+<!--
+  © 2026 Pedro Ramón Montserrat Cabrera — Fuerteventura, Islas Canarias, España.
+  Todos los derechos reservados. Consulte LICENSE y NOTICE.md.
+-->
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ingenuity: 72 vuelos, una cronología visual interactiva</title>
-  <meta name="description" content="Cronología interactiva de los 72 vuelos de Ingenuity: log oficial NASA, montaje visual de Landru79 y análisis exploratorio de referencias visibles en imágenes Navcam.">
+  <title>Ingenuity: log ampliado de 72 vuelos, imágenes y audio de Marte</title>
+  <meta name="description" content="Log ampliado e interactivo de los 72 vuelos de Ingenuity: mapa NASA/JPL, referencias Navcam, audios SuperCam del PDS y contraste con el ensayo terrestre en cámara.">
   <meta name="author" content="Pedro Ramón Montserrat Cabrera">
+  <meta name="copyright" content="© 2026 Pedro Ramón Montserrat Cabrera. Todos los derechos reservados.">
+  <meta name="author-location" content="Fuerteventura, Islas Canarias, España">
   <meta name="theme-color" content="#f6f1e8">
   <meta name="robots" content="index,follow,max-image-preview:large">
 
@@ -14,16 +20,16 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="Volviendo a Marte">
-  <meta property="og:title" content="Ingenuity: 72 vuelos, una cronología visual interactiva">
-  <meta property="og:description" content="Log oficial NASA + montaje de Landru79 + análisis exploratorio de referencias visuales.">
+  <meta property="og:title" content="Ingenuity: log ampliado de 72 vuelos, imágenes y audio">
+  <meta property="og:description" content="Cronología navegable de los 72 vuelos, referencias visuales, cuatro grabaciones SuperCam y contraste con el ensayo terrestre de JPL.">
   <meta property="og:url" content="https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/">
   <meta property="og:image" content="https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/assets/social-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Ingenuity: 72 vuelos, una cronología visual interactiva">
+  <meta property="og:image:alt" content="Ingenuity: log ampliado de 72 vuelos, imágenes y audio de Marte">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ingenuity: 72 vuelos, una cronología visual interactiva">
-  <meta name="twitter:description" content="Una exploración independiente de los 72 vuelos mediante información pública.">
+  <meta name="twitter:title" content="Ingenuity: log ampliado de 72 vuelos, imágenes y audio">
+  <meta name="twitter:description" content="Recorre la misión mediante el mapa oficial, datos públicos, referencias visuales y audios calibrados de Perseverance.">
   <meta name="twitter:image" content="https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/assets/social-card.png">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
@@ -31,16 +37,28 @@
   {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    "name": "Ingenuity: 72 vuelos, una cronología visual interactiva",
-    "description": "Análisis exploratorio de referencias visuales en un montaje cronológico de imágenes Navcam, cruzado con el registro oficial de los 72 vuelos de Ingenuity.",
+    "name": "Ingenuity: log ampliado de 72 vuelos, imágenes y audio de Marte",
+    "description": "Cronología pública que cruza el registro oficial de los 72 vuelos de Ingenuity, el mapa completo NASA/JPL, imágenes Navcam, referencias visuales, cuatro grabaciones calibradas de SuperCam y el ensayo terrestre en cámara.",
     "creator": {"@type": "Person", "name": "Pedro Ramón Montserrat Cabrera"},
-    "keywords": ["Ingenuity", "Mars Helicopter", "Navcam", "NASA", "JPL", "navegación visual", "ciencia abierta"],
+    "copyrightHolder": {"@type": "Person", "name": "Pedro Ramón Montserrat Cabrera"},
+    "copyrightYear": 2026,
+    "copyrightNotice": "© 2026 Pedro Ramón Montserrat Cabrera — Fuerteventura, Islas Canarias, España. Todos los derechos reservados.",
+    "locationCreated": {"@type": "Place", "name": "Fuerteventura, Islas Canarias, España"},
+    "license": "https://github.com/pedroramon-estudios/Ingenuity-72-vuelos/blob/main/LICENSE",
+    "keywords": ["Ingenuity", "Mars Helicopter", "mapa de vuelos", "Navcam", "SuperCam", "NASA PDS", "NASA", "JPL", "navegación visual", "audio de Marte", "ciencia abierta"],
     "isAccessibleForFree": true,
-    "distribution": {
-      "@type": "DataDownload",
-      "encodingFormat": "text/csv",
-      "contentUrl": "datos/ingenuity_72_vuelos.csv"
-    }
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "text/csv",
+        "contentUrl": "datos/ingenuity_72_vuelos.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "text/csv",
+        "contentUrl": "datos/audio_ingenuity_pds.csv"
+      }
+    ]
   }
   </script>
 
@@ -137,6 +155,9 @@
     .ivy-source-grid a { color: var(--ivy-accent-2); overflow-wrap: anywhere; text-underline-offset: 3px; }
     .ivy-source-grid p { margin: 0; color: var(--ivy-muted); font-size: 0.8rem; }
     .ivy-authorship { margin: 15px 0 0; padding-top: 12px; border-top: 1px solid var(--ivy-line); color: var(--ivy-muted); font-size: 0.78rem; }
+    .ivy-copyright { margin: 12px 0 0; padding: 12px 14px; border: 1px solid var(--ivy-line); border-left: 4px solid var(--ivy-accent-2); border-radius: 9px; color: var(--ivy-muted); background: var(--ivy-panel-2); font-size: 0.78rem; }
+    .ivy-copyright strong { color: var(--ivy-text); }
+    .ivy-copyright a { color: var(--ivy-accent-2); font-weight: 800; text-underline-offset: 3px; }
     .site-footer { padding: 20px 10px 0; color: #6d665d; text-align: center; font-size: 0.76rem; }
     noscript { display: block; margin: 0 0 12px; padding: 12px; background: #fff4d2; border: 1px solid #d19b31; border-radius: 10px; }
     @media (prefers-color-scheme: dark) {
@@ -151,7 +172,7 @@
     }
     @media print {
       body { background: #fff; }
-      .site-header, .site-actions, .ivy-toolbar, .ivy-flight-grid { display: none !important; }
+      .site-header, .site-actions, .ivy-toolbar, .ivy-flight-grid, .ivy-audio-card audio, .ivy-audio-actions { display: none !important; }
       .site-shell { width: 100%; padding: 0; }
       .ivy-root { border: 0 !important; box-shadow: none !important; }
     }
@@ -164,6 +185,10 @@
     <a class="site-mark" href="#explorador">Volviendo a Marte</a>
     <nav class="site-nav" aria-label="Navegación principal">
       <a href="#explorador">72 vuelos</a>
+      <a href="#mapa">Mapa completo</a>
+      <a href="#audio">Audio PDS</a>
+      <a href="#contraste">Contraste JPL</a>
+      <a href="#estudio">Memoria viva</a>
       <a href="#metodo">Método</a>
       <a href="#fuentes">Fuentes y créditos</a>
     </nav>
@@ -273,6 +298,22 @@
     font-weight: 800;
   }
   .ivy-flight-button[data-event="true"] { box-shadow: inset 0 -3px 0 var(--ivy-accent); }
+  .ivy-flight-button[data-audio="true"] { position: relative; }
+  .ivy-flight-button[data-audio="true"]::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 5px;
+    height: 5px;
+    background: var(--ivy-accent-2);
+    border: 1px solid var(--ivy-panel);
+    border-radius: 50%;
+  }
+  .ivy-flight-key { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: -5px 0 14px; color: var(--ivy-muted); font-size: 0.72rem; }
+  .ivy-flight-key span { display: inline-flex; align-items: center; gap: 6px; }
+  .ivy-key-line { width: 16px; height: 3px; background: var(--ivy-accent); border-radius: 3px; }
+  .ivy-key-dot { width: 7px; height: 7px; background: var(--ivy-accent-2); border-radius: 50%; }
   .ivy-chart-card { padding: 12px 12px 4px; }
   .ivy-chart-heading { display: flex; gap: 12px; align-items: baseline; justify-content: space-between; margin: 0 4px 8px; }
   .ivy-chart-heading h2 { font-size: 1rem; margin: 0; }
@@ -335,9 +376,111 @@
   .ivy-evidence .ivy-card b { display: block; font-size: 1.22rem; color: var(--ivy-accent-2); }
   .ivy-evidence .ivy-card span { color: var(--ivy-muted); font-size: 0.75rem; }
   .ivy-section-title { font-family: ui-serif, Georgia, serif; font-size: 1.35rem; margin: 26px 0 8px; }
+  .ivy-section-lead { margin: 0 0 12px; color: var(--ivy-muted); max-width: 980px; font-size: 0.88rem; }
+  .ivy-manifest {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 8px;
+    margin: 14px 0 0;
+  }
+  .ivy-manifest article { padding: 11px; background: var(--ivy-panel); border: 1px solid var(--ivy-line); border-radius: 11px; }
+  .ivy-manifest b { display: block; color: var(--ivy-accent-2); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .ivy-manifest span { color: var(--ivy-muted); font-size: 0.75rem; }
+  .ivy-evidence-chain { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .ivy-evidence-chain article { position: relative; padding-top: 42px; }
+  .ivy-evidence-chain .ivy-step {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    color: var(--ivy-panel);
+    background: var(--ivy-accent-2);
+    border-radius: 999px;
+    padding: 3px 8px;
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+  .ivy-evidence-chain h3 { margin: 0 0 5px; font-size: 0.95rem; }
+  .ivy-evidence-chain p { margin: 0; color: var(--ivy-muted); font-size: 0.8rem; }
+  .ivy-map-section { scroll-margin-top: 18px; }
+  .ivy-video-card { margin-top: 12px; padding: 0; overflow: hidden; }
+  .ivy-video-frame { position: relative; aspect-ratio: 16 / 9; background: #071414; }
+  .ivy-video-frame video,
+  .ivy-video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #071414; }
+  .ivy-video-caption { padding: 14px; }
+  .ivy-video-caption p { margin: 0; color: var(--ivy-muted); font-size: 0.8rem; }
+  .ivy-video-caption p + p { margin-top: 7px; }
+  .ivy-formula-panel { margin: 12px 0; padding: 13px 15px; border: 1px solid var(--ivy-line); border-left: 4px solid var(--ivy-accent-2); border-radius: 10px; background: var(--ivy-panel-2); }
+  .ivy-formula-panel code { color: var(--ivy-text); font-size: clamp(0.82rem, 1.5vw, 1rem); font-weight: 800; white-space: normal; }
+  .ivy-formula-panel p { margin: 6px 0 0; color: var(--ivy-muted); font-size: 0.76rem; }
+  .ivy-map-sync { margin-top: 12px; padding: 14px; }
+  .ivy-map-sync-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 10px; }
+  .ivy-map-sync-head h3 { margin: 0; font-size: 0.95rem; }
+  .ivy-map-sync-status { color: var(--ivy-accent-2); font-size: 0.76rem; font-weight: 800; }
+  .ivy-map-workspace .ivy-map-flight-grid { display: grid; grid-template-columns: repeat(6, minmax(32px, 1fr)); gap: 5px; max-height: 240px; overflow-y: auto; padding: 3px; scroll-behavior: auto; }
+  .ivy-map-workspace { display: grid; grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr); gap: 14px; align-items: start; scroll-margin-top: 16px; }
+  .ivy-map-workspace .ivy-video-card { margin: 12px 0 0; }
+  .ivy-map-workspace .ivy-map-sync { min-width: 0; }
+  .ivy-map-flight-grid button:focus-visible, .ivy-dot:focus-visible, #ivy-table-body tr:focus-visible { outline: 3px solid var(--ivy-accent-2); outline-offset: 2px; }
+  @media (max-width: 760px) { .ivy-map-workspace { grid-template-columns: minmax(0, 1fr); gap: 0; } .ivy-map-workspace .ivy-map-flight-grid { grid-template-columns: repeat(6, minmax(32px, 1fr)); max-height: 152px; } }
+  .ivy-map-jump {
+    min-height: 32px;
+    color: var(--ivy-text);
+    background: var(--ivy-panel-2);
+    border: 1px solid var(--ivy-line);
+    border-radius: 7px;
+    font-size: 0.75rem;
+    cursor: pointer;
+  }
+  .ivy-map-jump:hover, .ivy-map-jump:focus-visible { border-color: var(--ivy-accent-2); outline: none; }
+  .ivy-map-jump[aria-pressed="true"] { color: var(--ivy-bg); background: var(--ivy-accent-2); border-color: var(--ivy-accent-2); font-weight: 900; }
+  .ivy-map-sync-note { margin: 9px 0 0; color: var(--ivy-muted); font-size: 0.7rem; }
+  .ivy-map-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+  .ivy-map-facts div { padding: 10px; background: var(--ivy-panel-2); border-radius: 9px; }
+  .ivy-map-facts b { display: block; color: var(--ivy-accent-2); font-size: 1rem; }
+  .ivy-map-facts span { color: var(--ivy-muted); font-size: 0.7rem; }
+  .ivy-audio-section { scroll-margin-top: 18px; }
+  .ivy-audio-summary {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .ivy-frequency-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+  .ivy-frequency-strip div { padding: 9px; background: var(--ivy-panel-2); border-radius: 9px; }
+  .ivy-frequency-strip b { display: block; color: var(--ivy-accent-2); font-size: 1rem; }
+  .ivy-frequency-strip span { color: var(--ivy-muted); font-size: 0.68rem; }
+  .ivy-sync-note { border-left: 4px solid var(--ivy-mid); }
+  .ivy-sync-note h3 { margin: 0 0 5px; font-size: 0.9rem; }
+  .ivy-sync-note p { margin: 0; color: var(--ivy-muted); font-size: 0.78rem; }
+  .ivy-audio-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .ivy-audio-card { padding: 0; overflow: hidden; scroll-margin-top: 18px; }
+  .ivy-spectrogram { display: block; width: 100%; height: auto; background: #071414; }
+  .ivy-audio-body { padding: 14px; }
+  .ivy-audio-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+  .ivy-audio-head h3 { margin: 0; font-family: ui-serif, Georgia, serif; font-size: 1.15rem; }
+  .ivy-audio-head p { margin: 2px 0 0; color: var(--ivy-muted); font-size: 0.74rem; }
+  .ivy-status { flex: none; padding: 4px 8px; border: 1px solid var(--ivy-line); border-radius: 999px; color: var(--ivy-accent-2); background: var(--ivy-panel-2); font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; }
+  .ivy-audio-reading { min-height: 3.7em; margin: 10px 0; color: var(--ivy-muted); font-size: 0.79rem; }
+  .ivy-audio-card audio { display: block; width: 100%; height: 38px; margin: 8px 0; }
+  .ivy-audio-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+  .ivy-audio-footer { margin-top: 10px; }
+  .ivy-mini-button { display: inline-flex; align-items: center; min-height: 34px; padding: 6px 9px; border: 1px solid var(--ivy-line); border-radius: 8px; color: var(--ivy-text); background: var(--ivy-panel-2); font-size: 0.72rem; font-weight: 800; text-decoration: none; }
+  .ivy-mini-button.primary { color: var(--ivy-panel); background: var(--ivy-accent-2); border-color: var(--ivy-accent-2); }
+  .ivy-audio-caveat { margin: 9px 0 0; color: var(--ivy-muted); font-size: 0.67rem; }
+  .ivy-listening-log { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 7px; margin-top: 12px; }
+  .ivy-listening-log div { padding: 9px; background: var(--ivy-panel); border: 1px solid var(--ivy-line); border-radius: 9px; }
+  .ivy-listening-log b { display: block; color: var(--ivy-accent-2); font-size: 0.75rem; }
+  .ivy-listening-log span { color: var(--ivy-muted); font-size: 0.68rem; }
+  .ivy-inline-link { color: var(--ivy-accent-2); font-weight: 800; text-underline-offset: 3px; }
   .ivy-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
   .ivy-options h3 { margin: 0 0 5px; font-size: 0.92rem; }
   .ivy-options p { margin: 0; color: var(--ivy-muted); font-size: 0.82rem; }
+  .ivy-formula { display: block; margin: 8px 0; padding: 9px 10px; overflow-x: auto; color: var(--ivy-text); background: var(--ivy-panel-2); border: 1px solid var(--ivy-line); border-radius: 8px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.76rem; }
+  .ivy-research-list { margin: 8px 0 0; padding-left: 18px; color: var(--ivy-muted); font-size: 0.8rem; }
+  .ivy-research-list li + li { margin-top: 5px; }
+  .ivy-research-source { margin: 10px 0 0; color: var(--ivy-muted); font-size: 0.7rem; }
   .ivy-table-wrap { overflow: auto; max-height: 560px; border: 1px solid var(--ivy-line); border-radius: 12px; }
   .ivy-table { width: 100%; border-collapse: collapse; min-width: 1080px; font-size: 0.76rem; }
   .ivy-table th, .ivy-table td { padding: 7px 8px; border-bottom: 1px solid var(--ivy-line); text-align: right; white-space: nowrap; }
@@ -362,32 +505,51 @@
   @media (max-width: 820px) {
     .ivy-toolbar, .ivy-detail { grid-template-columns: 1fr; }
     .ivy-flight-grid { grid-template-columns: repeat(9, minmax(32px, 1fr)); }
+    .ivy-map-flight-grid { grid-template-columns: repeat(12, minmax(32px, 1fr)); }
     .ivy-evidence { grid-template-columns: repeat(2, 1fr); }
+    .ivy-manifest, .ivy-audio-summary, .ivy-evidence-chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ivy-listening-log { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .ivy-map-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .ivy-options { grid-template-columns: 1fr; }
   }
   @media (max-width: 520px) {
     .ivy-flight-grid { grid-template-columns: repeat(6, minmax(32px, 1fr)); }
+    .ivy-map-flight-grid { grid-template-columns: repeat(8, minmax(32px, 1fr)); }
     .ivy-metrics { grid-template-columns: repeat(2, 1fr); }
     .ivy-evidence { grid-template-columns: 1fr; }
+    .ivy-manifest, .ivy-audio-summary, .ivy-evidence-chain, .ivy-audio-grid, .ivy-listening-log, .ivy-map-facts { grid-template-columns: 1fr; }
+    .ivy-frequency-strip { grid-template-columns: 1fr; }
   }
+  @media print { .ivy-video-frame, .ivy-map-sync { display: none; } }
 </style>
 
 <section class="ivy-root" id="explorador" aria-labelledby="ivy-main-title">
-  <div class="ivy-eyebrow">Ingenuity · montaje de Landru79 + log oficial NASA</div>
-  <h1 class="ivy-title" id="ivy-main-title">72 vuelos, una pregunta: ¿cuánto terreno podía “ver”?</h1>
-  <p class="ivy-subtitle">Exploración provisional de referencias visuales en el montaje de imágenes Navcam. Sirve para encontrar comparaciones y preguntas útiles; no sustituye la telemetría de vuelo.</p>
+  <div class="ivy-eyebrow">Ingenuity · log del piloto ampliado</div>
+  <h1 class="ivy-title" id="ivy-main-title">72 vuelos para recorrer hacia delante y hacia atrás</h1>
+  <p class="ivy-subtitle">Registro oficial NASA, mapa completo NASA/JPL, continuidad visual de Landru79, referencias del terreno y grabaciones SuperCam de Perseverance. Un log ampliado con información pública: no es la telemetría interna del helicóptero ni pretende sustituirla.</p>
 
   <div class="site-intro">
-    <p><strong>Proyecto personal de Pedro Ramón Montserrat Cabrera.</strong> Reúne en una sola cronología información pública que originalmente estaba dispersa. El índice sirve para seleccionar comparaciones; no diagnostica por sí solo el sistema de navegación ni una avería.</p>
+    <p><strong>Proyecto personal de Pedro Ramón Montserrat Cabrera.</strong> Reúne en una sola cronología información que estaba dispersa para poder situar cada vuelo en el mapa, mirar, escuchar y contrastar. La pregunta visual sigue abierta: ¿cuánto terreno distinguible tenía Ingenuity bajo la cámara?</p>
     <div class="site-actions">
       <a class="site-button" href="datos/ingenuity_72_vuelos.csv" download>Descargar datos CSV</a>
+      <a class="site-button secondary" href="#mapa">Ver mapa</a>
+      <a class="site-button secondary" href="#audio">Escuchar vuelos</a>
       <a class="site-button secondary" href="#metodo">Leer el método</a>
     </div>
   </div>
 
+  <div class="ivy-manifest" role="group" aria-label="Capas del log ampliado">
+    <article><b>Volar</b><span>72 entradas del Flight Log oficial.</span></article>
+    <article><b>Mapear</b><span>La localización de los 72 vuelos publicada por NASA/JPL.</span></article>
+    <article><b>Mirar</b><span>22.546 fotogramas del montaje público.</span></article>
+    <article><b>Escuchar</b><span>4 sesiones calibradas de SuperCam.</span></article>
+    <article><b>Contrastar</b><span>Observado, reproducido e hipótesis separados.</span></article>
+    <article><b>Investigar</b><span>Vuelo 9, roca, ΔRPM y 31–32 lomas.</span></article>
+  </div>
+
   <div class="ivy-toolbar">
     <div class="ivy-field">
-      <label for="ivy-flight-select">Seleccionar vuelo</label>
+      <label for="ivy-flight-select">Seleccionar vuelo para analizar</label>
       <select class="ivy-select" id="ivy-flight-select"></select>
     </div>
     <div class="ivy-field">
@@ -396,13 +558,18 @@
         <option value="all">Todos los vuelos</option>
         <option value="vertical">Sólo verticales</option>
         <option value="events">Vuelos con incidencia o prueba conocida</option>
+        <option value="audio">Vuelos registrados por SuperCam</option>
         <option value="low">Referencias visuales bajas (puntuación &lt; 20)</option>
         <option value="late">Vuelos 68–72</option>
       </select>
     </div>
   </div>
 
-  <div class="ivy-flight-grid" id="ivy-flight-grid" aria-label="Botones de los 72 vuelos"></div>
+  <div class="ivy-flight-grid" id="ivy-flight-grid" role="group" aria-label="Botones de los 72 vuelos para el análisis fijo"></div>
+  <div class="ivy-flight-key" role="note" aria-label="Leyenda de los botones de vuelo">
+    <span><i class="ivy-key-line" aria-hidden="true"></i> incidencia o prueba conocida</span>
+    <span><i class="ivy-key-dot" aria-hidden="true"></i> grabación SuperCam disponible</span>
+  </div>
 
   <div class="ivy-card ivy-chart-card">
     <div class="ivy-chart-heading">
@@ -414,14 +581,14 @@
 
   <div class="ivy-detail">
     <div class="ivy-card">
-      <img class="ivy-frame" id="ivy-frame" alt="Fotograma representativo del vuelo seleccionado">
-      <div class="ivy-caption">Fotograma central aproximado del tramo asignado. La sombra se excluye del recuento de terreno.</div>
+      <img class="ivy-frame" id="ivy-frame" src="assets/frame-placeholder.svg" alt="Fotograma representativo del vuelo seleccionado">
+      <div class="ivy-caption">Fotograma fijo central aproximado del tramo asignado. Permanece en el vuelo seleccionado aunque se reproduzca el mapa. La sombra se excluye del recuento de terreno.</div>
     </div>
     <div class="ivy-card">
       <div class="ivy-detail-head">
         <div>
           <div class="ivy-eyebrow" id="ivy-date"></div>
-          <h2 id="ivy-flight-title"></h2>
+          <h2 id="ivy-flight-title">Vuelo seleccionado</h2>
         </div>
         <span class="ivy-badge" id="ivy-profile"></span>
       </div>
@@ -436,6 +603,268 @@
     <div class="ivy-card"><b>F53: 62</b><span>Había textura, pero falló la cadena de imágenes. Ver terreno no basta si faltan fotogramas o tiempos.</span></div>
     <div class="ivy-card"><b>ρ ≈ 0</b><span>Sin relación clara con distancia, altura, velocidad o duración en esta medida visual.</span></div>
   </div>
+
+  <h2 class="ivy-section-title">Qué aporta la combinación de fotografías</h2>
+  <p class="ivy-section-lead">La comparación visual no descubre por sí sola la causa del vuelo 72. Sí permite someter la explicación publicada por NASA/JPL a una comprobación abierta y trazable sobre material público.</p>
+  <div class="ivy-evidence-chain" role="group" aria-label="Cadena de evidencia visual">
+    <article class="ivy-card"><span class="ivy-step">Publicado</span><h3>NASA/JPL: faltó textura</h3><p>La investigación oficial explica que el terreno arenoso y casi uniforme proporcionó pocas referencias fiables al sistema de navegación visual.</p></article>
+    <article class="ivy-card"><span class="ivy-step">Reproducido</span><h3>El montaje también cae</h3><p>Aplicando el mismo criterio a todos los bloques, la mediana baja de 46,5 referencias en F1–67 a 11 en F68–72; F72 queda en 8.</p></article>
+    <article class="ivy-card"><span class="ivy-step">Conclusión</span><h3>Consistencia, no sustitución</h3><p>El resultado es coherente con la explicación oficial y muestra por qué es plausible. No equivale a probar causalidad sin imágenes originales completas y telemetría interna.</p></article>
+  </div>
+
+  <section class="ivy-map-section" id="mapa" aria-labelledby="ivy-map-title">
+    <h2 class="ivy-section-title" id="ivy-map-title">El mapa completo: 72 vuelos sobre Marte</h2>
+    <p class="ivy-section-lead">La cronología indica cuándo y cuánto voló Ingenuity; esta animación oficial añade la dimensión espacial y permite seguir cómo fue encadenando sus zonas de vuelo durante casi tres años.</p>
+
+    <div class="ivy-map-workspace" id="ivy-map-workspace">
+    <figure class="ivy-card ivy-video-card">
+      <div class="ivy-video-frame">
+        <video id="ivy-map-player" controls preload="metadata" playsinline title="Mapa oficial NASA JPL de los 72 vuelos de Ingenuity en Marte">
+          <source src="assets/video/ingenuity-72-flight-map-960x540.mp4" type="video/mp4">
+          Tu navegador no puede reproducir este vídeo MP4. Puedes abrir la versión oficial mediante el enlace situado debajo.
+        </video>
+      </div>
+      <figcaption class="ivy-video-caption">
+        <p><strong>NASA/JPL-Caltech · 18 de abril de 2024.</strong> Representación oficial de la localización de los 72 vuelos. Sirve como contexto espacial; no se utiliza aquí como telemetría, escala de medida ni fuente de coordenadas.</p>
+      </figcaption>
+    </figure>
+
+    <div class="ivy-card ivy-map-sync">
+      <div class="ivy-map-sync-head">
+        <h3>Ir directamente a un vuelo en el mapa oficial</h3>
+        <span class="ivy-map-sync-status" id="ivy-map-status" aria-live="polite">Vuelo 1 · pulsa un número para reproducir.</span>
+      </div>
+      <div class="ivy-map-flight-grid" id="ivy-map-flight-grid" role="group" aria-label="Marcas de tiempo de los 72 vuelos en el mapa oficial"></div>
+      <p class="ivy-map-sync-note">Cada número sitúa y reproduce su vuelo. Este índice sigue únicamente al vídeo del mapa y se desplaza para mantener visible el vuelo activo. El selector, la gráfica, la imagen fija y la ficha del primer bloque son independientes: permanecen en el vuelo elegido para que sus valores puedan estudiarse sin que la reproducción los cambie. Marcas de navegación medidas a 10 fps (±0,1 s), no tiempos de telemetría.</p>
+    </div>
+    </div>
+
+    <div class="ivy-map-facts" role="group" aria-label="Resumen del mapa oficial">
+      <div><b>72 vuelos</b><span>Todos aparecen en la animación.</span></div>
+      <div><b>Casi 3 años</b><span>Del primer vuelo al cierre de la misión.</span></div>
+      <div><b>&gt; 2 horas</b><span>Tiempo total acumulado en vuelo.</span></div>
+      <div><b>18 ene. 2024</b><span>Fecha del vuelo final.</span></div>
+    </div>
+
+    <div class="site-actions ivy-audio-actions ivy-audio-footer">
+      <a class="site-button secondary" href="https://science.nasa.gov/resource/see-ingenuitys-flight-map-72-helicopter-flights-on-mars/" target="_blank" rel="noopener noreferrer">Ficha NASA y descarga UHD</a>
+      <a class="site-button secondary" href="https://www.jpl.nasa.gov/videos/see-ingenuitys-flight-map-72-helicopter-flights-on-mars/" target="_blank" rel="noopener noreferrer">Ver en NASA/JPL</a>
+      <a class="site-button secondary" href="https://www.youtube.com/watch?v=U7DFnNimSfw" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+      <a class="site-button secondary" href="datos/mapa_oficial_72_vuelos_tiempos.csv" download>Descargar marcas CSV</a>
+    </div>
+    <p class="ivy-audio-caveat">El sitio incluye una copia ligera de 960×540 del vídeo oficial para que el índice funcione también sin servidor. La versión UHD publicada por NASA (639,35 MB) permanece disponible en su ficha oficial.</p>
+  </section>
+
+  <section class="ivy-audio-section" id="audio" aria-labelledby="ivy-audio-title">
+    <h2 class="ivy-section-title" id="ivy-audio-title">Perseverance también llevaba un log: lo que pudo escuchar</h2>
+    <p class="ivy-section-lead">SuperCam registró sesiones asociadas a los vuelos 4, 5, 6 y 8. Aquí puedes oír una previsualización preparada para escucha y descargar el WAV calibrado actual directamente del Planetary Data System para conservar o analizar el original.</p>
+
+    <div class="ivy-audio-summary">
+      <div class="ivy-card">
+        <div class="ivy-frequency-strip" role="group" aria-label="Frecuencias de referencia">
+          <div><b>84 Hz</b><span>frecuencia de paso de pala de Ingenuity</span></div>
+          <div><b>168 Hz</b><span>segundo armónico observado (2×BPF)</span></div>
+          <div><b>195 Hz</b><span>bomba térmica del rover; no helicóptero</span></div>
+        </div>
+      </div>
+      <aside class="ivy-card ivy-sync-note">
+        <h3>Alineación temporal: todavía abierta</h3>
+        <p>El paper advierte diferencias de decenas de segundos entre relojes del rover y SuperCam. El tiempo mostrado es el de cada audio; no se fuerza una sincronización exacta con imágenes sin aplicar primero las correcciones de cabecera.</p>
+      </aside>
+    </div>
+
+    <div class="ivy-audio-grid">
+      <article class="ivy-card ivy-audio-card" id="audio-flight-4">
+        <img class="ivy-spectrogram" src="assets/spectrograms/flight4-0-250hz.png" loading="lazy" width="1468" height="488" alt="Espectrograma de 0 a 250 hercios de la sesión SuperCam del vuelo 4">
+        <div class="ivy-audio-body">
+          <div class="ivy-audio-head"><div><h3>Vuelo 4 · Sol 69</h3><p>30 de abril de 2021 · sesión de 167 s · 25 kHz mono</p></div><span class="ivy-status">detección clara</span></div>
+          <p class="ivy-audio-reading">Se distinguen 84 y 168 Hz durante el vuelo, además del descenso de frecuencia al parar el rotor. El viento produce ráfagas intensas en parte de la grabación.</p>
+          <audio controls preload="metadata" src="assets/audio/flight4-audible.mp3">Tu navegador no puede reproducir este audio.</audio>
+          <div class="ivy-audio-actions">
+            <a class="ivy-mini-button primary" href="https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/data_calibrated_audio/sol_00069/ascam_sol0069_0673066208_290_ca2_scam07069_heli_________________01p02.wav" target="_blank" rel="noopener noreferrer">Descargar WAV PDS · 16,7 MB</a>
+            <a class="ivy-mini-button" href="https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/data_calibrated_audio/sol_00069/ascam_sol0069_0673066208_290_ca2_scam07069_heli_________________01p02.xml" target="_blank" rel="noopener noreferrer">Etiqueta XML PDS</a>
+            <a class="ivy-mini-button" href="https://science.nasa.gov/resource/listen-to-nasas-ingenuity-mars-helicopter-in-flight/" target="_blank" rel="noopener noreferrer">Escucha procesada NASA</a>
+          </div>
+          <p class="ivy-audio-caveat">Previsualización derivada: filtro 60–220 Hz y normalización. No usar el MP3 para medir; usa el WAV PDS p02.</p>
+        </div>
+      </article>
+
+      <article class="ivy-card ivy-audio-card" id="audio-flight-5">
+        <img class="ivy-spectrogram" src="assets/spectrograms/flight5-0-250hz.png" loading="lazy" width="1468" height="488" alt="Espectrograma de 0 a 250 hercios de la sesión SuperCam del vuelo 5">
+        <div class="ivy-audio-body">
+          <div class="ivy-audio-head"><div><h3>Vuelo 5 · Sol 76</h3><p>7 de mayo de 2021 · sesión de 167 s · 25 kHz mono</p></div><span class="ivy-status">detección clara</span></div>
+          <p class="ivy-audio-reading">La banda de 84 Hz permanece durante el vuelo y 168 Hz aparece más débil. Los mínimos abruptos descritos en el paper son compatibles con la directividad y la geometría de propagación.</p>
+          <audio controls preload="metadata" src="assets/audio/flight5-audible.mp3">Tu navegador no puede reproducir este audio.</audio>
+          <div class="ivy-audio-actions">
+            <a class="ivy-mini-button primary" href="https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/data_calibrated_audio/sol_00076/ascam_sol0076_0673687636_279_ca2_scam01076_heli_________________01p02.wav" target="_blank" rel="noopener noreferrer">Descargar WAV PDS · 16,7 MB</a>
+            <a class="ivy-mini-button" href="https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/data_calibrated_audio/sol_00076/ascam_sol0076_0673687636_279_ca2_scam01076_heli_________________01p02.xml" target="_blank" rel="noopener noreferrer">Etiqueta XML PDS</a>
+          </div>
+          <p class="ivy-audio-caveat">Previsualización derivada: filtro 60–220 Hz y normalización. No usar el MP3 para medir; usa el WAV PDS p02.</p>
+        </div>
+      </article>
+
+      <article class="ivy-card ivy-audio-card" id="audio-flight-6">
+        <img class="ivy-spectrogram" src="assets/spectrograms/flight6-0-250hz.png" loading="lazy" width="1468" height="488" alt="Espectrograma de 0 a 250 hercios de la sesión SuperCam del vuelo 6">
+        <div class="ivy-audio-body">
+          <div class="ivy-audio-head"><div><h3>Vuelo 6 · Sol 91</h3><p>22 de mayo de 2021 · sesión de 167 s · 25 kHz mono</p></div><span class="ivy-status">detección parcial</span></div>
+          <p class="ivy-audio-reading">Se observa el arranque y algunos ciclos cerca de 84 Hz; después se desvanece cuando el helicóptero se aleja. La anomalía de control ocurrió ya distante y no es audible en esta sesión.</p>
+          <audio controls preload="metadata" src="assets/audio/flight6-audible.mp3">Tu navegador no puede reproducir este audio.</audio>
+          <div class="ivy-audio-actions">
+            <a class="ivy-mini-button primary" href="https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/data_calibrated_audio/sol_00091/ascam_sol0091_0675019254_277_ca2_scam05091_heli_91_scam_mic_____01p02.wav" target="_blank" rel="noopener noreferrer">Descargar WAV PDS · 16,7 MB</a>
+            <a class="ivy-mini-button" href="https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/data_calibrated_audio/sol_00091/ascam_sol0091_0675019254_277_ca2_scam05091_heli_91_scam_mic_____01p02.xml" target="_blank" rel="noopener noreferrer">Etiqueta XML PDS</a>
+          </div>
+          <p class="ivy-audio-caveat">Previsualización derivada: filtro 60–220 Hz y normalización. No usar el MP3 para medir; usa el WAV PDS p02.</p>
+        </div>
+      </article>
+
+      <article class="ivy-card ivy-audio-card" id="audio-flight-8">
+        <img class="ivy-spectrogram" src="assets/spectrograms/flight8-0-250hz.png" loading="lazy" width="1468" height="488" alt="Espectrograma de 0 a 250 hercios de la sesión SuperCam del vuelo 8">
+        <div class="ivy-audio-body">
+          <div class="ivy-audio-head"><div><h3>Vuelo 8 · Sol 120</h3><p>21 de junio de 2021 · sesión de 167 s · 25 kHz mono</p></div><span class="ivy-status">detección con viento</span></div>
+          <p class="ivy-audio-reading">84 y 168 Hz son detectables principalmente en los primeros 20 segundos. El viento domina la sesión y aparecen líneas del propio rover o posibles interferencias.</p>
+          <audio controls preload="metadata" src="assets/audio/flight8-audible.mp3">Tu navegador no puede reproducir este audio.</audio>
+          <div class="ivy-audio-actions">
+            <a class="ivy-mini-button primary" href="https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/data_calibrated_audio/sol_00120/ascam_sol0120_0677593685_336_ca2_scam06120_heli_________________01p02.wav" target="_blank" rel="noopener noreferrer">Descargar WAV PDS · 16,7 MB</a>
+            <a class="ivy-mini-button" href="https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/data_calibrated_audio/sol_00120/ascam_sol0120_0677593685_336_ca2_scam06120_heli_________________01p02.xml" target="_blank" rel="noopener noreferrer">Etiqueta XML PDS</a>
+          </div>
+          <p class="ivy-audio-caveat">Previsualización derivada: filtro 60–220 Hz y normalización. No usar el MP3 para medir; usa el WAV PDS p02.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="ivy-listening-log" role="group" aria-label="Resumen del registro de escucha">
+      <div><b>F4 · Sol 69</b><span>vuelo completo detectable</span></div>
+      <div><b>F5 · Sol 76</b><span>84 Hz y mínimos abruptos</span></div>
+      <div><b>F6 · Sol 91</b><span>arranque y alejamiento</span></div>
+      <div><b>F8 · Sol 120</b><span>detección inicial con viento</span></div>
+      <div><b>F9 · Sol 133</b><span>grabado, sin señal detectable a 200–500 m</span></div>
+      <div><b>Soles 105 / 128</b><span>escuchas previstas, sin vuelo registrado</span></div>
+    </div>
+    <div class="site-actions ivy-audio-actions ivy-audio-footer">
+      <a class="site-button secondary" href="datos/audio_ingenuity_pds.csv" download>Descargar catálogo de audio CSV</a>
+      <a class="site-button secondary" href="https://doi.org/10.1016/j.pss.2023.105684" target="_blank" rel="noopener noreferrer">Abrir el paper</a>
+    </div>
+  </section>
+
+  <section class="ivy-audio-section" id="contraste" aria-labelledby="ivy-contrast-title">
+    <h2 class="ivy-section-title" id="ivy-contrast-title">Dos comprobaciones independientes: terreno y firma de rotor</h2>
+    <p class="ivy-section-lead">El vídeo de evitación de peligros y el ensayo terrestre no son telemetría de estos cuatro vuelos, pero permiten someter dos ideas a contraste independiente: qué estructura del suelo puede aprovechar un algoritmo y qué familia tonal debe producir la arquitectura de dos rotores coaxiales.</p>
+
+    <figure class="ivy-card ivy-audio-card">
+      <img class="ivy-spectrogram" src="assets/analisis/hazard-vuelo9-superposiciones.png" loading="lazy" width="2210" height="1530" alt="Seis fotogramas del vuelo 9 reprocesado por NASA JPL con peligros rojos y candidatos verdes">
+      <figcaption class="ivy-audio-body"><strong>Lo documentado y lo desconocido.</strong> NASA/JPL define el rojo como peligro y el verde como candidato de aterrizaje. La ficha pública no asigna significado ni unidades a las cifras rojas, los círculos cian o los rectángulos blancos.</figcaption>
+    </figure>
+
+    <figure class="ivy-card ivy-video-card">
+      <div class="ivy-video-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/nAQxNd3uBN0?start=148&amp;rel=0"
+          title="Ensayo de Ingenuity en la cámara de simulación marciana de JPL"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <figcaption class="ivy-video-caption">
+        <p><strong>NASA/JPL-Caltech · NASA Ingenuity Mars Helicopter Testing Media Reel.</strong> El reproductor abre el ensayo desde 2:28, cuando comienza la secuencia de cámara: giro a 2.277 rpm, ascenso, traslación, estacionarios, giros, regreso y aterrizaje.</p>
+        <p>Es un vídeo oficial incrustado y requiere conexión a internet. No se redistribuye la grabación de pantalla empleada para el análisis.</p>
+      </figcaption>
+    </figure>
+
+    <div class="site-actions ivy-audio-actions ivy-audio-footer">
+      <a class="site-button secondary" href="https://www.youtube.com/watch?v=nAQxNd3uBN0&amp;t=148s" target="_blank" rel="noopener noreferrer">Abrir el ensayo en JPLraw · 2:28</a>
+      <a class="site-button secondary" href="https://doi.org/10.1016/j.pss.2023.105684" target="_blank" rel="noopener noreferrer">Abrir el estudio acústico</a>
+    </div>
+
+    <div class="ivy-formula-panel" aria-label="Conversión de frecuencia de paso de pala a revoluciones por minuto">
+      <code>RPM = 60 · BPF / 2 = 30 · 75,8813 = 2.276,44 rpm</code>
+      <p>Dos palas por rotor. El resultado reproduce el rótulo de 2.277 rpm con una diferencia de −0,56 rpm (−0,025 %).</p>
+    </div>
+
+    <div class="ivy-evidence-chain" role="group" aria-label="Resultados del contraste con NASA JPL">
+      <article class="ivy-card"><span class="ivy-step">Terreno</span><h3>Rojo y verde, no nuestra puntuación</h3><p>NASA define rojo como zona no apta y verde como candidato. El algoritmo usa elevación, pendiente, rugosidad e incertidumbre; no es el contador de referencias de este montaje.</p></article>
+      <article class="ivy-card"><span class="ivy-step">Ensayo</span><h3>14 picos medidos confirman 2.277 rpm</h3><p>El ajuste de la captura da 75,8813 Hz y un residuo RMS de 0,018 Hz. En Marte, la frecuencia de paso de pala se sitúa cerca de 84 Hz.</p></article>
+      <article class="ivy-card"><span class="ivy-step">Paper</span><h3>Una estructura equivalente, no la misma toma</h3><p>El apéndice 3, figura A3, muestra un peine cercano a 82 Hz con al menos 15 dientes visibles. Confirma el tipo de estructura armónica, no una identidad entre grabaciones.</p></article>
+    </div>
+
+    <div class="ivy-note">
+      <p><strong>Dos validaciones que no deben confundirse.</strong> El vídeo permite recuperar 2.276,44 rpm y compararlas con las 2.277 rpm mostradas en pantalla. El paper aporta otro registro de la misma arquitectura de rotor: la figura A2 documenta el montaje en cámara y la figura A3 presenta su espectro. Las unidades, el tramo y la separación exacta no tienen por qué coincidir.</p>
+    </div>
+
+    <div class="ivy-audio-grid">
+      <figure class="ivy-card ivy-audio-card">
+        <img class="ivy-spectrogram" src="assets/analisis/audio-espectros-jpl-perseverance.png" loading="lazy" width="2160" height="1215" alt="Espectros normalizados del ensayo JPL y los vuelos 4, 5, 6 y 8 registrados por Perseverance">
+        <figcaption class="ivy-audio-body"><strong>Posición de los tonos, no volumen absoluto.</strong> El ensayo conserva una peineta rica por la proximidad; en Marte dominan 84 Hz y, a veces, 168 Hz.</figcaption>
+      </figure>
+      <figure class="ivy-card ivy-audio-card">
+        <img class="ivy-spectrogram" src="assets/analisis/audio-nulos-jpl-vuelo5.png" loading="lazy" width="2340" height="1440" alt="Comparación temporal entre las caídas de energía del ensayo JPL y los seis nulos del vuelo 5">
+        <figcaption class="ivy-audio-body"><strong>Dos clases de mínimos.</strong> Los del ensayo siguen mayoritariamente las fases de vuelo; los seis del vuelo 5 forman la modulación descrita en el paper.</figcaption>
+      </figure>
+    </div>
+
+    <div class="site-actions ivy-audio-actions ivy-audio-footer">
+      <a class="site-button secondary" href="ANALISIS_HAZARD_AUDIO_JPL.md">Leer el análisis completo</a>
+      <a class="site-button secondary" href="datos/comparacion_audio_jpl_perseverance.csv" download>Descargar comparación CSV</a>
+      <a class="site-button secondary" href="datos/nulos_audio_comparados.csv" download>Descargar nulos CSV</a>
+    </div>
+    <p class="ivy-audio-caveat">La captura del ensayo contiene audio AAC procedente de YouTube y no permite comparar niveles absolutos con los WAV PDS. Se midieron 14 picos; «al menos 15 dientes visibles» describe la figura A3 del paper y no amplía retrospectivamente el ajuste. El vídeo de evitación usa imágenes del vuelo 9 reprocesadas con software añadido a finales de 2022; no prueba que esa función operase durante el vuelo de 2021.</p>
+  </section>
+
+  <section class="ivy-audio-section" id="estudio" aria-labelledby="ivy-study-title">
+    <h2 class="ivy-section-title" id="ivy-study-title">Memoria viva del estudio: qué sabemos y qué queda abierto</h2>
+    <p class="ivy-section-lead">Esta capa reúne la gráfica visual, el vuelo 9, el aterrizaje próximo a una roca, los audios SuperCam, la hipótesis ΔRPM, la observación publicada de las lomas y la nueva pregunta sobre los vuelos de máxima velocidad. Cada afirmación queda marcada por su nivel de evidencia para que el log pueda ampliarse sin reescribir la historia.</p>
+
+    <div class="ivy-evidence-chain" role="group" aria-label="Resultados principales del estudio ampliado">
+      <article class="ivy-card"><span class="ivy-step">Visual</span><h3>La secuencia final merece atención</h3><p>La mediana de referencias del montaje pasa de 46,5 en los vuelos 1–67 a 11,0 en los vuelos 68–72. Es un resultado descriptivo compatible con un entorno visual más difícil; no es telemetría interna ni prueba por sí solo causalidad.</p></article>
+      <article class="ivy-card"><span class="ivy-step">Audio</span><h3>Dos comprobaciones independientes</h3><p>El ensayo JPL reproduce una peineta compatible con 2.277 rpm y el vuelo 5 conserva seis mínimos periódicos. Bajo el modelo geométrico de cuatro lóbulos, ΔRPM queda en el orden de 0,9–1,5 rpm.</p></article>
+      <article class="ivy-card"><span class="ivy-step">Terreno</span><h3>Una hipótesis que puede ponerse a prueba</h3><p>Las publicaciones iniciales señalaron posiciones finales próximas a crestas, dunas o lomas. El archivo conservado habla de 31 imágenes; “unas 32” es una aproximación de aquella muestra, no 32 aterrizajes autónomos demostrados.</p></article>
+    </div>
+
+    <div class="ivy-audio-grid">
+      <article class="ivy-card">
+        <h3>Fórmulas auditables de la gráfica</h3>
+        <code class="ivy-formula">t = fotograma / 25 fps<br>Rᵢ = mediana(rᵢ,₁ … rᵢ,₂₀)<br>IQRᵢ = Q₃,ᵢ − Q₁,ᵢ<br>Cᵢ = 100 · celdas útiles con ≥2 rasgos / celdas útiles<br>Pᵢ = 100 · (rangoᵢ − 1) / 71</code>
+        <p>El percentil se reconstruye exactamente desde el CSV. La puntuación visual es relativa al montaje, pero el paquete actual no conserva el detector original, sus umbrales ni la ponderación exacta; por eso su generación completa se declara parcialmente reproducible.</p>
+      </article>
+      <article class="ivy-card">
+        <h3>ΔRPM: una escala, no una avería</h3>
+        <code class="ivy-formula">BPF = B · rpm / 60<br>para B = 2: rpm = 30 · f<br>modelo de 4 lóbulos: Δrpm ≈ 15 / Tₙᵤₗₒ</code>
+        <p>Los intervalos de 10,5–16,5 s del vuelo 5 dan aproximadamente 0,9–1,5 rpm. El mecanismo del “faro acústico” procede de Lorenz et al.; la aportación del log es reproducirlo sobre el PDS, contrastarlo y dejar explícita la convención empleada. No existe evidencia de que esta pequeña asincronía causara el vuelo 72.</p>
+      </article>
+      <article class="ivy-card">
+        <h3>Vuelo 9: coincidencia conceptual, no equivalencia</h3>
+        <p>La demostración <a class="ivy-inline-link" href="https://www.jpl.nasa.gov/images/pia25662-ingenuitys-hazard-avoidance-capability/" target="_blank" rel="noopener noreferrer">PIA25662 de NASA/JPL</a> reprocesa imágenes del vuelo 9 con software añadido a finales de 2022. Su cadena reconstruye relieve 3D y evalúa pendiente, rugosidad e incertidumbre. Nuestro índice sólo cuenta estructura visual y su distribución en imágenes públicas: coincide en la condición inicial, pero no decide ni valida lugares de aterrizaje.</p>
+      </article>
+      <article class="ivy-card">
+        <h3>Vuelo 33: aterrizaje junto a una roca</h3>
+        <p>La imagen cercana a una piedra corresponde al vuelo 33, de septiembre de 2022, anterior a la demostración pública de evitación de peligros. Lo más prudente es interpretar que el destino fue planificado y que la piedra quedó cerca, pero fuera de la huella efectiva del tren. Sin escala, poses, pendiente local y telemetría de contacto no puede afirmarse que Ingenuity detectara la roca y decidiera aceptarla.</p>
+      </article>
+      <article class="ivy-card">
+        <h3>Vuelos 62, 68 y 69: el límite de 10 m/s</h3>
+        <code class="ivy-formula">μ = V<sub>aire</sub> / (ΩR)<br>q = ½ρV<sub>aire</sub><sup>2</sup><br>N<sub>vueltas</sub> ≈ rpm · T / 60<br>D = Σ n<sub>j</sub> / N<sub>j</sub></code>
+        <p><a class="ivy-inline-link" href="https://science.nasa.gov/resource/mars-report-the-most-extreme-flights-of-nasas-ingenuity-mars-helicopter/" target="_blank" rel="noopener noreferrer">NASA identifica estos tres</a> —no el 65— como los únicos vuelos que alcanzaron 10 m/s sobre el suelo. Los vuelos 68 y 69 fueron además <a class="ivy-inline-link" href="https://science.nasa.gov/blog/unlocking-the-martian-skies-using-ingenuity-as-a-martian-testbed-for-future-rotorcraft/" target="_blank" rel="noopener noreferrer">ensayos <em>Sys-ID</em></a>: incorporaron pequeñas excitaciones de control y, por el viento, al menos un tramo debía superar 10 m/s respecto al aire. Es un historial de carga que merece estudio, pero los datos públicos no prueban que dejara fatiga ni que causara la rotura.</p>
+      </article>
+    </div>
+
+    <div class="ivy-note">
+      <p><strong>Hipótesis de las 31–32 lomas.</strong> La serie de LinkedIn del autor describió una recurrencia aparente de posiciones finales sobre cimas, aristas, faldas de dunas o lomas. El texto archivado menciona 31 imágenes; no deben contarse varias fotografías de un vuelo como varios aterrizajes, ni llamarse “preferencia” sin medir cuánto terreno de ese tipo estaba disponible.</p>
+      <p><strong>Cómo comprobarla:</strong> una fila por vuelo; categorías fijadas antes de mirar; producto PDS e instante trazables; dos observadores independientes; separación entre destino planificado, posición final y candidato autónomo; inclusión de casos negativos e indeterminados. Si k de n casos cumplen la definición, p̂ = k/n, pero debe compararse con la proporción real de lomas disponible en cada zona, no automáticamente con 0,5.</p>
+    </div>
+
+    <div class="ivy-note">
+      <p><strong>Hipótesis V · preacondicionamiento por vuelos rápidos.</strong> Los vuelos 68 y 69 sumaron 266,5 s, sólo el 3,45 % del tiempo total de vuelo, y fueron declarados exitosos. Eso no descarta por sí solo la fatiga —el daño depende de la amplitud de carga, no sólo del tiempo—, pero tampoco permite calcularla sin el espectro de esfuerzos, vibraciones, rpm, paso, corriente y temperaturas.</p>
+      <p><strong>Contraste oficial:</strong> <a class="ivy-inline-link" href="https://www.jpl.nasa.gov/news/nasa-performs-first-aircraft-accident-investigation-on-another-world/" target="_blank" rel="noopener noreferrer">JPL atribuye el accidente del vuelo 72</a> a pérdida de referencias sobre arena poco texturada, alta velocidad horizontal al contacto y una sobrecarga común al inclinarse el helicóptero sobre la pendiente. El antecedente 62/68/69 queda registrado como línea de investigación secundaria y comprobable, no como causa demostrada.</p>
+    </div>
+
+    <div class="site-actions ivy-audio-actions ivy-audio-footer">
+      <a class="site-button secondary" href="LEYENDA_FORMULAS_Y_CRITERIOS.md">Abrir leyenda, fórmulas y criterios</a>
+      <a class="site-button secondary" href="datos/plantilla_revision_lomas.csv" download>Descargar protocolo de revisión</a>
+      <a class="site-button secondary" href="datos/vuelos_alta_velocidad_hipotesis.csv" download>Descargar vuelos de máxima velocidad</a>
+      <a class="site-button secondary" href="DIFUSION_AEROESPACIAL.md">Resumen bilingüe para difusión</a>
+      <a class="site-button secondary" href="https://www.linkedin.com/in/pedroramon-drones-atsep" target="_blank" rel="noopener noreferrer">Publicaciones del autor en LinkedIn</a>
+    </div>
+    <p class="ivy-research-source"><strong>Autor de la hipótesis editorial y del estudio:</strong> Pedro Ramón Montserrat Cabrera, Fuerteventura, Islas Canarias, España. Serie de LinkedIn «Anatomía de la Rotura de una Pala del Ingenuity». NASA/JPL no ha publicado una conclusión equivalente sobre una preferencia por lomas.</p>
+  </section>
 
   <h2 class="ivy-section-title">Qué opción de mejora sugiere esta comparación</h2>
   <div class="ivy-options">
@@ -453,7 +882,7 @@
   </div>
 
   <h2 class="ivy-section-title">Cómo interpretar la evidencia</h2>
-  <div class="ivy-transparency" aria-label="Niveles de evidencia">
+  <div class="ivy-transparency" role="group" aria-label="Niveles de evidencia">
     <article><h3>Observado</h3><p>Lo que aparece directamente en las imágenes públicas, el montaje o los datos oficiales de cada vuelo.</p></article>
     <article><h3>Reproducido</h3><p>Resultados calculados de forma uniforme sobre el montaje: segmentación, referencias locales, cobertura y puntuación relativa.</p></article>
     <article><h3>Hipótesis</h3><p>Interpretaciones que ayudan a formular nuevas preguntas, pero que necesitan telemetría o imágenes adicionales para confirmarse.</p></article>
@@ -466,6 +895,9 @@
       <li>Se detectaron 75 pasajes de sombra grande; tres situados entre los vuelos 13 y 14 se separaron como comprobaciones previas al vuelo 14.</li>
       <li>En cada vuelo se tomaron 20 fotogramas del tramo central. “Referencias” es la mediana de esquinas/rasgos locales detectables después de recortar el viñeteado y enmascarar la sombra estimada.</li>
       <li>La puntuación es relativa a este mismo vídeo, no es la cifra que usó el software de Ingenuity. El montaje, la selección pública de imágenes y la compresión pueden alterar el resultado.</li>
+      <li>El mapa integrado es la animación oficial NASA/JPL de los 72 vuelos. Aporta contexto espacial, pero el proyecto no extrae de ella coordenadas ni distancias.</li>
+      <li>Las cuatro escuchas integradas parten de WAV calibrados SuperCam p02: 25 kHz, mono y 167 segundos. Los MP3 locales están filtrados entre 60 y 220 Hz y normalizados sólo para facilitar la escucha.</li>
+      <li>Los espectrogramas comparan siempre 0–250 Hz. La asociación precisa entre un instante acústico y una imagen exige corregir primero el desfase entre relojes indicado en las cabeceras PDS.</li>
       <li>Las incidencias de servos se anotan para comparar, pero las sombras y la textura no demuestran el estado de los actuadores.</li>
       <li>Una zona aparentemente limpia no demuestra que sea horizontal, y un fotograma representativo no permite conocer el orden de contacto de las patas.</li>
     </ul>
@@ -475,15 +907,22 @@
     <h2 class="ivy-section-title" id="ivy-sources-title">Fuentes, créditos y trazabilidad</h2>
     <div class="ivy-source-grid">
       <p><strong>Registro de vuelos:</strong><br><a href="https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/" target="_blank" rel="noopener noreferrer">NASA Science · misión Ingenuity y Flight Log</a></p>
+      <p><strong>Mapa completo de los 72 vuelos:</strong><br><a href="https://science.nasa.gov/resource/see-ingenuitys-flight-map-72-helicopter-flights-on-mars/" target="_blank" rel="noopener noreferrer">NASA Science · Ingenuity Flight Map Animation</a>, crédito NASA/JPL-Caltech.</p>
       <p><strong>Imágenes originales:</strong><br><a href="https://mars.nasa.gov/mars2020/multimedia/raw-images/" target="_blank" rel="noopener noreferrer">Archivo público de imágenes Mars 2020</a></p>
       <p><strong>Montaje cronológico:</strong><br><a href="https://www.youtube.com/@landru79" target="_blank" rel="noopener noreferrer">Jacint Roger · Landru79</a>, elaborado a partir de imágenes públicas NASA/JPL-Caltech.</p>
       <p><strong>Investigación oficial del vuelo 72:</strong><br><a href="https://www.jpl.nasa.gov/news/nasa-performs-first-aircraft-accident-investigation-on-another-world/" target="_blank" rel="noopener noreferrer">NASA/JPL · primera investigación de un accidente aéreo en otro mundo</a></p>
       <p><strong>Control de vuelo y aterrizaje:</strong><br><a href="https://science.nasa.gov/blog/what-were-learning-about-ingenuitys-flight-control-and-aerodynamic-performance/" target="_blank" rel="noopener noreferrer">NASA · flight control and aerodynamic performance</a></p>
       <p><strong>Evitación de peligros:</strong><br><a href="https://www.jpl.nasa.gov/images/pia25662-ingenuitys-hazard-avoidance-capability/" target="_blank" rel="noopener noreferrer">NASA/JPL · Hazard Avoidance Capability</a></p>
+      <p><strong>Ensayo terrestre en cámara:</strong><br><a href="https://www.youtube.com/watch?v=nAQxNd3uBN0&amp;t=148s" target="_blank" rel="noopener noreferrer">JPLraw · NASA Ingenuity Mars Helicopter Testing Media Reel, desde 2:28</a></p>
+      <p><strong>Memoria técnica del proyecto:</strong><br><a href="LEYENDA_FORMULAS_Y_CRITERIOS.md">Leyenda, fórmulas, vuelo 9, roca, lomas y ΔRPM</a></p>
+      <p><strong>Cita académica:</strong><br><a href="CITATION.cff">Metadatos CFF para citar este repositorio</a></p>
+      <p><strong>Hipótesis de las lomas:</strong><br><a href="https://www.linkedin.com/in/pedroramon-drones-atsep" target="_blank" rel="noopener noreferrer">Pedro Ramón Montserrat Cabrera · serie de publicaciones en LinkedIn</a></p>
       <p><strong>Contexto acústico de la serie:</strong><br><a href="https://doi.org/10.1016/j.pss.2023.105684" target="_blank" rel="noopener noreferrer">Lorenz et al., “The sounds of a helicopter on Mars” (2023)</a></p>
-      <p><strong>Datos acústicos:</strong><br><a href="https://pds-geosciences.wustl.edu/missions/mars2020/" target="_blank" rel="noopener noreferrer">NASA Planetary Data System · Mars 2020</a></p>
+      <p><strong>Datos acústicos originales:</strong><br><a href="https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/data_calibrated_audio/" target="_blank" rel="noopener noreferrer">NASA PDS · archivo calibrado de audio SuperCam</a></p>
+      <p><strong>Escucha pública del vuelo 4:</strong><br><a href="https://science.nasa.gov/resource/listen-to-nasas-ingenuity-mars-helicopter-in-flight/" target="_blank" rel="noopener noreferrer">NASA Science · versión procesada de la grabación</a></p>
     </div>
-    <p class="ivy-authorship"><strong>Análisis, selección y relato:</strong> <a href="https://www.linkedin.com/in/pedroramon-drones-atsep" target="_blank" rel="noopener noreferrer">Pedro Ramón Montserrat Cabrera</a>. Proyecto independiente de divulgación y aprendizaje abierto, sin afiliación ni aval de NASA/JPL. Imágenes y datos de misión: NASA/JPL-Caltech y sus respectivos equipos. Montaje visual acreditado a Jacint Roger (Landru79). Los materiales de terceros conservan sus condiciones de uso originales.</p>
+    <p class="ivy-authorship"><strong>Análisis, selección y relato:</strong> <a href="https://www.linkedin.com/in/pedroramon-drones-atsep" target="_blank" rel="noopener noreferrer">Pedro Ramón Montserrat Cabrera</a>, Fuerteventura, Islas Canarias, España. Proyecto independiente de divulgación y consulta pública, sin afiliación ni aval de NASA/JPL. Imágenes y datos de misión: NASA/JPL-Caltech y sus respectivos equipos. Montaje visual acreditado a Jacint Roger (Landru79). Los materiales de terceros conservan sus condiciones de uso originales.</p>
+    <p class="ivy-copyright"><strong>© 2026 Pedro Ramón Montserrat Cabrera — Fuerteventura, Islas Canarias, España. Todos los derechos reservados.</strong><br>La consulta, el enlace y la cita breve con atribución están permitidos. La reproducción sustancial, redistribución, modificación o uso comercial de las aportaciones originales requiere autorización previa. Este repositorio no concede una licencia de código abierto. Consulte <a href="https://github.com/pedroramon-estudios/Ingenuity-72-vuelos/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">las condiciones de uso</a> y el <a href="https://github.com/pedroramon-estudios/Ingenuity-72-vuelos/blob/main/NOTICE.md" target="_blank" rel="noopener noreferrer">desglose de autorías</a>.</p>
   </section>
 </section>
 
@@ -492,15 +931,120 @@
 (() => {
   const payload = JSON.parse(document.getElementById('ivy-data').textContent);
   const flights = payload.flights;
+  const highSpeedEvents = new Map([
+    [62, 'Primera demostración oficial de 10 m/s; expansión de la envolvente a 18 m de altura de vuelo horizontal.'],
+    [68, 'Primer ensayo dedicado Sys-ID a 10 m/s, con excitación dinámica deliberada durante un recorrido largo.'],
+    [69, 'Segundo ensayo Sys-ID a 10 m/s; el perfil de ida y vuelta buscó superar 10 m/s respecto al aire en un tramo.']
+  ]);
+  flights.forEach(flight => {
+    if (highSpeedEvents.has(flight.flight)) flight.event = highSpeedEvents.get(flight.flight);
+  });
   const select = document.getElementById('ivy-flight-select');
   const filter = document.getElementById('ivy-filter-select');
   const grid = document.getElementById('ivy-flight-grid');
+  const mapGrid = document.getElementById('ivy-map-flight-grid');
+  const mapStatus = document.getElementById('ivy-map-status');
   const tableBody = document.getElementById('ivy-table-body');
   const chart = document.getElementById('ivy-chart');
-  let selected = 70;
+  const audioFlights = new Set([4, 5, 6, 8]);
+  const mapPlayer = document.getElementById('ivy-map-player');
+  const officialMapTimes = [
+    0.2, 0.7, 1.9, 3.0, 4.2, 5.3, 7.7, 8.4, 9.0, 9.6, 10.3, 10.9,
+    11.5, 12.1, 12.8, 13.4, 14.0, 14.7, 15.3, 15.9, 16.6, 17.2, 17.9, 18.5,
+    19.2, 19.8, 20.4, 21.1, 21.7, 22.4, 23.0, 23.6, 24.3, 24.9, 25.6, 26.2,
+    26.9, 27.5, 28.2, 28.8, 29.4, 30.1, 30.7, 31.4, 32.1, 32.7, 33.4, 34.0,
+    34.7, 35.3, 36.0, 36.6, 37.3, 38.0, 38.6, 39.3, 39.9, 40.6, 41.3, 41.9,
+    42.6, 43.3, 43.9, 44.6, 45.3, 45.9, 46.6, 48.6, 50.6, 52.6, 54.6, 56.6
+  ];
+  let selected = 1;
+  let mapPlayerReady = Boolean(mapPlayer && mapPlayer.readyState >= 1);
+  let pendingMapFlight = null;
 
   const fmt = (value, digits = 1) => value === null || value === undefined ? '—' : Number(value).toLocaleString('es-ES', { maximumFractionDigits: digits });
   const tone = score => score < 20 ? 'var(--ivy-low)' : score < 45 ? 'var(--ivy-mid)' : 'var(--ivy-high)';
+  const fmtMapTime = seconds => `${Math.floor(seconds / 60)}:${(seconds % 60).toFixed(1).padStart(4, '0')}`;
+
+  function markMapFlight(number) {
+    document.querySelectorAll('.ivy-map-jump').forEach(button => button.setAttribute('aria-pressed', button.dataset.flight === String(number) ? 'true' : 'false'));
+    const active = mapGrid.querySelector(`[data-flight="${number}"]`);
+    if (active) {
+      const panel = mapGrid.getBoundingClientRect();
+      const button = active.getBoundingClientRect();
+      if (button.top < panel.top + 3) mapGrid.scrollTop += button.top - panel.top - 3;
+      else if (button.bottom > panel.bottom - 3) mapGrid.scrollTop += button.bottom - panel.bottom + 3;
+    }
+  }
+
+  function flightAtMapTime(seconds) {
+    let currentFlight = 1;
+    for (let index = 0; index < officialMapTimes.length; index += 1) {
+      if (seconds + 0.00001 < officialMapTimes[index]) break;
+      currentFlight = index + 1;
+    }
+    return currentFlight;
+  }
+
+  function syncIndexFromMapPlayer(frameTime) {
+    if (!mapPlayerReady || !mapPlayer || mapPlayer.seeking || pendingMapFlight !== null) return;
+    const currentTime = typeof frameTime === 'number' ? frameTime : Number(mapPlayer.currentTime);
+    if (!Number.isFinite(currentTime)) return;
+    const currentFlight = flightAtMapTime(currentTime);
+    markMapFlight(currentFlight);
+    if (mapStatus.dataset.flight !== String(currentFlight)) {
+      mapStatus.dataset.flight = String(currentFlight);
+      mapStatus.textContent = `Vuelo ${currentFlight} · marca ${fmtMapTime(officialMapTimes[currentFlight - 1])}`;
+    }
+  }
+
+  function playMapFlight(number) {
+    const time = officialMapTimes[Number(number) - 1];
+    if (!Number.isFinite(time)) return;
+    pendingMapFlight = Number(number);
+    markMapFlight(number);
+    mapStatus.textContent = `Vuelo ${number} · marca ${fmtMapTime(time)} · preparando reproducción…`;
+    if (!mapPlayerReady || !mapPlayer) return;
+    pendingMapFlight = null;
+    mapPlayer.currentTime = time;
+    const playback = mapPlayer.play();
+    if (playback && typeof playback.catch === 'function') {
+      playback.catch(error => {
+        if (error.name === 'AbortError' || selected !== Number(number)) return;
+        mapStatus.textContent = `Vuelo ${number} situado en ${fmtMapTime(time)} · pulsa ▶ en el reproductor para continuar.`;
+      });
+    }
+    mapStatus.dataset.flight = String(number);
+    mapStatus.textContent = `Vuelo ${number} · reproduciendo desde ${fmtMapTime(time)}`;
+  }
+
+  function activateMapPlayer() {
+    if (!mapPlayer || mapPlayer.readyState < 1) return;
+    mapPlayerReady = true;
+    if (pendingMapFlight !== null) {
+      const flight = pendingMapFlight;
+      pendingMapFlight = null;
+      playMapFlight(flight);
+    }
+  }
+
+  if (mapPlayer) {
+    mapPlayer.addEventListener('loadedmetadata', activateMapPlayer);
+    mapPlayer.addEventListener('durationchange', activateMapPlayer);
+    mapPlayer.addEventListener('timeupdate', syncIndexFromMapPlayer);
+    mapPlayer.addEventListener('seeked', syncIndexFromMapPlayer);
+    mapPlayer.addEventListener('play', syncIndexFromMapPlayer);
+    // Follow rendered frames: timeupdate alone may arrive several tenths late.
+    if ('requestVideoFrameCallback' in mapPlayer) {
+      const followFrame = (_now, metadata) => {
+        syncIndexFromMapPlayer(metadata.mediaTime);
+        mapPlayer.requestVideoFrameCallback(followFrame);
+      };
+      mapPlayer.requestVideoFrameCallback(followFrame);
+    }
+    mapPlayer.addEventListener('error', () => {
+      mapStatus.textContent = 'No se pudo cargar la copia local del vídeo; puedes abrir la versión oficial de NASA/JPL o YouTube.';
+    });
+    if (mapPlayerReady) activateMapPlayer();
+  }
 
   flights.forEach(f => {
     const option = document.createElement('option');
@@ -514,9 +1058,20 @@
     button.textContent = f.flight;
     button.dataset.flight = f.flight;
     button.dataset.event = f.event ? 'true' : 'false';
-    button.setAttribute('aria-label', `Ver vuelo ${f.flight}`);
+    button.dataset.audio = audioFlights.has(f.flight) ? 'true' : 'false';
+    button.setAttribute('aria-label', `Analizar vuelo ${f.flight}${audioFlights.has(f.flight) ? ', con grabación SuperCam' : ''}`);
     button.addEventListener('click', () => updateSelected(f.flight));
     grid.appendChild(button);
+
+    const mapButton = document.createElement('button');
+    mapButton.type = 'button';
+    mapButton.className = 'ivy-map-jump';
+    mapButton.textContent = f.flight;
+    mapButton.dataset.flight = f.flight;
+    mapButton.title = `Vuelo ${f.flight} · ${fmtMapTime(officialMapTimes[f.flight - 1])}`;
+    mapButton.setAttribute('aria-label', `Reproducir vuelo ${f.flight} desde la marca ${fmtMapTime(officialMapTimes[f.flight - 1])}`);
+    mapButton.addEventListener('click', () => playMapFlight(f.flight));
+    mapGrid.appendChild(mapButton);
   });
 
   function interpretation(f) {
@@ -532,6 +1087,7 @@
   }
 
   function updateSelected(number) {
+    if (!Number.isInteger(Number(number)) || Number(number) < 1 || Number(number) > flights.length) return;
     selected = Number(number);
     const f = flights[selected - 1];
     select.value = String(selected);
@@ -551,7 +1107,8 @@
       [`${fmt(f.duration_s)} s`, 'duración oficial']
     ].map(item => `<div class="ivy-metric"><b>${item[0]}</b><span>${item[1]}</span></div>`).join('');
     const eventText = f.event ? `<p><strong>Referencia conocida:</strong> ${f.event}</p>` : '<p><strong>Referencia conocida:</strong> sin incidencia específica anotada en esta comparación.</p>';
-    document.getElementById('ivy-selected-note').innerHTML = `<p><strong>Lectura:</strong> ${interpretation(f)}</p>${eventText}<p><strong>Confianza de asignación:</strong> ${f.analysis_confidence}.</p>`;
+    const audioText = audioFlights.has(f.flight) ? `<p><strong>Audio:</strong> <a class="ivy-inline-link" href="#audio-flight-${f.flight}">escuchar la sesión SuperCam y descargar el WAV PDS</a>.</p>` : '';
+    document.getElementById('ivy-selected-note').innerHTML = `<p><strong>Lectura:</strong> ${interpretation(f)}</p>${eventText}${audioText}<p><strong>Confianza de asignación:</strong> ${f.analysis_confidence}.</p>`;
     renderChart();
     document.querySelectorAll('#ivy-table-body tr').forEach(row => row.dataset.selected = row.dataset.flight === String(selected) ? 'true' : 'false');
   }
@@ -573,6 +1130,7 @@
   function included(f) {
     if (filter.value === 'vertical') return f.profile === 'Vertical';
     if (filter.value === 'events') return Boolean(f.event);
+    if (filter.value === 'audio') return audioFlights.has(f.flight);
     if (filter.value === 'low') return f.visual_score < 20;
     if (filter.value === 'late') return f.flight >= 68;
     return true;
@@ -587,10 +1145,11 @@
   filter.addEventListener('change', renderTable);
   renderTable();
   updateSelected(selected);
+  markMapFlight(1);
 })();
 </script>
   <footer class="site-footer">
-    <p>Volviendo a Marte · Cronología visual interactiva de los 72 vuelos de Ingenuity · 2026</p>
+    <p>Volviendo a Marte · Log ampliado de los 72 vuelos de Ingenuity · © 2026 Pedro Ramón Montserrat Cabrera · Fuerteventura, Islas Canarias, España</p>
   </footer>
 </main>
 </body>

@@ -18,21 +18,21 @@
   <rect x="42" y="38" width="12" height="554" rx="6" fill="#d95f38"/>
   <text x="88" y="92" class="sans" font-size="21" font-weight="800" letter-spacing="3" fill="#b44e2b">VOLVIENDO A MARTE</text>
   <text x="88" y="162" class="serif" font-size="58" font-weight="700" fill="#25221f">INGENUITY</text>
-  <text x="88" y="222" class="sans" font-size="38" font-weight="850" fill="#275f69">72 VUELOS</text>
-  <text x="88" y="266" class="sans" font-size="25" font-weight="700" fill="#25221f">Una cronología visual interactiva</text>
-  <text x="88" y="320" class="sans" font-size="19" fill="#6d665d">Log oficial NASA · montaje de Landru79</text>
-  <text x="88" y="350" class="sans" font-size="19" fill="#6d665d">análisis exploratorio de referencias visuales</text>
+  <text x="88" y="222" class="sans" font-size="32" font-weight="850" fill="#275f69">LOG AMPLIADO · 72 VUELOS</text>
+  <text x="88" y="266" class="sans" font-size="25" font-weight="700" fill="#25221f">Imágenes, escucha y referencias</text>
+  <text x="88" y="320" class="sans" font-size="19" fill="#6d665d">Log NASA · Landru79 · audio SuperCam PDS</text>
+  <text x="88" y="350" class="sans" font-size="19" fill="#6d665d">observado · reproducido · hipótesis</text>
   <rect x="88" y="397" width="142" height="74" rx="14" fill="#eee4d4"/>
   <text x="159" y="428" text-anchor="middle" class="sans" font-size="26" font-weight="850" fill="#275f69">22.546</text>
   <text x="159" y="454" text-anchor="middle" class="sans" font-size="15" fill="#6d665d">fotogramas</text>
   <rect x="244" y="397" width="142" height="74" rx="14" fill="#eee4d4"/>
-  <text x="315" y="428" text-anchor="middle" class="sans" font-size="26" font-weight="850" fill="#275f69">75</text>
-  <text x="315" y="454" text-anchor="middle" class="sans" font-size="15" fill="#6d665d">pasos de sombra</text>
+  <text x="315" y="428" text-anchor="middle" class="sans" font-size="26" font-weight="850" fill="#275f69">4</text>
+  <text x="315" y="454" text-anchor="middle" class="sans" font-size="15" fill="#6d665d">audios PDS</text>
   <rect x="400" y="397" width="142" height="74" rx="14" fill="#eee4d4"/>
   <text x="471" y="428" text-anchor="middle" class="sans" font-size="26" font-weight="850" fill="#275f69">72</text>
-  <text x="471" y="454" text-anchor="middle" class="sans" font-size="15" fill="#6d665d">bloques de vuelo</text>
+  <text x="471" y="454" text-anchor="middle" class="sans" font-size="15" fill="#6d665d">vuelos</text>
   <text x="88" y="534" class="sans" font-size="18" font-weight="700" fill="#25221f">Pedro Ramón Montserrat Cabrera</text>
-  <text x="88" y="562" class="sans" font-size="15" fill="#6d665d">Información abierta · método trazable · resultados provisionales</text>
+  <text x="88" y="562" class="sans" font-size="13" fill="#6d665d">© 2026 · Fuerteventura, Islas Canarias, España · Todos los derechos reservados</text>
 
   <rect x="614" y="102" width="514" height="405" rx="22" fill="#f6f1e8" stroke="#d7c9b7"/>
   <text x="650" y="140" class="sans" font-size="18" font-weight="800" fill="#25221f">PUNTUACIÓN VISUAL RELATIVA POR VUELO</text>
@@ -43,5 +43,5 @@
   <text x="660" y="475" class="axis">Vuelo 1</text>
   <text x="1115" y="475" text-anchor="end" class="axis">Vuelo 72</text>
   <rect x="800" y="522" width="328" height="46" rx="23" fill="#275f69"/>
-  <text x="964" y="551" text-anchor="middle" class="sans" font-size="17" font-weight="800" fill="#ffffff">EXPLORAR LOS 72 VUELOS</text>
+  <text x="964" y="551" text-anchor="middle" class="sans" font-size="17" font-weight="800" fill="#ffffff">RECORRER EL LOG AMPLIADO</text>
 </svg>
