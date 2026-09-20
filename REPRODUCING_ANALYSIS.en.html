@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Pedro Ramón Montserrat Cabrera"><title>Reproducing the analysis and understanding its scope</title><link rel="stylesheet" href="assets/docs/katex.min.css"><style>body{margin:0;background:#f6f1e8;color:#272b28;font:17px/1.7 system-ui,sans-serif}main{max-width:960px;margin:auto;padding:28px clamp(16px,4vw,48px) 70px}nav{padding:12px;background:#e9e2d5;display:flex;gap:24px;flex-wrap:wrap}a{color:#16594b;overflow-wrap:anywhere}h1,h2,h3{line-height:1.25}h1{font-family:Georgia,serif;font-size:clamp(28px,5vw,44px)}h2{margin-top:2em}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}td,th{border:1px solid #ccc3b4;padding:10px;text-align:left}th{background:#e9e2d5}blockquote{border-left:4px solid #bd6a43;padding:4px 20px;margin-left:0}code{font-size:.88em;overflow-wrap:anywhere}.katex-display{overflow-x:auto;overflow-y:hidden;padding:10px 0}.katex{font-size:1.05em}pre{max-width:100%;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}main{overflow-wrap:anywhere}td,th{overflow-wrap:normal;word-break:normal}td:first-child,th:first-child{min-width:7em}</style></head><body><nav><a href="index-en.html">← English explorer</a><a href="index.html" lang="es">Español</a><a href="REPRODUCING_ANALYSIS.en.md" download>Download Markdown</a></nav><main><h1>Reproducing the analysis and understanding its scope</h1>
+<p><a href="REPRODUCIR_ANALISIS.html">Español</a> · <a href="index-en.html">English explorer</a></p>
+<h2>Acoustic figures in Spanish and English</h2>
+<p>The spectral and minima figures were regenerated for edition 1.4.2 from the four calibrated PDS <code>p02</code> WAV files and the original JPL test capture supplied for the study. English titles, axes, legends and phase labels use the same calculations and recordings.</p>
+<ol>
+<li><p>Install Python and the recorded package versions:</p>
+<pre><code class="language-sh">python -m pip install -r analisis/requirements.txt
+</code></pre>
+</li>
+<li><p>Download the four WAV files using the <code>pds_wav</code> addresses in <code>datos/audio_ingenuity_pds.csv</code>. Save them in a working directory as <code>flight4.wav</code>, <code>flight5.wav</code>, <code>flight6.wav</code> and <code>flight8.wav</code>.</p>
+</li>
+<li><p>Exact reproduction of the ground comparison requires the original 94.848-second capture, containing mono AAC audio at 48,000 samples/s. This capture is not redistributed. The public source is the JPLraw video linked in the analysis. Another YouTube download may have different encoding or timing and cannot guarantee the same result. Extract the original capture&#39;s audio without trimming or changing the sample rate:</p>
+<pre><code class="language-sh">ffmpeg -i CAPTURE.mp4 -vn -c:a pcm_f32le work/jpl-test-audio.wav
+</code></pre>
+</li>
+<li><p>Run from the project root:</p>
+<pre><code class="language-sh">python analisis/comparar_audio.py --pds-dir work --jpl-wav work/jpl-test-audio.wav --output figures --language es
+python analisis/comparar_audio.py --pds-dir work --jpl-wav work/jpl-test-audio.wav --output figures --language en
+</code></pre>
+</li>
+</ol>
+<p>The WAV input SHA-256 hashes and library versions are recorded in <code>analisis/inputs.json</code>. Listening-preview MP3 files cannot replace these WAV inputs.</p>
+<h2>What the program does</h2>
+<p>It calculates normalised Welch spectra, the filtered flight 5 envelope and the combined harmonic energy of the ground test. Windows, bands and normalisations are specified in the code. Language changes labels and output filenames, not calculations.</p>
+<p>Minima markers and test phases are previously measured annotations explicitly entered as <code>JPL_DIPS</code>, <code>F5_NULLS</code> and <code>JPL_PHASES</code>. The program does not automatically detect those timings or recalculate the fourteen-peak fit. Those results are documented separately in the acoustic analysis.</p>
+<h2>Visual metric</h2>
+<p>Tabulated outputs, percentiles and statistical checks are preserved. The original visual-extraction program, thresholds and exact score weights are not included. Full reproduction therefore remains partial. No new formula has been substituted for the missing procedure.</p>
+<p>Official facts, observations and hypotheses remain distinct. This editorial revision does not turn the study&#39;s hypotheses into official accident findings.</p>
+<hr><p>© 2026 Pedro Ramón Montserrat Cabrera · Fuerteventura, Canary Islands, Spain.</p></main></body></html>

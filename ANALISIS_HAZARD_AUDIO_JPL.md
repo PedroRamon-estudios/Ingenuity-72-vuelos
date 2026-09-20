@@ -252,3 +252,7 @@ Debe evitarse:
 - “cada nulo es una parada o fallo del rotor”;
 - “el audio prueba que todo el vuelo 6 funcionó normalmente”;
 - “el vídeo de 2022 muestra una capacidad usada durante el vuelo 9 de 2021”.
+
+## Reproducción de las figuras
+
+El programa admite `--language es` y `--language en`. Las entradas, dependencias y el alcance exacto del cálculo se documentan en [Reproducción del análisis](REPRODUCIR_ANALISIS.md). Los marcadores temporales son anotaciones previas; no proceden de un detector automático ejecutado por ese programa.

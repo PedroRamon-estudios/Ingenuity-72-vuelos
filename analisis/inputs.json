@@ -1,0 +1,17 @@
+{
+  "version": "1.4.2",
+  "inputs": {
+    "flight4.wav": "38d660e70f632c408b5fd0de48e8e863cec519c2088cab3126e668f136cecd12",
+    "flight5.wav": "65f23945f1cda44b3f227ee23a192cef0151b6be8693f5a0f8e2645b95961eb3",
+    "flight8.wav": "84532abb5c6f7bb38f703ad41adc77512fc83355c0aff1c72c3a3544ee5a6c65",
+    "jpl-test-audio.wav": "43d661aad99f87aa64cdbffa767f08ef2b489d3557509231c7dfcba9c682eef5",
+    "flight6.wav": "6241c570426839987eef4ccd0ba4725d44090130e65e07c40ade7f7996c6d234"
+  },
+  "python_packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "jpl_extraction": "ffmpeg -i CAPTURE.mp4 -vn -c:a pcm_f32le jpl-test-audio.wav",
+  "redistribution": "JPL capture and source WAV files are not included. PDS source URLs are in datos/audio_ingenuity_pds.csv."
+}

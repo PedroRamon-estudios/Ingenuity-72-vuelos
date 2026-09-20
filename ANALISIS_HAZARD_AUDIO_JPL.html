@@ -1,0 +1,503 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Pedro Ramón Montserrat Cabrera"><title>Contraste técnico: evitación de peligros y firma acústica de Ingenuity</title><link rel="stylesheet" href="assets/docs/katex.min.css"><style>body{margin:0;background:#f6f1e8;color:#272b28;font:17px/1.7 system-ui,sans-serif}main{max-width:960px;margin:auto;padding:28px clamp(16px,4vw,48px) 70px}nav{padding:12px;background:#e9e2d5;display:flex;gap:24px;flex-wrap:wrap}a{color:#16594b;overflow-wrap:anywhere}h1,h2,h3{line-height:1.25}h1{font-family:Georgia,serif;font-size:clamp(28px,5vw,44px)}h2{margin-top:2em}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}td,th{border:1px solid #ccc3b4;padding:10px;text-align:left}th{background:#e9e2d5}blockquote{border-left:4px solid #bd6a43;padding:4px 20px;margin-left:0}code{font-size:.88em;overflow-wrap:anywhere}.katex-display{overflow-x:auto;overflow-y:hidden;padding:10px 0}.katex{font-size:1.05em}pre{max-width:100%;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}main{overflow-wrap:anywhere}td,th{overflow-wrap:normal;word-break:normal}td:first-child,th:first-child{min-width:7em}</style></head><body><nav><a href="index.html">← Explorador en español</a><a href="index-en.html" lang="en">English</a><a href="ANALISIS_HAZARD_AUDIO_JPL.md" download>Descargar Markdown</a></nav><main><h1>Contraste técnico: evitación de peligros y firma acústica de Ingenuity</h1>
+<p>Fecha del análisis: 31 de agosto de 2026<br>Revisión documental: 19 de septiembre de 2026<br>Estado: análisis exploratorio reproducible; no sustituye telemetría de vuelo ni diagnóstico de ingeniería de NASA/JPL.</p>
+<h2>Resultado en una frase</h2>
+<p>Las imágenes de <em>Hazard Avoidance Capability</em> apoyan cualitativamente la idea central del proyecto —el terreno visible aporta o niega información útil—, pero no validan numéricamente nuestra puntuación de referencias. El ensayo terrestre de JPL confirma con mucha precisión la firma armónica de los rotores, mientras que los cuatro WAV de Perseverance muestran la misma familia física desplazada a unos 84 Hz y fuertemente filtrada por la propagación en Marte. No aparece una firma acústica clara de avería en los tramos audibles.</p>
+<h2>1. Qué muestra realmente <em>Hazard Avoidance Capability</em></h2>
+<p>La ficha oficial de NASA/JPL establece tres hechos:</p>
+<ol>
+<li>se emplean imágenes del vuelo 9, realizado el 5 de julio de 2021;</li>
+<li>las imágenes se procesaron después con una capacidad añadida mediante una actualización de software a finales de 2022;</li>
+<li>el rojo identifica zonas no aptas para aterrizar y el verde candidatos de aterrizaje; el algoritmo puede usar mapas digitales de elevación.</li>
+</ol>
+<p>Por tanto, el vídeo no demuestra que esa capacidad estuviera activa durante el vuelo 9. Es una reprocesamiento posterior de la secuencia.</p>
+<p>Fuentes:</p>
+<ul>
+<li><a href="https://science.nasa.gov/photojournal/ingenuitys-hazard-avoidance-capability/">NASA Science Photojournal · Ingenuity&#39;s Hazard Avoidance Capability</a></li>
+<li><a href="https://www.jpl.nasa.gov/images/pia25662-ingenuitys-hazard-avoidance-capability/">NASA/JPL · PIA25662</a></li>
+</ul>
+<h3>Lectura de las superposiciones</h3>
+<table>
+<thead>
+<tr>
+<th>Elemento visible</th>
+<th>Lectura permitida por la fuente</th>
+<th>Lo que no debe afirmarse</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>sombreado rojo sobre rocas/relieve</td>
+<td>terreno no apto para aterrizar</td>
+<td>que cada píxel rojo sea una roca concreta o una altura exacta</td>
+</tr>
+<tr>
+<td>marca verde en una zona más lisa</td>
+<td>candidato de aterrizaje</td>
+<td>que sea la orden final de aterrizaje ejecutada en el vuelo 9</td>
+</tr>
+<tr>
+<td>rectángulo blanco grande</td>
+<td>región gráfica de trabajo/seguimiento, sin definición pública localizada</td>
+<td>su tamaño físico o función exacta</td>
+</tr>
+<tr>
+<td>cuadrado blanco pequeño alrededor de la marca verde</td>
+<td>vecindad gráfica del candidato, compatible con una huella de evaluación</td>
+<td>radio de seguridad o dimensiones sin documentación del vídeo</td>
+</tr>
+<tr>
+<td>cifras rojas <code>+57</code>, <code>+71</code>, <code>+76</code>, <code>+80</code>, <code>+82</code>, <code>+94</code></td>
+<td>valores internos de la visualización, no definidos en la ficha pública</td>
+<td>centímetros, altura, riesgo o puntuación concreta</td>
+</tr>
+<tr>
+<td>círculos y dígitos cian junto al candidato</td>
+<td>marcadores internos no definidos en la ficha pública</td>
+<td>telemetría de vuelo o equivalencia con nuestra métrica</td>
+</tr>
+</tbody></table>
+<p>La publicación técnica asociada describe una cadena bastante distinta de nuestro contador exploratorio: imágenes monoculares sucesivas → reconstrucción 3D por <em>Structure from Motion</em> → mapa de elevación multirresolución → evaluación de pendiente, rugosidad y calidad/incertidumbre → mapa binario seguro/peligroso → candidatos mediante transformada de distancia. Un trabajo posterior añade varios picos candidatos, desplazamiento hacia regiones menos rugosas e inciertas y selección final.</p>
+<p><img src="assets/analisis/hazard-vuelo9-superposiciones.png" alt="Seis instantes del vuelo 9 reprocesado con peligros rojos y candidatos verdes"></p>
+<p>Fuentes técnicas:</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2111.06271">Multi-Resolution Elevation Mapping and Safe Landing Site Detection with Applications to Planetary Rotorcraft</a></li>
+<li><a href="https://arxiv.org/abs/2205.03522">Optimizing Terrain Mapping and Landing Site Detection for Autonomous UAVs</a></li>
+</ul>
+<h3>Comparación con nuestra métrica visual</h3>
+<p>Para el vuelo 9, el montaje público analizado en este repositorio dio:</p>
+<table>
+<thead>
+<tr>
+<th>Métrica del montaje</th>
+<th align="right">Resultado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>referencias visuales locales, mediana</td>
+<td align="right">12,5</td>
+</tr>
+<tr>
+<td>cobertura de celdas 4×4</td>
+<td align="right">25,0 %</td>
+</tr>
+<tr>
+<td>puntuación visual relativa</td>
+<td align="right">12,9</td>
+</tr>
+</tbody></table>
+<p>Estas cifras describen veinte muestras del montaje público, tras recorte de viñeta y máscara aproximada de la sombra. No son conteos de características del software de vuelo, ni pendiente, rugosidad, altura o incertidumbre del mapa de JPL.</p>
+<p>La correspondencia válida es cualitativa:</p>
+<ul>
+<li>las agrupaciones de rocas y el relieve que conservan geometría aparecen como peligros rojos;</li>
+<li>las zonas visualmente más lisas contienen los candidatos verdes;</li>
+<li>la secuencia completa permite integrar información entre imágenes aunque una selección pequeña del montaje tenga pocas esquinas locales;</li>
+<li>por eso el vídeo es un contraste conceptual favorable, no una calibración de <code>12,9</code>, <code>12,5</code> o <code>25 %</code>.</li>
+</ul>
+<h2>2. Material acústico comparado</h2>
+<h3>Cuatro grabaciones científicas de Perseverance/SuperCam</h3>
+<p>Se usaron los WAV calibrados <code>p02</code> del Planetary Data System para los vuelos 4, 5, 6 y 8. Todos duran 167 s, tienen un canal, 25.000 muestras/s y muestras de 32 bits. Esa estructura fija explica que todos ocupen exactamente 16.700.058 bytes; sus SHA-256 diferentes confirman que el contenido no es igual.</p>
+<table>
+<thead>
+<tr>
+<th align="right">Vuelo</th>
+<th>SHA-256</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">4</td>
+<td><code>38d660e70f632c408b5fd0de48e8e863cec519c2088cab3126e668f136cecd12</code></td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td><code>65f23945f1cda44b3f227ee23a192cef0151b6be8693f5a0f8e2645b95961eb3</code></td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td><code>6241c570426839987eef4ccd0ba4725d44090130e65e07c40ade7f7996c6d234</code></td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td><code>84532abb5c6f7bb38f703ad41adc77512fc83355c0aff1c72c3a3544ee5a6c65</code></td>
+</tr>
+</tbody></table>
+<p>Fuentes:</p>
+<ul>
+<li><a href="https://pds-geosciences.wustl.edu/missions/mars2020/supercam.htm">NASA PDS Geosciences · Mars 2020 SuperCam</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0032063323000533">The sounds of a helicopter on Mars</a></li>
+</ul>
+<h3>Referencia terrestre de JPL</h3>
+<p>La fuente oficial es <a href="https://www.youtube.com/watch?v=nAQxNd3uBN0&t=148s">NASA Ingenuity Mars Helicopter Testing Media Reel</a>, publicado por JPLraw. Dura 3:58 y el ensayo comienza en 2:28. La web incrusta la fuente oficial; la grabación de pantalla analizada no se redistribuye.</p>
+<p>Se analizó la pista de audio de la captura aportada:</p>
+<ul>
+<li>duración de audio: 94,848 s;</li>
+<li>AAC mono a 48.000 muestras/s dentro del MP4;</li>
+<li>el propio vídeo muestra <code>Spin-up (2277 rpm)</code> y una secuencia de ascenso, traslación, estacionarios, giros, retorno y aterrizaje.</li>
+</ul>
+<p>Es una referencia útil, pero no es un WAV científico: contiene codificación AAC, posible normalización de YouTube y una captura móvil. Las amplitudes absolutas y la profundidad de los mínimos no son directamente comparables con el PDS.</p>
+<h2>3. Firma armónica del ensayo JPL</h2>
+<p>Ingenuity tiene dos palas por rotor. La frecuencia de paso de pala esperada para 2.277 rpm es:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>f</mi><mrow><mi>B</mi><mi>P</mi><mi>F</mi></mrow></msub><mo>=</mo><mfrac><mn>2277</mn><mn>60</mn></mfrac><mo>×</mo><mn>2</mn><mo>=</mo><mn>75,9</mn><mtext> Hz</mtext></mrow><annotation encoding="application/x-tex">
+f_{BPF}=\frac{2277}{60}\times 2=75{,}9\ \text{Hz}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0502em;">B</span><span class="mord mathnormal mtight" style="margin-right:0.1389em;">P</span><span class="mord mathnormal mtight" style="margin-right:0.1389em;">F</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">60</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2277</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">75</span><span class="mord"><span class="mpunct">,</span></span><span class="mord">9</span><span class="mspace"> </span><span class="mord text"><span class="mord">Hz</span></span></span></span></span></span></p>
+<p>En el intervalo estable de la captura se midieron catorce máximos igualmente espaciados. Un ajuste lineal forzado al origen da <code>75,8813 Hz</code>, equivalente a <code>2.276,44 rpm</code>. La diferencia frente al rótulo del vídeo es <code>−0,56 rpm</code> (<code>−0,025 %</code>) y el residuo cuadrático medio de esos catorce picos es sólo <code>0,018 Hz</code>.</p>
+<table>
+<thead>
+<tr>
+<th align="right">Armónico</th>
+<th align="right">Esperado desde el ajuste (Hz)</th>
+<th align="right">Medido (Hz)</th>
+<th align="right">Residuo (Hz)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1</td>
+<td align="right">75,881</td>
+<td align="right">75,882</td>
+<td align="right">+0,001</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right">151,763</td>
+<td align="right">151,794</td>
+<td align="right">+0,031</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">227,644</td>
+<td align="right">227,646</td>
+<td align="right">+0,002</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">303,525</td>
+<td align="right">303,528</td>
+<td align="right">+0,003</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="right">379,407</td>
+<td align="right">379,395</td>
+<td align="right">−0,012</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="right">455,288</td>
+<td align="right">455,276</td>
+<td align="right">−0,012</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td align="right">531,169</td>
+<td align="right">531,158</td>
+<td align="right">−0,011</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td align="right">607,051</td>
+<td align="right">607,056</td>
+<td align="right">+0,005</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td align="right">682,932</td>
+<td align="right">682,938</td>
+<td align="right">+0,006</td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td align="right">758,813</td>
+<td align="right">758,820</td>
+<td align="right">+0,007</td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td align="right">834,695</td>
+<td align="right">834,686</td>
+<td align="right">−0,009</td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td align="right">910,576</td>
+<td align="right">910,583</td>
+<td align="right">+0,007</td>
+</tr>
+<tr>
+<td align="right">13</td>
+<td align="right">986,458</td>
+<td align="right">986,496</td>
+<td align="right">+0,039</td>
+</tr>
+<tr>
+<td align="right">14</td>
+<td align="right">1.062,339</td>
+<td align="right">1.062,302</td>
+<td align="right">−0,037</td>
+</tr>
+</tbody></table>
+<p>La coincidencia es demasiado precisa para ser casual: el vídeo contiene la firma tonal real de la rotación. No implica que cada bajada de volumen sea una avería o una parada.</p>
+<h3>La comprobación del paper no es la misma grabación</h3>
+<p>El apéndice 3 de Lorenz et al. separa dos elementos:</p>
+<ul>
+<li>la figura A2 muestra el montaje de vuelo estacionario en la cámara a presión marciana;</li>
+<li>la figura A3 muestra el espectro, el espectrograma y la forma de onda, con una serie armónica cercana a 82 Hz y al menos 15 dientes visibles.</li>
+</ul>
+<p>Por tanto, hay dos validaciones distintas:</p>
+<ol>
+<li><strong>Vídeo JPL:</strong> <code>75,8813 Hz → 2.276,44 rpm</code>, en acuerdo con las <code>2.277 rpm</code> del rótulo.</li>
+<li><strong>Paper:</strong> una peineta equivalente confirma el mismo principio físico de frecuencia de paso de pala para la misma arquitectura de rotor.</li>
+</ol>
+<p>No se comparan como si fueran la misma toma, el mismo tramo o la misma unidad. «Catorce picos» describe el conjunto empleado en nuestro ajuste; «al menos quince dientes visibles» describe la figura A3 publicada.</p>
+<p><img src="assets/analisis/audio-espectros-jpl-perseverance.png" alt="Espectros normalizados del ensayo JPL y los cuatro vuelos registrados por Perseverance"></p>
+<h2>4. Nulos del ensayo JPL frente al vuelo 5 en Marte</h2>
+<h3>Cronología aproximada del ensayo</h3>
+<p>Los rótulos que se van añadiendo al vídeo permiten estimar estos comienzos, con una incertidumbre de aproximadamente medio segundo a un segundo y medio por la captura:</p>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th align="right">Tiempo aproximado (s)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>inicio del giro</td>
+<td align="right">5,0</td>
+</tr>
+<tr>
+<td>ascenso a 1 m</td>
+<td align="right">15,5</td>
+</tr>
+<tr>
+<td>giro hacia el punto</td>
+<td align="right">21,0</td>
+</tr>
+<tr>
+<td>traslación 0,5 m</td>
+<td align="right">23,0</td>
+</tr>
+<tr>
+<td>estacionario</td>
+<td align="right">40,0</td>
+</tr>
+<tr>
+<td>giro de 180°</td>
+<td align="right">47,5</td>
+</tr>
+<tr>
+<td>retorno</td>
+<td align="right">54,0</td>
+</tr>
+<tr>
+<td>segundo estacionario</td>
+<td align="right">59,0</td>
+</tr>
+<tr>
+<td>giro al rumbo original</td>
+<td align="right">68,0</td>
+</tr>
+<tr>
+<td>aterrizaje</td>
+<td align="right">74,0</td>
+</tr>
+</tbody></table>
+<p>Al seguir conjuntamente los armónicos 1–12, los mínimos principales aparecen aproximadamente en <code>15,7</code>, <code>17,8</code>, <code>21,4</code>, <code>24,5</code>, <code>47,5</code>, <code>49,8</code>, <code>53,0</code>, <code>59,3</code>, <code>62,6</code>, <code>64,5</code>, <code>68,0</code>, <code>71,9</code> y <code>74,5 s</code>. Ocho de las nueve transiciones desde el ascenso hasta el aterrizaje tienen un mínimo a no más de 1,5 s; la excepción clara es el primer estacionario de ~40 s.</p>
+<p>Eso indica que la mayor parte de los mínimos de la captura terrestre está ligada a orientación, distancia, maniobra, reverberación de la cámara y control automático de nivel. Los intervalos no forman una cadencia estable.</p>
+<h3>Nulos del vuelo 5</h3>
+<p>La envolvente de 81,5–87 Hz del WAV PDS del vuelo 5 produce mínimos en:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Detección independiente (s)</th>
+<th align="right">Publicación (s)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">36,3</td>
+<td align="right">36</td>
+</tr>
+<tr>
+<td align="right">46,8</td>
+<td align="right">47</td>
+</tr>
+<tr>
+<td align="right">57,5</td>
+<td align="right">57</td>
+</tr>
+<tr>
+<td align="right">71,7</td>
+<td align="right">72</td>
+</tr>
+<tr>
+<td align="right">88,2</td>
+<td align="right">88</td>
+</tr>
+<tr>
+<td align="right">103,7</td>
+<td align="right">104</td>
+</tr>
+</tbody></table>
+<p>La coincidencia con los seis tiempos publicados es excelente. Los intervalos sucesivos son aproximadamente <code>10,5</code>, <code>10,7</code>, <code>14,2</code>, <code>16,5</code> y <code>15,5 s</code>: una modulación mucho más organizada que la sucesión de mínimos del ensayo terrestre.</p>
+<p>El artículo atribuye esta estructura a la pequeña diferencia de velocidad entre los dos rotores coaxiales y a la directividad rotatoria de la radiación acústica. Aplicando ese mecanismo a los intervalos observados se infiere una diferencia aproximada de <code>0,9–1,5 rpm</code>, alrededor de cuatro centésimas del régimen nominal. Es una inferencia acústica, no telemetría.</p>
+<p>Conclusión sobre los nulos: el vídeo de JPL confirma que la geometría y las maniobras pueden producir caídas fuertes de nivel, pero no reproduce de forma limpia la cadencia de nulos del vuelo 5. No conviene usarlo como calibrador temporal de esos nulos marcianos.</p>
+<p><img src="assets/analisis/audio-nulos-jpl-vuelo5.png" alt="Comparación temporal de los mínimos del ensayo JPL y los seis nulos del vuelo 5"></p>
+<h2>5. Comparación de los cinco registros</h2>
+<table>
+<thead>
+<tr>
+<th>Registro</th>
+<th align="right">Banda fundamental representativa</th>
+<th align="right">Régimen equivalente</th>
+<th align="right">Tramo tonal claro</th>
+<th>Lectura</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>captura del ensayo JPL</td>
+<td align="right">75,881 Hz</td>
+<td align="right">2.276,44 rpm</td>
+<td align="right">aprox. 5–85 s</td>
+<td>14 picos medidos y ajustados</td>
+</tr>
+<tr>
+<td>vuelo 4</td>
+<td align="right">84,305 Hz</td>
+<td align="right">2.529,1 rpm</td>
+<td align="right">aprox. 21,5–143,4 s</td>
+<td>fundamental clara, segundo armónico débil, Doppler/modulación</td>
+</tr>
+<tr>
+<td>vuelo 5</td>
+<td align="right">84,400 Hz</td>
+<td align="right">2.532,0 rpm</td>
+<td align="right">aprox. 14,3–130,0 s</td>
+<td>seis nulos publicados reproducidos</td>
+</tr>
+<tr>
+<td>vuelo 6</td>
+<td align="right">84,400 Hz</td>
+<td align="right">2.532,0 rpm</td>
+<td align="right">aprox. 23,6–68,6 s</td>
+<td>se desvanece al aumentar la distancia; 168 Hz no robusto</td>
+</tr>
+<tr>
+<td>vuelo 8</td>
+<td align="right">84,400 Hz</td>
+<td align="right">2.532,0 rpm</td>
+<td align="right">aprox. 29,7–55,3 s</td>
+<td>84 y 168 Hz; viento/EMI dominantes después</td>
+</tr>
+</tbody></table>
+<p>Los valores de los vuelos son representativos de ventanas largas y no deben leerse como rpm constantes al decimal: el movimiento produce Doppler y el régimen cambia ligeramente. NASA anunció 2.537 rpm para el primer vuelo, coherente con una frecuencia de paso de pala cercana a 84,6 Hz.</p>
+<p>Fuente oficial del régimen previsto: <a href="https://www.jpl.nasa.gov/news/nasa-ingenuity-mars-helicopter-prepares-for-first-flight/">NASA/JPL · Ingenuity Prepares for First Flight</a>.</p>
+<h3>Por qué en la Tierra hay tantos armónicos y en Marte casi no</h3>
+<ul>
+<li>el ensayo tiene micrófono/cámara muy cerca y una sala reverberante;</li>
+<li>Perseverance estaba a decenas o cientos de metros;</li>
+<li>la atmósfera marciana atenúa con fuerza, especialmente las frecuencias altas;</li>
+<li>el viento, la actividad del rover y el ruido del propio micrófono compiten con el helicóptero;</li>
+<li>AAC/YouTube altera amplitudes, pero conserva muy bien la posición de la peineta tonal.</li>
+</ul>
+<p>Por eso, el hecho de que en los PDS dominen 84 Hz y a veces 168 Hz, mientras el ensayo conserva armónicos hasta más de 1 kHz, es físicamente coherente.</p>
+<h2>6. Búsqueda de irregularidades</h2>
+<h3>No se observa una avería acústica clara</h3>
+<ul>
+<li>La frecuencia fundamental de los cuatro vuelos permanece cerca del valor esperado durante los tramos audibles.</li>
+<li>La desaparición del vuelo 6 coincide con el alejamiento por encima del alcance acústico útil descrito en el artículo. La anomalía de control de ese vuelo ocurrió ya demasiado lejos para diagnosticarla con este micrófono.</li>
+<li>Los nulos del vuelo 5 son modulación/interferencia, no detenciones del rotor.</li>
+<li>El vuelo 8 conserva la firma esperada antes de que viento e interferencias dominen.</li>
+</ul>
+<h3>Impulsos que deben tratarse como artefactos de grabación</h3>
+<table>
+<thead>
+<tr>
+<th align="right">WAV</th>
+<th align="right">Instante</th>
+<th align="right">Duración aproximada</th>
+<th>Lectura prudente</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">vuelo 4</td>
+<td align="right">15,675 s</td>
+<td align="right">2,0 ms por encima de 0,8 FS</td>
+<td>impulso previo al tramo tonal principal</td>
+</tr>
+<tr>
+<td align="right">vuelo 5</td>
+<td align="right">0 s y 42,114 s</td>
+<td align="right">una muestra inicial y &lt;0,2 ms</td>
+<td>borde/impulso de adquisición</td>
+</tr>
+<tr>
+<td align="right">vuelo 6</td>
+<td align="right">0 s</td>
+<td align="right">una muestra</td>
+<td>borde de adquisición</td>
+</tr>
+<tr>
+<td align="right">vuelo 8</td>
+<td align="right">57,308 s</td>
+<td align="right">1,2 ms casi a escala completa</td>
+<td>impulso de grabación, viento o EMI; posterior al tono principal</td>
+</tr>
+</tbody></table>
+<p>Ninguno muestra por sí solo una dinámica mecánica de rotor: son demasiado breves, de banda ancha y/o están fuera del tramo tonal.</p>
+<h2>7. Grado de confianza</h2>
+<table>
+<thead>
+<tr>
+<th>Afirmación</th>
+<th>Confianza</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rojo = peligro y verde = candidato</td>
+<td>alta; ficha oficial</td>
+</tr>
+<tr>
+<td>algoritmo usa elevación, pendiente, rugosidad y calidad/incertidumbre</td>
+<td>alta; publicaciones técnicas</td>
+</tr>
+<tr>
+<td>cifras <code>+57…+94</code> equivalen a centímetros o riesgo</td>
+<td>no establecido</td>
+</tr>
+<tr>
+<td>peineta de la captura corresponde a 2.277 rpm</td>
+<td>muy alta; ajuste de 14 picos</td>
+</tr>
+<tr>
+<td>figura A3 del paper muestra una estructura armónica equivalente</td>
+<td>alta; fuente publicada, sin identificarla como la misma toma</td>
+</tr>
+<tr>
+<td>seis nulos del vuelo 5 reproducen el artículo</td>
+<td>muy alta</td>
+</tr>
+<tr>
+<td>mínimos del ensayo están dominados por maniobras/geometría</td>
+<td>alta para la captura analizada</td>
+</tr>
+<tr>
+<td>no hay anomalía audible clara en los cuatro vuelos</td>
+<td>moderada-alta dentro del alcance del micrófono</td>
+</tr>
+<tr>
+<td>el audio puede certificar el funcionamiento completo durante todo cada vuelo</td>
+<td>baja; la pérdida de señal no es pérdida de rotor</td>
+</tr>
+</tbody></table>
+<h2>8. Conclusión editorial para el repositorio</h2>
+<p>La formulación defendible es:</p>
+<blockquote>
+<p>El vídeo de NASA/JPL demuestra que una secuencia de imágenes puede reconstruir relieve y separar peligros de candidatos de aterrizaje. Nuestra métrica no reproduce ese algoritmo, pero mide una condición previa relacionada: la cantidad y distribución de estructura visible en el montaje público. Los audios PDS añaden una comprobación independiente del régimen de rotor durante cuatro vuelos, sin sustituir la telemetría ni permitir diagnosticar lo que quedó fuera del alcance acústico.</p>
+</blockquote>
+<p>Debe evitarse:</p>
+<ul>
+<li>“nuestra puntuación coincide con la puntuación de JPL”;</li>
+<li>“las cifras rojas son alturas en centímetros”;</li>
+<li>“cada nulo es una parada o fallo del rotor”;</li>
+<li>“el audio prueba que todo el vuelo 6 funcionó normalmente”;</li>
+<li>“el vídeo de 2022 muestra una capacidad usada durante el vuelo 9 de 2021”.</li>
+</ul>
+<h2>Reproducción de las figuras</h2>
+<p>El programa admite <code>--language es</code> y <code>--language en</code>. Las entradas, dependencias y el alcance exacto del cálculo se documentan en <a href="REPRODUCIR_ANALISIS.html">Reproducción del análisis</a>. Los marcadores temporales son anotaciones previas; no proceden de un detector automático ejecutado por ese programa.</p>
+<hr><p>© 2026 Pedro Ramón Montserrat Cabrera · Fuerteventura, Islas Canarias, España.</p></main></body></html>

@@ -1,0 +1,29 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Pedro Ramón Montserrat Cabrera"><title>Reproducción del análisis y alcance de los resultados</title><link rel="stylesheet" href="assets/docs/katex.min.css"><style>body{margin:0;background:#f6f1e8;color:#272b28;font:17px/1.7 system-ui,sans-serif}main{max-width:960px;margin:auto;padding:28px clamp(16px,4vw,48px) 70px}nav{padding:12px;background:#e9e2d5;display:flex;gap:24px;flex-wrap:wrap}a{color:#16594b;overflow-wrap:anywhere}h1,h2,h3{line-height:1.25}h1{font-family:Georgia,serif;font-size:clamp(28px,5vw,44px)}h2{margin-top:2em}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}td,th{border:1px solid #ccc3b4;padding:10px;text-align:left}th{background:#e9e2d5}blockquote{border-left:4px solid #bd6a43;padding:4px 20px;margin-left:0}code{font-size:.88em;overflow-wrap:anywhere}.katex-display{overflow-x:auto;overflow-y:hidden;padding:10px 0}.katex{font-size:1.05em}pre{max-width:100%;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}main{overflow-wrap:anywhere}td,th{overflow-wrap:normal;word-break:normal}td:first-child,th:first-child{min-width:7em}</style></head><body><nav><a href="index.html">← Explorador en español</a><a href="index-en.html" lang="en">English</a><a href="REPRODUCIR_ANALISIS.md" download>Descargar Markdown</a></nav><main><h1>Reproducción del análisis y alcance de los resultados</h1>
+<p><a href="REPRODUCING_ANALYSIS.en.html">English</a> · <a href="index.html">Explorador</a></p>
+<h2>Gráficas acústicas en español e inglés</h2>
+<p>Las figuras de espectros y mínimos se regeneraron para la edición 1.4.2 a partir de los cuatro WAV calibrados PDS <code>p02</code> y de la captura original del ensayo JPL aportada al estudio. Las versiones inglesas traducen títulos, ejes, leyendas y fases; utilizan los mismos cálculos y registros.</p>
+<ol>
+<li><p>Instalar Python y las versiones de las bibliotecas registradas:</p>
+<pre><code class="language-sh">python -m pip install -r analisis/requirements.txt
+</code></pre>
+</li>
+<li><p>Descargar los cuatro WAV desde las direcciones <code>pds_wav</code> del archivo <code>datos/audio_ingenuity_pds.csv</code>. Guardarlos en una carpeta de trabajo como <code>flight4.wav</code>, <code>flight5.wav</code>, <code>flight6.wav</code> y <code>flight8.wav</code>.</p>
+</li>
+<li><p>Para repetir exactamente la comparación terrestre, se necesita la captura original de 94,848 segundos, con audio AAC mono de 48.000 muestras/s. No se redistribuye en este paquete. La fuente pública es el vídeo JPLraw enlazado en el análisis. Una descarga distinta de YouTube puede tener otra codificación o referencia temporal y no garantiza el mismo resultado. Extraer el audio de la captura original, sin recortar ni cambiar su frecuencia de muestreo:</p>
+<pre><code class="language-sh">ffmpeg -i CAPTURA.mp4 -vn -c:a pcm_f32le trabajo/jpl-test-audio.wav
+</code></pre>
+</li>
+<li><p>Ejecutar desde la raíz del proyecto:</p>
+<pre><code class="language-sh">python analisis/comparar_audio.py --pds-dir trabajo --jpl-wav trabajo/jpl-test-audio.wav --output figuras --language es
+python analisis/comparar_audio.py --pds-dir trabajo --jpl-wav trabajo/jpl-test-audio.wav --output figuras --language en
+</code></pre>
+</li>
+</ol>
+<p>Las huellas SHA-256 de los WAV utilizados y las versiones de las bibliotecas están en <code>analisis/inputs.json</code>. Los MP3 de escucha no sustituyen a los WAV para este cálculo.</p>
+<h2>Qué hace el programa</h2>
+<p>Calcula espectros normalizados mediante Welch, la envolvente filtrada del vuelo 5 y la energía conjunta de los armónicos del ensayo terrestre. Las ventanas, bandas y normalizaciones figuran en el código. El idioma cambia los rótulos y los nombres de salida, no los cálculos.</p>
+<p>Los marcadores de mínimos y las fases del ensayo son anotaciones previamente medidas: se introducen explícitamente en <code>JPL_DIPS</code>, <code>F5_NULLS</code> y <code>JPL_PHASES</code>. El programa no detecta automáticamente esos tiempos ni vuelve a calcular el ajuste de los catorce picos de la tabla. El análisis acústico documenta esos resultados por separado.</p>
+<h2>Métrica visual</h2>
+<p>Se conservan los resultados tabulados, los percentiles y las comprobaciones estadísticas. El programa original de extracción visual, sus umbrales y los pesos exactos de la puntuación no están incluidos. Su reproducción integral sigue siendo parcial. No se ha sustituido el procedimiento ausente por una fórmula nueva.</p>
+<p>Los hechos oficiales, las observaciones y las hipótesis mantienen su distinción. Esta revisión editorial no convierte las hipótesis del estudio en conclusiones oficiales sobre el accidente.</p>
+<hr><p>© 2026 Pedro Ramón Montserrat Cabrera · Fuerteventura, Islas Canarias, España.</p></main></body></html>

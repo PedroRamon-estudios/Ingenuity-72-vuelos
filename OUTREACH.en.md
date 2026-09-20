@@ -11,7 +11,7 @@
 **English edition:** https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/index-en.html  
 **Repository:** https://github.com/pedroramon-estudios/Ingenuity-72-vuelos
 
-The English address becomes available once this bilingual package is uploaded and deployed.
+Both language versions are published. This v1.4.2 package updates the existing pages; uploading the package is required to deploy these latest corrections.
 
 ## Abstract
 
@@ -48,7 +48,7 @@ Do not claim reproduction of Ingenuity's navigation algorithm, NASA confirmation
 ## Publication sequence
 
 1. Publish the complete package on GitHub Pages and verify its links.
-2. Archive a stable release with the ZIP and date; the bilingual edition uses `v1.4.1` to distinguish it from the Spanish `v1.3` package.
+2. Archive a stable release with the ZIP and date; the bilingual edition uses `v1.4.2` to distinguish it from the Spanish `v1.3` package.
 3. Use **Cite this repository**, supported by `CITATION.cff`.
 4. Share the website, not just a screenshot, on LinkedIn and in professional aerospace groups where the author already participates.
 5. Use the bilingual summary for visual-navigation, planetary-robotics, rotorcraft and data-science audiences.

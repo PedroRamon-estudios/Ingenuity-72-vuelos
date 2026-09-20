@@ -1,0 +1,149 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Pedro Ramón Montserrat Cabrera"><title>Ingenuity: log ampliado de 72 vuelos, imágenes y audio de Marte</title><link rel="stylesheet" href="assets/docs/katex.min.css"><style>body{margin:0;background:#f6f1e8;color:#272b28;font:17px/1.7 system-ui,sans-serif}main{max-width:960px;margin:auto;padding:28px clamp(16px,4vw,48px) 70px}nav{padding:12px;background:#e9e2d5;display:flex;gap:24px;flex-wrap:wrap}a{color:#16594b;overflow-wrap:anywhere}h1,h2,h3{line-height:1.25}h1{font-family:Georgia,serif;font-size:clamp(28px,5vw,44px)}h2{margin-top:2em}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}td,th{border:1px solid #ccc3b4;padding:10px;text-align:left}th{background:#e9e2d5}blockquote{border-left:4px solid #bd6a43;padding:4px 20px;margin-left:0}code{font-size:.88em;overflow-wrap:anywhere}.katex-display{overflow-x:auto;overflow-y:hidden;padding:10px 0}.katex{font-size:1.05em}pre{max-width:100%;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}main{overflow-wrap:anywhere}td,th{overflow-wrap:normal;word-break:normal}td:first-child,th:first-child{min-width:7em}</style></head><body><nav><a href="index.html">← Explorador en español</a><a href="index-en.html" lang="en">English</a><a href="README.md" download>Descargar Markdown</a></nav><main><h1>Ingenuity: log ampliado de 72 vuelos, imágenes y audio de Marte</h1>
+<p><a href="index.html">Español</a> · <a href="index-en.html">English</a> · <a href="README.en.html">English documentation</a></p>
+<h2>Edición bilingüe v1.4.2 — 20 de septiembre de 2026</h2>
+<p>Esta edición incorpora la web, los controles, las fichas de los 72 vuelos, la documentación y los siete CSV en inglés. El selector «Español | English» conserva la dirección española actual. La guía de actualización está en <a href="ACTUALIZAR_GITHUB.html">ACTUALIZAR_GITHUB.md</a> y las comprobaciones de esta entrega en <a href="REVISION_PUBLICACION.html">REVISION_PUBLICACION.md</a>. Los apartados siguientes conservan el historial de la revisión española.</p>
+<h2>Revisión del ensayo JPL y documentación — 19 de septiembre de 2026</h2>
+<p>Esta revisión incorpora en la web el vídeo oficial <strong>NASA Ingenuity Mars Helicopter Testing Media Reel</strong> de JPLraw, abierto directamente en el tramo del ensayo de cámara (2:28). El vídeo se integra desde la fuente oficial: requiere conexión a internet y evita redistribuir la grabación de pantalla utilizada durante el análisis.</p>
+<p>También se han armonizado la web, las fórmulas, las fuentes, la nota de difusión, la cita y el aviso de materiales de terceros:</p>
+<ul>
+<li>14 picos son los realmente medidos y empleados en el ajuste de <code>75,8813 Hz</code>;</li>
+<li>la figura A3 del paper muestra una peineta equivalente, con al menos 15 dientes visibles, pero no es necesariamente la misma toma, unidad ni separación numérica;</li>
+<li>la figura A2 documenta el montaje del ensayo en cámara y la figura A3 contiene el espectro;</li>
+<li><code>75,8813 Hz × 30 = 2.276,44 rpm</code>, frente a las <code>2.277 rpm</code> visibles en el vídeo;</li>
+<li>el valor de <code>2.529,1 rpm</code> del vuelo 4 se conserva como equivalente derivado de una ventana acústica, mientras que <code>≈2.537 rpm</code> se reserva para el régimen publicado por NASA;</li>
+<li>168 Hz se denomina segundo armónico (<code>2×BPF</code>) para evitar la ambigüedad entre armónico y sobretono;</li>
+<li>la licencia CC BY 4.0 se atribuye al artículo; el vídeo de JPL mantiene su crédito y condiciones propias.</li>
+</ul>
+<h2>Corrección de independencia entre explorador y mapa — 15 de septiembre de 2026</h2>
+<p>Descomprime el paquete completo y abre <code>index.html</code>. Conserva las carpetas junto al HTML. Para actualizar el repositorio existente, sustituye los archivos por el contenido de este paquete en la raíz; no subas solamente el ZIP. No hace falta crear otro repositorio ni cambiar su visibilidad.</p>
+<ul>
+<li>La ficha y el explorador principal comienzan en el vuelo 1; el índice del mapa también comienza en el vuelo 1, pero funciona de forma independiente.</li>
+<li>El índice sigue los fotogramas presentados cuando el navegador admite <code>requestVideoFrameCallback</code>, con los eventos de reproducción y búsqueda como respaldo.</li>
+<li>Durante un salto se evita que una actualización intermedia del reproductor sustituya la selección solicitada.</li>
+<li>Se ha eliminado el adelanto artificial de 0,05 segundos al decidir el vuelo activo.</li>
+<li>Seleccionar un vuelo desde los botones superiores, el desplegable, la gráfica o la tabla actualiza únicamente la imagen fija, la ficha y la puntuación del explorador principal.</li>
+<li>Sólo los 72 botones situados junto al vídeo hacen saltar y reproducir el mapa oficial desde la marca elegida.</li>
+<li>La reproducción y la barra del mapa actualizan únicamente su propio índice; ya no cambian el vuelo seleccionado, la imagen fija ni los valores del primer bloque.</li>
+<li>El índice del mapa desplaza su propio panel para mantener visible el vuelo activo, sin mover la página durante la reproducción.</li>
+</ul>
+<p>Comprobaciones de esta versión: sintaxis JavaScript válida; 72 marcas conservadas (vuelo 1: 0,2 s; vuelo 72: 56,6 s); llamadas del explorador separadas de las llamadas del mapa; vídeo local íntegro de 69,1 s; cuatro audios locales íntegros de 167,03 s; estructura completa del paquete y prueba de integridad del ZIP. La validación anterior en Chromium confirmó la apertura directa y bajo una subruta equivalente a la del repositorio, los 72 botones, los seis filtros, la carga del vídeo y los cuatro audios, además de la adaptación a 390 px.</p>
+<p>Estas pruebas verifican navegación y reproducción; no constituyen una nueva validación científica de los datos ni una prueba en todos los navegadores. Aquella revisión no modificó directamente GitHub. El 20 de septiembre se comprobó que los 82 archivos públicos de la edición bilingüe v1.4.1 coincidían con el paquete corregido. La presente v1.4.2 incorpora las correcciones posteriores y requiere subir sus archivos para actualizar la web.</p>
+<p><img src="assets/social-card.png" alt="Portada del explorador de los 72 vuelos"></p>
+<blockquote>
+<p><strong>© 2026 Pedro Ramón Montserrat Cabrera — Fuerteventura, Islas Canarias, España. Todos los derechos reservados.</strong> El repositorio es público para su consulta y cita con atribución, pero no concede una licencia de código abierto. La reproducción, redistribución, modificación o uso comercial de las aportaciones originales requiere autorización previa. Véanse <a href="LICENSE"><code>LICENSE</code></a> y <a href="NOTICE.html"><code>NOTICE.md</code></a>.</p>
+</blockquote>
+<p>Proyecto personal de <strong>Pedro Ramón Montserrat Cabrera</strong> construido a partir del registro oficial de vuelos de NASA, el mapa completo publicado por <strong>NASA/JPL-Caltech</strong>, un montaje cronológico de imágenes públicas elaborado por <strong>Jacint Roger (Landru79)</strong>, un análisis exploratorio uniforme de referencias visuales y las grabaciones calibradas de <strong>SuperCam</strong> conservadas en el Planetary Data System.</p>
+<p>La intención es crear un <strong>log del piloto ampliado y de acceso público</strong>: una cronología para avanzar y retroceder entre vuelos, imágenes, escucha, incidencias y análisis independiente. No es telemetría interna de Ingenuity ni sustituye la investigación de NASA/JPL.</p>
+<p>La página es completamente estática: no necesita base de datos, instalación ni servidor. GitHub Pages puede publicarla gratuitamente.</p>
+<h2>Contenido del repositorio</h2>
+<ul>
+<li><code>index.html</code>: web completa e interactiva.</li>
+<li>Mapa oficial de la localización de los 72 vuelos, integrado como vídeo MP4 ligero y sincronizado únicamente con su índice propio para no alterar el explorador principal.</li>
+<li><code>datos/ingenuity_72_vuelos.csv</code>: tabla descargable de los 72 vuelos.</li>
+<li><code>datos/mapa_oficial_72_vuelos_tiempos.csv</code>: las 72 marcas verificadas para saltar al rótulo de cada vuelo en la animación oficial.</li>
+<li><code>datos/audio_ingenuity_pds.csv</code>: catálogo trazable de los WAV y etiquetas PDS usados.</li>
+<li><code>datos/comparacion_audio_jpl_perseverance.csv</code>: resumen de frecuencia, régimen equivalente y duración tonal del ensayo JPL y los cuatro WAV PDS.</li>
+<li><code>datos/nulos_audio_comparados.csv</code>: tiempos de los mínimos medidos en el ensayo y en el vuelo 5.</li>
+<li><code>datos/plantilla_revision_lomas.csv</code>: protocolo de 72 filas para verificar, sin duplicar imágenes ni confundirlas con aterrizajes, la hipótesis publicada de las 31–32 lomas.</li>
+<li><code>datos/vuelos_alta_velocidad_hipotesis.csv</code>: vuelos 62, 68 y 69 a 10 m/s, magnitudes calculadas y separación entre hechos oficiales, plausibilidad física y causalidad no demostrada.</li>
+<li><code>assets/audio/</code>: previsualizaciones MP3 filtradas para facilitar la escucha.</li>
+<li><code>assets/video/ingenuity-72-flight-map-960x540.mp4</code>: copia ligera del mapa oficial para que el índice funcione también al abrir <code>index.html</code> directamente.</li>
+<li>Ensayo de cámara de JPL: reproductor oficial incrustado desde JPLraw, abierto en 2:28; no se incluye una copia local de la grabación de pantalla.</li>
+<li><code>assets/spectrograms/</code>: comparaciones de 0–250 Hz de las cuatro sesiones SuperCam.</li>
+<li><code>assets/analisis/</code>: contraste visual del vuelo 9, espectros normalizados y comparación de nulos.</li>
+<li><code>analisis/comparar_audio.py</code>: genera las figuras de espectros y nulos desde los audios originales.</li>
+<li><code>assets/social-card.png</code>: portada para LinkedIn y redes sociales.</li>
+<li><code>assets/social-card.svg</code>: versión vectorial editable de la portada.</li>
+<li><code>assets/favicon.svg</code>: icono de la página.</li>
+<li><code>FUENTES_Y_METODO.md</code>: trazabilidad, método y límites.</li>
+<li><code>LEYENDA_FORMULAS_Y_CRITERIOS.md</code>: guía completa para interpretar la gráfica, reproducir los cálculos documentados, comprender ΔRPM, evaluar la hipótesis de las lomas y distinguir las coincidencias y diferencias con la evitación de peligros de JPL.</li>
+<li><code>ANALISIS_HAZARD_AUDIO_JPL.md</code>: contraste profundo entre el vídeo de evitación de peligros, el ensayo terrestre y los cuatro registros de Perseverance.</li>
+<li><code>CITATION.cff</code>: cita normalizada para que GitHub ofrezca la opción <strong>Cite this repository</strong> a estudiantes e investigadores.</li>
+<li><code>DIFUSION_AEROESPACIAL.md</code>: resumen bilingüe, texto para LinkedIn, afirmaciones seguras y secuencia de difusión.</li>
+<li><code>LICENSE</code>: condiciones de uso de las aportaciones originales; todos los derechos reservados.</li>
+<li><code>NOTICE.md</code>: autoría, cita recomendada y separación de materiales de terceros.</li>
+<li><code>.nojekyll</code>: evita que GitHub transforme los archivos.</li>
+</ul>
+<h2>Publicarlo gratis en GitHub Pages</h2>
+<h3>1. Crear el repositorio</h3>
+<ol>
+<li>Entra en <a href="https://github.com/">GitHub</a> e inicia sesión.</li>
+<li>Pulsa <strong>New repository</strong>.</li>
+<li>Escribe como nombre: <code>ingenuity-72-vuelos</code>.</li>
+<li>Selecciona <strong>Public</strong>.</li>
+<li>No marques ninguna opción adicional y pulsa <strong>Create repository</strong>.</li>
+</ol>
+<h3>2. Subir los archivos</h3>
+<ol>
+<li>Dentro del repositorio, pulsa <strong>uploading an existing file</strong> o <strong>Add file → Upload files</strong>.</li>
+<li>Descomprime el paquete preparado.</li>
+<li>Arrastra <strong>el contenido de la carpeta</strong>, no la carpeta exterior. <code>index.html</code> debe quedar en la raíz del repositorio.</li>
+<li>En el cuadro inferior escribe: <code>Publicación inicial de la cronología de Ingenuity</code>.</li>
+<li>Pulsa <strong>Commit changes</strong>.</li>
+</ol>
+<h3>3. Activar GitHub Pages</h3>
+<ol>
+<li>Abre <strong>Settings</strong> en el repositorio.</li>
+<li>En el menú izquierdo entra en <strong>Pages</strong>.</li>
+<li>En <strong>Build and deployment</strong>, elige <strong>Deploy from a branch</strong>.</li>
+<li>Selecciona la rama <strong>main</strong> y la carpeta <strong>/(root)</strong>.</li>
+<li>Pulsa <strong>Save</strong>.</li>
+</ol>
+<p>GitHub mostrará la dirección pública después de unos minutos:
+<a href="https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/">https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/</a></p>
+<h3>4. Ajustar la tarjeta de LinkedIn</h3>
+<p>Antes de compartir la web, abre <code>index.html</code> dentro de GitHub, pulsa el lápiz de edición y sustituye las cuatro apariciones de:</p>
+<p><a href="https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/">https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/</a></p>
+<p>por la dirección real que GitHub te haya proporcionado. Guarda con <strong>Commit changes</strong>.</p>
+<p>Este cambio permite que LinkedIn encuentre correctamente la portada de 1200 × 630 píxeles.</p>
+<h3>5. Comprobar la publicación</h3>
+<ol>
+<li>Abre la dirección de GitHub Pages.</li>
+<li>Comprueba que puedes seleccionar vuelos, pulsar los puntos de la gráfica y filtrar la tabla.</li>
+<li>Elige un vuelo en el desplegable, los botones, la gráfica y la tabla del primer bloque: la imagen fija y la ficha deben cambiar, pero el mapa no debe reproducirse ni arrastrar esa selección.</li>
+<li>Pulsa varios números del índice situado junto al mapa y comprueba que el vídeo oficial salta a su rótulo y empieza a reproducirse dentro de la página.</li>
+<li>Mueve manualmente la barra de tiempo del mapa hacia delante y hacia atrás: sólo su índice debe actualizarse al vuelo mostrado; la imagen fija, la ficha y el selector principal deben permanecer en el vuelo elegido.</li>
+<li>Con conexión a internet, abre el ensayo JPL y comprueba que comienza en 2:28. El enlace directo situado debajo sirve como alternativa si el navegador bloquea el reproductor incrustado.</li>
+<li>Prueba los cuatro reproductores y abre al menos un enlace <strong>Descargar WAV PDS</strong>.</li>
+<li>Prueba también los catálogos CSV, incluida la tabla de marcas del mapa.</li>
+<li>Introduce la dirección en <a href="https://www.linkedin.com/post-inspector/">LinkedIn Post Inspector</a> para actualizar y revisar la tarjeta antes de publicar.</li>
+</ol>
+<h2>Texto breve sugerido para LinkedIn</h2>
+<blockquote>
+<p>Después de recorrer por separado los sonidos, las sombras, los aterrizajes y las incidencias de Ingenuity, quería reunir todo en un único log ampliado y de acceso público.</p>
+<p>Esta cronología interactiva combina el registro oficial y el mapa NASA/JPL de los 72 vuelos, el montaje visual de Landru79, un análisis exploratorio de las referencias visibles en Navcam y las grabaciones SuperCam que Perseverance hizo de los vuelos 4, 5, 6 y 8.</p>
+<p>No representa la telemetría interna del helicóptero. Es una forma de recorrer toda la misión bajo un mismo criterio, comparar vuelos y distinguir entre observaciones, resultados reproducidos e hipótesis.</p>
+<p>La web incorpora además una pregunta surgida de mis publicaciones anteriores: la recurrencia aparente de aterrizajes próximos a crestas, dunas o lomas en una muestra inicial de 31 imágenes. No se presenta como una preferencia ya demostrada, sino como una hipótesis abierta, acompañada ahora por un protocolo para revisarla vuelo a vuelo.</p>
+<p>Añade también una nueva línea sobre los vuelos 62, 68 y 69, los únicos que alcanzaron 10 m/s. Los vuelos 68 y 69 fueron ensayos dinámicos <code>Sys-ID</code> al final de la misión. El log pregunta si ese historial de carga merece examinarse como posible preacondicionamiento, pero deja claro que los datos públicos no demuestran fatiga previa ni sustituyen la explicación de JPL sobre la sobrecarga del vuelo 72.</p>
+<p><strong>Explorar los 72 vuelos:</strong> (<a href="https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/">https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/</a>)</p>
+</blockquote>
+<h2>Audio: escucha y descarga</h2>
+<p>Los cuatro reproductores locales son MP3 derivados de los WAV calibrados <code>p02</code>: se aplicó un filtro de 60–220 Hz y normalización para hacer más cómoda la escucha. Estas copias no deben emplearse para medidas cuantitativas.</p>
+<p>Cada tarjeta enlaza al WAV original del PDS —mono, 25 kHz y 167 segundos— y el archivo <code>datos/audio_ingenuity_pds.csv</code> conserva también la dirección de su etiqueta XML. El paper acústico advierte un desfase de decenas de segundos entre relojes; por eso la web no fuerza una sincronización exacta con las imágenes.</p>
+<h2>Ensayo terrestre de JPL: dos comprobaciones distintas</h2>
+<p>La web incorpora el vídeo oficial <a href="https://www.youtube.com/watch?v=nAQxNd3uBN0&t=148s">NASA Ingenuity Mars Helicopter Testing Media Reel</a>. En la captura analizada se midieron 14 picos igualmente espaciados: el ajuste da <code>75,8813 Hz</code>, equivalente a <code>2.276,44 rpm</code>, en acuerdo con las <code>2.277 rpm</code> mostradas en pantalla.</p>
+<p>El apéndice 3 del artículo de Lorenz et al. proporciona una segunda referencia: la figura A2 muestra el montaje de vuelo estacionario en la cámara y la figura A3 presenta un peine armónico equivalente, cercano a 82 Hz y con al menos 15 dientes visibles. Esta coincidencia confirma la estructura física esperada de la misma arquitectura de rotor; no significa que ambas gráficas procedan de la misma toma o que deban coincidir píxel a píxel.</p>
+<h2>Navegación sincronizada del mapa</h2>
+<p>Los 72 rótulos <code>Flight Number</code> de la animación NASA/JPL se revisaron sobre el máster oficial a 10 fotogramas por segundo. El explorador principal y el mapa tienen ahora estados independientes. Los botones, la gráfica, el desplegable y la tabla del primer bloque cambian su imagen fija y su ficha sin iniciar ni mover el vídeo. Sólo el panel situado junto al mapa hace que el reproductor salte a la marca correspondiente y comience a reproducirse. Al avanzar o retroceder con la barra, se actualiza exclusivamente el índice del mapa. La tabla <code>datos/mapa_oficial_72_vuelos_tiempos.csv</code> hace auditable esa relación con una precisión de muestreo de ±0,1 s.</p>
+<p>Estas marcas sólo sirven para navegar por la animación. No se interpretan como hora de despegue, duración del vuelo, coordenadas ni telemetría de Ingenuity. El vídeo UHD de 639,35 MB no se redistribuye; el repositorio incorpora una copia ligera de 960×540 para la navegación interactiva.</p>
+<p>El índice del mapa funciona en ambos sentidos sin depender de la API de YouTube: al elegir uno de sus vuelos, el vídeo local salta a la marca; al mover la barra, se actualiza automáticamente ese mismo índice. La selección analítica del primer bloque permanece quieta para poder estudiar sus valores. Puede comprobarse abriendo <code>index.html</code> directamente en el navegador y funcionará del mismo modo cuando se publique en GitHub Pages.</p>
+<h2>Actualizaciones posteriores</h2>
+<p>Para publicar una versión nueva sólo hay que editar o volver a subir los archivos y confirmar los cambios. GitHub Pages actualizará automáticamente la web sin cambiar su dirección.</p>
+<h2>Atribución</h2>
+<ul>
+<li>Imágenes y datos de misión: NASA/JPL-Caltech y equipos correspondientes.</li>
+<li>Mapa completo de los 72 vuelos: NASA/JPL-Caltech.</li>
+<li>Registro oficial: NASA Science, misión Ingenuity.</li>
+<li>Montaje cronológico de imágenes públicas: Jacint Roger (Landru79).</li>
+<li>Análisis, selección y relato: Pedro Ramón Montserrat Cabrera, Fuerteventura, Islas Canarias, España.</li>
+</ul>
+<p>Proyecto independiente de divulgación y consulta pública, sin afiliación ni aval de NASA/JPL. Los materiales de terceros conservan sus condiciones de uso originales.</p>
+<h2>Derechos y cita</h2>
+<p><strong>© 2026 Pedro Ramón Montserrat Cabrera — Fuerteventura, Islas Canarias, España. Todos los derechos reservados.</strong> La publicación pública no transfiere la titularidad ni convierte las aportaciones originales en código abierto. Consulte las condiciones completas en <a href="LICENSE"><code>LICENSE</code></a> y el desglose de autorías en <a href="NOTICE.html"><code>NOTICE.md</code></a>.</p>
+<p>Cita recomendada:</p>
+<blockquote>
+<p>Montserrat Cabrera, Pedro Ramón (2026). <em>Ingenuity: log ampliado de 72 vuelos, imágenes y audio de Marte</em>. Fuerteventura, Islas Canarias, España. <a href="https://github.com/pedroramon-estudios/Ingenuity-72-vuelos">https://github.com/pedroramon-estudios/Ingenuity-72-vuelos</a></p>
+</blockquote>
+<h2>Correcciones de la edición 1.4.2</h2>
+<p>Se traducen también los rótulos internos de las dos gráficas acústicas; se conserva la figura inglesa corregida del vuelo 9. La documentación española dispone ahora de páginas HTML con fórmulas legibles. Ambos idiomas ya están publicados en la edición anterior; este paquete actualiza sus archivos. Véanse las <a href="REPRODUCIR_ANALISIS.html">instrucciones de reproducción y sus límites</a>.</p>
+<hr><p>© 2026 Pedro Ramón Montserrat Cabrera · Fuerteventura, Islas Canarias, España.</p></main></body></html>

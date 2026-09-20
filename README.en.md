@@ -2,9 +2,9 @@
 
 [Español](README.md) · [English explorer](index-en.html) · [Spanish explorer](index.html)
 
-## Bilingual edition — 19 September 2026
+## Bilingual edition v1.4.2 — 20 September 2026
 
-This edition adds an **Español | English** selector while retaining the existing Spanish address. It includes an English explorer, flight notes, controls, accessibility labels, metadata, documentation and CSV downloads. Both languages share the same images, audio and video. English documentation is supplied as Markdown for GitHub and as readable HTML pages for the website, with locally rendered formulas.
+This edition adds an **Español | English** selector while retaining the existing Spanish address. It includes an English explorer, flight notes, controls, accessibility labels, metadata, documentation and CSV downloads. Both languages share the scientific imagery, audio and video, with translated figures where labels are embedded. Documentation in both languages is supplied as Markdown for GitHub and as readable HTML pages for the website, with locally rendered formulas.
 
 The main explorer remains independent of the map. A small playback-error correction now checks the map's selected flight rather than the explorer's selection.
 
@@ -130,3 +130,7 @@ Mission images/data and map: NASA/JPL-Caltech and relevant teams. Official recor
 An independent public-study project with no NASA/JPL affiliation or endorsement. Third-party materials retain their original terms. Public availability does not transfer ownership or make original contributions open source.
 
 > Montserrat Cabrera, Pedro Ramón (2026). *Ingenuity: log ampliado de 72 vuelos, imágenes y audio de Marte*. Fuerteventura, Canary Islands, Spain. https://github.com/pedroramon-estudios/Ingenuity-72-vuelos
+
+## Corrections in edition 1.4.2
+
+Both acoustic figures now have English labels throughout; the corrected English flight 9 figure is retained. Spanish documentation now has readable HTML pages with rendered formulas. Both languages are already published in the previous edition; this package updates their files. See the [reproduction instructions and limitations](REPRODUCING_ANALYSIS.en.md).

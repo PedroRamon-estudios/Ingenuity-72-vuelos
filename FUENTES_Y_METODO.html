@@ -1,0 +1,111 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Pedro Ramón Montserrat Cabrera"><title>Fuentes, método y límites</title><link rel="stylesheet" href="assets/docs/katex.min.css"><style>body{margin:0;background:#f6f1e8;color:#272b28;font:17px/1.7 system-ui,sans-serif}main{max-width:960px;margin:auto;padding:28px clamp(16px,4vw,48px) 70px}nav{padding:12px;background:#e9e2d5;display:flex;gap:24px;flex-wrap:wrap}a{color:#16594b;overflow-wrap:anywhere}h1,h2,h3{line-height:1.25}h1{font-family:Georgia,serif;font-size:clamp(28px,5vw,44px)}h2{margin-top:2em}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}td,th{border:1px solid #ccc3b4;padding:10px;text-align:left}th{background:#e9e2d5}blockquote{border-left:4px solid #bd6a43;padding:4px 20px;margin-left:0}code{font-size:.88em;overflow-wrap:anywhere}.katex-display{overflow-x:auto;overflow-y:hidden;padding:10px 0}.katex{font-size:1.05em}pre{max-width:100%;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}main{overflow-wrap:anywhere}td,th{overflow-wrap:normal;word-break:normal}td:first-child,th:first-child{min-width:7em}</style></head><body><nav><a href="index.html">← Explorador en español</a><a href="index-en.html" lang="en">English</a><a href="FUENTES_Y_METODO.md" download>Descargar Markdown</a></nav><main><h1>Fuentes, método y límites</h1>
+<h2>Qué reúne esta página</h2>
+<p>La cronología cruza siete niveles de información:</p>
+<ol>
+<li><strong>Datos oficiales de los vuelos:</strong> número, sol, fecha, distancia, altura máxima, velocidad y duración.</li>
+<li><strong>Contexto espacial:</strong> animación oficial NASA/JPL-Caltech de la localización de los 72 vuelos.</li>
+<li><strong>Continuidad visual:</strong> montaje cronológico de imágenes públicas Navcam elaborado por Jacint Roger (Landru79).</li>
+<li><strong>Análisis visual exploratorio:</strong> segmentación mediante pasos de sombra y resultados uniformes de referencias locales, cobertura y puntuación visual relativa; la fórmula completa de la puntuación no se conserva en este paquete y se declara parcialmente reproducible.</li>
+<li><strong>Registro acústico:</strong> WAV calibrados de SuperCam asociados a los vuelos 4, 5, 6 y 8, con previsualizaciones y espectrogramas derivados.</li>
+<li><strong>Contrastes independientes:</strong> demostración de evitación de peligros y ensayo terrestre de JPL, separados de la telemetría de vuelo.</li>
+<li><strong>Preguntas abiertas:</strong> aterrizaje junto a una roca, ΔRPM, la hipótesis publicada de las 31–32 lomas y el historial de carga de los vuelos 62, 68 y 69 a 10 m/s.</li>
+</ol>
+<h2>Mapa oficial de los 72 vuelos</h2>
+<ul>
+<li>Recurso: <code>See Ingenuity&#39;s Flight Map: 72 Helicopter Flights on Mars</code>.</li>
+<li>Publicación: 18 de abril de 2024.</li>
+<li>Crédito: NASA/JPL-Caltech.</li>
+<li>Cobertura declarada: localización de los 72 vuelos realizados durante casi tres años.</li>
+<li>Integración: copia local ligera del vídeo oficial, con enlaces a las fichas de NASA Science y JPL.</li>
+<li>Navegación: sólo el índice situado junto al mapa lleva el reproductor al rótulo correspondiente. Los botones, la gráfica, el desplegable y la tabla del explorador mantienen una selección fija e independiente.</li>
+<li>Tabla auditable: <a href="datos/mapa_oficial_72_vuelos_tiempos.csv"><code>datos/mapa_oficial_72_vuelos_tiempos.csv</code></a>.</li>
+<li>El archivo UHD descargable ocupa 639,35 MB y no se copia en el repositorio.</li>
+</ul>
+<p>La animación añade contexto espacial a la cronología, pero no se usa para medir coordenadas, escala o distancias. No se presenta como telemetría bruta ni sustituye el Flight Log.</p>
+<p>Las 72 marcas se obtuvieron revisando el máster UHD oficial a 10 fotogramas por segundo y anotando el primer fotograma estable en el que aparece cada rótulo <code>Flight Number</code>. La precisión de muestreo es de ±0,1 s; la búsqueda efectiva del reproductor puede variar ligeramente por los fotogramas clave del MP4 y el navegador. No se repartió la duración total de forma proporcional: los vuelos finales permanecen más tiempo en pantalla que gran parte de los anteriores.</p>
+<h2>Método aplicado al montaje</h2>
+<ul>
+<li>Archivo procesado: 22.546 fotogramas.</li>
+<li>Frecuencia: 25 fotogramas por segundo.</li>
+<li>Duración: 901,84 segundos.</li>
+<li>Pasos de sombra grande detectados: 75.</li>
+<li>Tres pasos situados entre los vuelos 13 y 14 fueron tratados como comprobaciones previas, no como vuelos.</li>
+<li>Bloques provisionales asignados: 72.</li>
+<li>Muestra por bloque: 20 fotogramas del tramo central.</li>
+<li>Referencias visuales: aproximación basada en esquinas o rasgos locales detectables después de recortar el viñeteado y enmascarar la sombra estimada.</li>
+<li>Cobertura: proporción de celdas útiles de una cuadrícula 4 × 4 que contienen al menos dos referencias.</li>
+<li>Puntuación: medida relativa normalizada dentro del propio montaje.</li>
+</ul>
+<h2>Capa acústica</h2>
+<ul>
+<li>Archivo de autoridad: colección <code>mars2020_supercam/data_calibrated_audio</code> del NASA Planetary Data System.</li>
+<li>Sesiones integradas: vuelos 4 (sol 69), 5 (sol 76), 6 (sol 91) y 8 (sol 120).</li>
+<li>Formato PDS actual: WAV calibrado <code>p02</code>, mono, 25.000 muestras por segundo y 167 segundos por sesión.</li>
+<li>Previsualización local: MP3 mono a 44,1 kHz, filtrado entre 60 y 220 Hz y normalizado. Sirve para escuchar, no para medir.</li>
+<li>Espectrograma local: misma escala para las cuatro sesiones, de 0 a 250 Hz.</li>
+<li>Referencias de lectura: 84 Hz corresponde a la frecuencia de paso de pala de Ingenuity; 168 Hz es su segundo armónico (<code>2×BPF</code>). La señal cercana a 195 Hz pertenece a la bomba térmica del rover y no debe atribuirse al helicóptero.</li>
+</ul>
+<p>El artículo de Lorenz et al. reproduce identificadores <code>p01</code> para algunas sesiones. El archivo PDS disponible actualmente sirve productos reprocesados <code>p02</code>; el CSV del proyecto registra las direcciones actuales y las etiquetas XML correspondientes.</p>
+<h3>Contraste con el ensayo terrestre de JPL</h3>
+<p>Fuente audiovisual: <a href="https://www.youtube.com/watch?v=nAQxNd3uBN0&t=148s">NASA Ingenuity Mars Helicopter Testing Media Reel</a>, canal oficial JPLraw, duración 3:58. El ensayo comienza en 2:28. La web incrusta ese reproductor oficial y no redistribuye la grabación de pantalla empleada en el análisis.</p>
+<p>La captura aportada contiene audio AAC mono a 48 kHz y muestra un régimen de 2.277 rpm. Se extrajo la pista a WAV sin cambiar el contenido y se midió la densidad espectral en el tramo estable. Los catorce máximos realmente medidos se ajustaron a múltiplos enteros de una frecuencia fundamental: <code>75,8813 Hz</code>, equivalente a <code>2.276,44 rpm</code>, con residuo RMS de <code>0,018 Hz</code>.</p>
+<p>El apéndice 3 de Lorenz et al. constituye una comprobación diferente. La figura A2 muestra el montaje de vuelo estacionario en la cámara de presión marciana; la figura A3 presenta el espectro, el espectrograma y la señal temporal. En A3 se distingue una peineta cercana a 82 Hz con al menos 15 dientes visibles. La equivalencia está en el tipo de estructura armónica gobernada por la frecuencia de paso de pala, no en que sea la misma grabación, el mismo tramo, la misma unidad ni una copia píxel a píxel.</p>
+<p>Para comparar mínimos temporales se siguió conjuntamente la energía de los armónicos 1–12 mediante STFT. En el vuelo 5 se filtró la banda 81,5–87 Hz, se calculó su envolvente y se suavizó a una escala de 0,5 s. Los seis mínimos reproducen los tiempos publicados con diferencias inferiores a un segundo.</p>
+<p>La comparación usa frecuencias y tiempos relativos, no niveles acústicos absolutos. AAC, YouTube, la captura móvil, la reverberación del recinto y el control automático de ganancia impiden calibrar amplitudes frente a los WAV PDS.</p>
+<h3>Sincronización</h3>
+<p>La tabla A3 y el apéndice del paper advierten que los relojes del rover y SuperCam pueden presentar diferencias de decenas de segundos. Por eso el sitio mantiene el tiempo propio de la grabación y no afirma una correspondencia exacta audio–imagen. Para construirla habría que leer las cabeceras de imagen y audio, aplicar sus desplazamientos y documentar la incertidumbre resultante.</p>
+<h2>Cómo debe interpretarse</h2>
+<h3>Observado</h3>
+<p>Información visible directamente en las imágenes públicas o publicada oficialmente en el registro de vuelos.</p>
+<h3>Reproducido</h3>
+<p>Resultados obtenidos nuevamente con un procedimiento descrito. La tabla final es auditable; la regeneración completa de las referencias, la cobertura y la puntuación visual queda limitada por la ausencia del programa original de extracción y sus parámetros, como se explica en la guía metodológica.</p>
+<h3>Hipótesis</h3>
+<p>Interpretaciones que conectan terreno, navegación, aterrizaje o posibles mejoras de diseño. Sirven para formular preguntas, pero no sustituyen la telemetría interna.</p>
+<p>La llamada hipótesis de las <strong>31–32 lomas</strong> procede de una serie de publicaciones del autor en LinkedIn. El archivo histórico menciona de forma exacta una revisión de 31 imágenes; «unas 32» es una aproximación posterior. Ese número no equivale todavía a 31 o 32 aterrizajes independientes ni demuestra una preferencia autónoma. La revisión formal debe completarse con <a href="datos/plantilla_revision_lomas.csv"><code>datos/plantilla_revision_lomas.csv</code></a>, registrando un caso por vuelo, contraejemplos y terreno disponible.</p>
+<p>La <strong>hipótesis V</strong> registra otra pregunta surgida al comparar la secuencia final: los vuelos 62, 68 y 69 fueron los únicos que alcanzaron 10 m/s, y 68–69 fueron ensayos dinámicos <code>Sys-ID</code>. NASA confirma la expansión deliberada de la envolvente, las excitaciones de control y una velocidad respecto al aire superior a 10 m/s en al menos un tramo previsto. El proyecto no dispone, sin embargo, de cargas de raíz, vibraciones, órdenes de paso, rpm y temperaturas para calcular daño acumulado; por ello se clasifica como posible historial de carga, no como causa demostrada del vuelo 72.</p>
+<h2>Límites esenciales</h2>
+<ul>
+<li>El montaje no contiene todos los fotogramas originales de todos los vuelos ni constituye una grabación continua.</li>
+<li>La puntuación no es el contador interno de rasgos usado por Ingenuity.</li>
+<li>La selección pública, la compresión, el viñeteado, la exposición y la asignación provisional de bloques pueden afectar a las medidas.</li>
+<li>La textura visible no permite diagnosticar servos, rotor, vibraciones ni sincronización cámara–IMU.</li>
+<li>Una zona aparentemente libre de piedras no demuestra que sea horizontal o estable para las cuatro patas.</li>
+<li>Un fotograma representativo no permite reconstruir el orden exacto de contacto de las patas.</li>
+<li>Las diferencias observadas permiten seleccionar casos para una revisión más profunda; no demuestran por sí solas una avería progresiva.</li>
+<li>El audio filtrado puede ocultar componentes y cambiar niveles relativos; cualquier análisis debe volver al WAV PDS.</li>
+<li>Detectar una frecuencia de rotor no permite deducir por sí solo el estado de servos, control o estructura.</li>
+<li>Contar imágenes próximas a lomas sin medir el terreno alternativo disponible no permite inferir una preferencia de selección.</li>
+<li>Una velocidad máxima sobre el suelo no permite deducir directamente esfuerzo de pala, potencia, margen estructural ni fatiga acumulada.</li>
+</ul>
+<h2>Fuentes principales</h2>
+<ul>
+<li><a href="https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/">NASA Science · Ingenuity Mars Helicopter y Flight Log</a></li>
+<li><a href="https://science.nasa.gov/resource/see-ingenuitys-flight-map-72-helicopter-flights-on-mars/">NASA Science · mapa de los 72 vuelos de Ingenuity</a></li>
+<li><a href="https://www.jpl.nasa.gov/videos/see-ingenuitys-flight-map-72-helicopter-flights-on-mars/">NASA/JPL · vídeo del mapa de los 72 vuelos</a></li>
+<li><a href="https://mars.nasa.gov/mars2020/multimedia/raw-images/">NASA Mars 2020 · archivo de imágenes públicas</a></li>
+<li><a href="https://www.youtube.com/@landru79">Jacint Roger · Landru79</a></li>
+<li><a href="https://www.jpl.nasa.gov/news/nasa-performs-first-aircraft-accident-investigation-on-another-world/">NASA/JPL · investigación oficial del vuelo 72</a></li>
+<li><a href="https://science.nasa.gov/blog/the-right-stuff/">NASA · The Right Stuff: expansión de la envolvente y vuelo 62</a></li>
+<li><a href="https://science.nasa.gov/blog/unlocking-the-martian-skies-using-ingenuity-as-a-martian-testbed-for-future-rotorcraft/">NASA/JPL/Ames · campaña Sys-ID de los vuelos 68 y 69</a></li>
+<li><a href="https://science.nasa.gov/resource/mars-report-the-most-extreme-flights-of-nasas-ingenuity-mars-helicopter/">NASA · vuelos de máxima velocidad 62, 68 y 69</a></li>
+<li><a href="https://science.nasa.gov/blog/what-were-learning-about-ingenuitys-flight-control-and-aerodynamic-performance/">NASA · Flight Control and Aerodynamic Performance</a></li>
+<li><a href="https://www.jpl.nasa.gov/images/pia25662-ingenuitys-hazard-avoidance-capability/">NASA/JPL · Hazard Avoidance Capability</a></li>
+<li><a href="https://www.youtube.com/watch?v=nAQxNd3uBN0&t=148s">JPLraw · NASA Ingenuity Mars Helicopter Testing Media Reel</a></li>
+<li><a href="https://arxiv.org/abs/2111.06271">Schoppmann et al. · Multi-Resolution Elevation Mapping and Safe Landing Site Detection</a></li>
+<li><a href="https://arxiv.org/abs/2205.03522">Proença et al. · Optimizing Terrain Mapping and Landing Site Detection</a></li>
+<li><a href="https://doi.org/10.1016/j.pss.2023.105684">Lorenz et al., “The sounds of a helicopter on Mars” (2023)</a></li>
+<li><a href="https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/data_calibrated_audio/">NASA PDS · archivo calibrado de audio SuperCam</a></li>
+<li><a href="https://science.nasa.gov/resource/listen-to-nasas-ingenuity-mars-helicopter-in-flight/">NASA Science · escucha procesada del vuelo 4</a></li>
+<li><a href="https://www.linkedin.com/in/pedroramon-drones-atsep">Pedro Ramón Montserrat Cabrera · publicaciones de Ingenuity en LinkedIn</a></li>
+</ul>
+<p>Las direcciones exactas de los cuatro WAV y sus etiquetas se mantienen en <a href="datos/audio_ingenuity_pds.csv"><code>datos/audio_ingenuity_pds.csv</code></a>.</p>
+<p>El contraste completo con el vídeo de evitación y el ensayo terrestre se documenta en <a href="ANALISIS_HAZARD_AUDIO_JPL.html"><code>ANALISIS_HAZARD_AUDIO_JPL.md</code></a>.</p>
+<p>Las fórmulas, la evaluación del vuelo 9, el aterrizaje del vuelo 33, la hipótesis de las lomas y la teoría ΔRPM se reúnen en <a href="LEYENDA_FORMULAS_Y_CRITERIOS.html"><code>LEYENDA_FORMULAS_Y_CRITERIOS.md</code></a>.</p>
+<h2>Créditos</h2>
+<p>Imágenes y datos de misión: <strong>NASA/JPL-Caltech</strong> y los equipos científicos correspondientes.</p>
+<p>Montaje cronológico: <strong>Jacint Roger (Landru79)</strong>.</p>
+<p>Análisis, selección y relato: <strong>Pedro Ramón Montserrat Cabrera</strong>, Fuerteventura, Islas Canarias, España.</p>
+<p>Este es un proyecto personal e independiente de divulgación y consulta pública. No está afiliado ni ha sido avalado por NASA/JPL. Los materiales de terceros conservan sus condiciones de uso originales.</p>
+<h2>Derechos sobre las aportaciones originales</h2>
+<p><strong>© 2026 Pedro Ramón Montserrat Cabrera — Fuerteventura, Islas Canarias, España. Todos los derechos reservados.</strong> El acceso público permite consultar, enlazar y citar el trabajo con atribución; no concede una licencia de código abierto. Las condiciones completas y la separación entre aportaciones originales y materiales de terceros figuran en <a href="LICENSE"><code>LICENSE</code></a> y <a href="NOTICE.html"><code>NOTICE.md</code></a>.</p>
+<hr><p>© 2026 Pedro Ramón Montserrat Cabrera · Fuerteventura, Islas Canarias, España.</p></main></body></html>

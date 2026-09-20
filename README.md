@@ -2,7 +2,7 @@
 
 [Español](index.html) · [English](index-en.html) · [English documentation](README.en.md)
 
-## Edición bilingüe v1.4.1 — 19 de septiembre de 2026
+## Edición bilingüe v1.4.2 — 20 de septiembre de 2026
 
 Esta edición incorpora la web, los controles, las fichas de los 72 vuelos, la documentación y los siete CSV en inglés. El selector «Español | English» conserva la dirección española actual. La guía de actualización está en [ACTUALIZAR_GITHUB.md](ACTUALIZAR_GITHUB.md) y las comprobaciones de esta entrega en [REVISION_PUBLICACION.md](REVISION_PUBLICACION.md). Los apartados siguientes conservan el historial de la revisión española.
 
@@ -35,7 +35,7 @@ Descomprime el paquete completo y abre `index.html`. Conserva las carpetas junto
 
 Comprobaciones de esta versión: sintaxis JavaScript válida; 72 marcas conservadas (vuelo 1: 0,2 s; vuelo 72: 56,6 s); llamadas del explorador separadas de las llamadas del mapa; vídeo local íntegro de 69,1 s; cuatro audios locales íntegros de 167,03 s; estructura completa del paquete y prueba de integridad del ZIP. La validación anterior en Chromium confirmó la apertura directa y bajo una subruta equivalente a la del repositorio, los 72 botones, los seis filtros, la carga del vídeo y los cuatro audios, además de la adaptación a 390 px.
 
-Estas pruebas verifican navegación y reproducción; no constituyen una nueva validación científica de los datos ni una prueba en todos los navegadores. Aquella revisión no modificó directamente GitHub. En la comprobación del 19 de septiembre, los 33 archivos públicos del paquete español coincidían byte por byte con los servidos por GitHub Pages; la nueva edición bilingüe debe subirse para quedar publicada.
+Estas pruebas verifican navegación y reproducción; no constituyen una nueva validación científica de los datos ni una prueba en todos los navegadores. Aquella revisión no modificó directamente GitHub. El 20 de septiembre se comprobó que los 82 archivos públicos de la edición bilingüe v1.4.1 coincidían con el paquete corregido. La presente v1.4.2 incorpora las correcciones posteriores y requiere subir sus archivos para actualizar la web.
 
 ![Portada del explorador de los 72 vuelos](assets/social-card.png)
 
@@ -182,3 +182,7 @@ Proyecto independiente de divulgación y consulta pública, sin afiliación ni a
 Cita recomendada:
 
 > Montserrat Cabrera, Pedro Ramón (2026). *Ingenuity: log ampliado de 72 vuelos, imágenes y audio de Marte*. Fuerteventura, Islas Canarias, España. https://github.com/pedroramon-estudios/Ingenuity-72-vuelos
+
+## Correcciones de la edición 1.4.2
+
+Se traducen también los rótulos internos de las dos gráficas acústicas; se conserva la figura inglesa corregida del vuelo 9. La documentación española dispone ahora de páginas HTML con fórmulas legibles. Ambos idiomas ya están publicados en la edición anterior; este paquete actualiza sus archivos. Véanse las [instrucciones de reproducción y sus límites](REPRODUCIR_ANALISIS.md).

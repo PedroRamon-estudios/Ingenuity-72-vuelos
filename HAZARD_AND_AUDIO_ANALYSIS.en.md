@@ -109,9 +109,9 @@ Appendix 3 of Lorenz et al. separates Figure A2 (hovering set-up in a Mars-press
 
 There are two validations: the JPL video gives `75.8813 Hz → 2,276.44 rpm`, agreeing with its `2,277 rpm` label; the paper's equivalent comb confirms the blade-passing principle for the same rotor architecture. They are not treated as the same recording, segment or hardware unit. “Fourteen peaks” describes our fit; “at least fifteen visible teeth” describes published Figure A3.
 
-![Normalised spectra from the JPL test and four Perseverance recordings](assets/analisis/audio-espectros-jpl-perseverance.png)
+![Normalised spectra from the JPL test and four Perseverance recordings](assets/analisis/audio-espectros-jpl-perseverance-en.png)
 
-English figure key: normalised tonal signature, ground test versus four Mars flights. Horizontal axis: frequency (Hz). Vertical axis: relative spectral density (dB), with each recording’s maximum set to 0. Orange: JPL test at 2,277 rpm; blue: flight 4; teal: flight 5; purple: flight 6; red: flight 8. Vertical guides: 75.9, 84.4, 151.8 and 168.8 Hz.
+Figure guide: normalised tonal signature, ground test versus four Mars flights. Horizontal axis: frequency (Hz). Vertical axis: relative spectral density (dB), with each recording’s maximum set to 0. Orange: JPL test at 2,277 rpm; blue: flight 4; teal: flight 5; purple: flight 6; red: flight 8. Vertical guides: 75.9, 84.4, 151.8 and 168.8 Hz.
 
 ## 4. JPL test minima versus flight 5 on Mars
 
@@ -155,9 +155,9 @@ The paper attributes this structure to the small speed difference between the co
 
 JPL's video confirms that geometry and manoeuvres can produce strong level dips, but does not cleanly reproduce flight 5's cadence. It should not calibrate the timing of the Martian minima.
 
-![Timing comparison of JPL test minima and the six flight 5 minima](assets/analisis/audio-nulos-jpl-vuelo5.png)
+![Timing comparison of JPL test minima and the six flight 5 minima](assets/analisis/audio-nulos-jpl-vuelo5-en.png)
 
-English figure key: upper panel, combined energy of JPL test harmonics 1–12; lower panel, flight 5 envelope at 81.5–87 Hz. Vertical axes: relative level (dB). Horizontal axis: recording time (s). Red dots: measured minima; lower-panel dashed lines: published times. Upper labels: spin-up, climb, turn towards waypoint, translation, hover, 180° turn, return, second hover, original heading and landing.
+Figure guide: upper panel, combined energy of JPL test harmonics 1–12; lower panel, flight 5 envelope at 81.5–87 Hz. Vertical axes: relative level (dB). Horizontal axis: recording time (s). Red dots: measured minima; lower-panel dashed lines: published times. Upper labels: spin-up, climb, turn towards waypoint, translation, hover, 180° turn, return, second hover, original heading and landing.
 
 ## 5. Comparison of the five recordings
 
@@ -211,3 +211,7 @@ None independently reveals rotor mechanical dynamics: they are too brief, broadb
 > NASA/JPL's video demonstrates that an image sequence can reconstruct terrain and distinguish hazards from landing candidates. Our metric does not reproduce that algorithm, but measures a related prerequisite: the amount and distribution of visible structure in the public montage. PDS audio adds an independent rotor-speed check during four flights, without replacing telemetry or diagnosing events beyond acoustic range.
 
 Avoid claims that our score equals JPL's score, that red numbers are heights in centimetres, that each minimum is a rotor stop or fault, that audio proves all of flight 6 was normal, or that the 2022 video shows a capability used during flight 9 in 2021.
+
+## Reproducing the figures
+
+The program accepts `--language es` and `--language en`. Inputs, dependencies and calculation scope are documented in [Reproducing the analysis](REPRODUCING_ANALYSIS.en.md). Timing markers are prior annotations, not outputs from an automatic detector run by this program.

@@ -1,70 +1,39 @@
-# Revisión de la edición v1.4.1 — 20 de septiembre de 2026
-
-Se ha corregido la figura del vuelo 9 en la web y en el análisis inglés: título y nota explicativa aparecen ahora en inglés. La edición española conserva su imagen original. Los fotogramas, tiempos y marcas NASA/JPL permanecen intactos. Se repitieron las pruebas funcionales de los controles y se revisó visualmente la figura corregida. El nuevo intento de abrir Chromium no pudo completarse por un fallo de arranque del navegador en el entorno de revisión; las comprobaciones de navegador descritas más abajo corresponden a la edición anterior.
-
-# Revisión de publicación — 19 de septiembre de 2026
-
-## Resultado de la comparación con GitHub Pages
-
-Dirección revisada: https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/
-
-Los **33 archivos públicos** del ZIP español v1.3 entregado coinciden byte por byte con los descargados de GitHub Pages. Se compararon el HTML, README, documentación, LICENSE, NOTICE, CITATION, los siete CSV, el programa de análisis, imágenes, cuatro MP3 y vídeo MP4.
-
-El ZIP contiene además `.gitignore` y `.nojekyll`, que no se incluyeron en esa comparación HTTP. La comprobación acredita el contenido servido por la web; no es una inspección del historial de commits, de ramas privadas ni de la configuración de la cuenta.
-
-SHA-256 del `index.html` español publicado y del ZIP de partida:
-
-`da5638c7f497c95a998a7cf23faf27b39e0f11abf8e34e76ddb83afe3ef042e3`
-
-## Edición bilingüe v1.4.1 preparada
-
-- Selector Español | English.
-- Página inglesa con los 72 vuelos, notas, controles, mensajes, accesibilidad y metadatos.
-- Siete documentos en inglés, disponibles en Markdown y HTML; guía con 75 expresiones matemáticas renderizadas localmente.
-- Siete CSV ingleses con datos numéricos idénticos a los originales.
-- Portada inglesa de 1200 × 630 para enlaces compartidos.
-- Figuras analíticas originales conservadas; pies y claves de ejes, colores y fases disponibles en inglés.
-- Autoría, copyright, Fuerteventura y créditos de terceros conservados.
-- Corrección del aviso de bloqueo de reproducción: usa la selección del mapa y no la del explorador.
-- Aclaración documental de que la extracción visual completa sigue siendo parcialmente reproducible, pues no se conserva el detector original ni sus parámetros.
-
-## Pruebas de funcionamiento
-
-Se ejecutó el JavaScript de las dos páginas y se comprobaron:
-
-| Prueba | Español | Inglés |
-|---|---|---|
-| 72 botones del explorador | Correcto | Correcto |
-| 72 botones del mapa y sus marcas | Correcto | Correcto |
-| Índice en las 72 posiciones de reproducción simuladas | Correcto | Correcto |
-| Selección mediante desplegable, tabla y gráfica | Correcto | Correcto |
-| Seis filtros | Correcto | Correcto |
-| Independencia entre explorador y mapa | Correcto | Correcto |
-| Aviso cuando se rechaza la reproducción | Correcto | Correcto |
-| Errores JavaScript detectados | Ninguno | Ninguno |
-
-Los filtros devuelven 72 vuelos totales, 6 verticales, 14 con incidencia/prueba, 4 con audio, 15 con puntuación baja y 5 en la secuencia final.
-
-## Revisión en Chromium
-
-Se abrieron ambas páginas bajo una subruta de un servidor local y la inglesa también directamente como archivo:
-
-- Vídeo MP4 cargado: 69,1 s; reproducción y búsqueda comprobadas.
-- Cuatro audios cargados: 167 s cada uno, sin errores de carga.
-- La ficha del vuelo 33 permaneció seleccionada al reproducir otro vuelo en el mapa y saltar al vuelo 72.
-- Imágenes sin fallos de carga.
-- Revisión visual a 1440 px y 390 px; sin desbordamiento horizontal de la página a 390 px.
-- Guía inglesa revisada con las fórmulas renderizadas.
-- Portada inglesa renderizada y revisada.
-
-Las pruebas de navegador se realizaron sobre el paquete local. Los reproductores externos y las descargas científicas remotas no se reprodujeron exhaustivamente en esta revisión. Se conservan sus direcciones y créditos. La comprobación funcional no constituye una nueva validación científica de los análisis.
-
-## Conservación de datos
-
-Todos los archivos multimedia originales mantienen exactamente sus bytes. Los valores numéricos y las miniaturas de los 72 vuelos coinciden en ambos idiomas con el original. Los siete CSV ingleses conservan todas las celdas numéricas; cambian las cabeceras y los textos descriptivos.
+# Revisión de la edición 1.4.2 — 20 de septiembre de 2026
 
 ## Estado de publicación
 
-La **versión española v1.3 está publicada y comprobada**. La **edición bilingüe v1.4.1 está preparada para subir**. Esta entrega no ha realizado un commit, un push, una release ni un despliegue en la cuenta de GitHub.
+La edición bilingüe 1.4.1 está publicada. Se comprobaron sus 82 archivos públicos y todos coincidían con el paquete anterior. Esta entrega 1.4.2 contiene las correcciones posteriores, comprobadas localmente. Debe subirse a GitHub para actualizar la publicación; esta preparación no ha realizado un commit, un push ni un despliegue en la cuenta del autor.
 
-Las instrucciones están en `ACTUALIZAR_GITHUB.md`. Tras subir los archivos, hay que comprobar que el despliegue termina correctamente antes de anunciar la dirección inglesa.
+## Correcciones
+
+- Regeneradas las dos gráficas acústicas con todos sus rótulos en inglés, a partir de los WAV PDS y la captura original JPL del estudio.
+- Conservada la figura inglesa corregida del vuelo 9, incluidos su título y la nota sobre números rojos y marcadores cian.
+- Añadidas páginas HTML españolas para la documentación, con las fórmulas renderizadas y fuentes locales.
+- Actualizados los textos que presentaban la edición inglesa como todavía inexistente.
+- Añadidas instrucciones de reproducción, versiones de dependencias y huellas de las entradas acústicas.
+- Añadido el número de edición al pie de ambas portadas para identificar la actualización.
+- Conservados los datos de los 72 vuelos, las marcas temporales del mapa, los audios y el vídeo, las imágenes españolas, los créditos y las condiciones de uso.
+
+## Pruebas funcionales
+
+Se ejecutaron en español e inglés los 72 botones del explorador, los 72 botones del mapa, las 72 posiciones temporales simuladas, el desplegable, la tabla, la gráfica y los seis filtros. También se comprobó el aviso de reproducción bloqueada. No se detectaron errores JavaScript en estas pruebas. Los filtros devuelven 72, 6, 14, 4, 15 y 5 vuelos, respectivamente.
+
+## Pruebas en navegador
+
+Se abrió el paquete local con Chromium 153, bajo una subruta de servidor, y la portada inglesa también como archivo local. Ambas portadas cargan el vídeo de 69,1 segundos y los cuatro audios de 167 segundos. Se comprobó la búsqueda y reproducción del mapa, el mantenimiento de la ficha del vuelo 33 al cambiar el mapa y el salto a la marca del vuelo 72. Las portadas no presentan desbordamiento horizontal a 390 píxeles. La guía inglesa renderiza 75 expresiones matemáticas; la española, 81, por su distinta distribución editorial.
+
+Estas pruebas se refieren al paquete preparado. No certifican todos los navegadores ni la disponibilidad futura de los reproductores externos.
+
+## Datos y figuras
+
+La revisión previa contrastó los 72 vuelos con el registro oficial de NASA en sol, distancia horizontal, altura máxima, velocidad máxima y duración, sin discrepancias. Esos valores se conservan en esta edición. También se verificaron los percentiles, las medianas y las correlaciones de Spearman publicadas.
+
+Las dos figuras acústicas se recalcularon desde las entradas originales. La regeneración española coincide con las figuras publicadas salvo diferencias mínimas de renderizado. La opción de idioma cambia los textos y los nombres de salida, sin cambiar el cálculo. Las entradas no se sustituyeron por los MP3 de escucha.
+
+## Alcance y límites
+
+La puntuación visual sigue siendo parcialmente reproducible porque no se conserva en el paquete su programa original completo. Las fases y los mínimos señalados en las figuras acústicas son anotaciones previas introducidas en el código; el programa no los detecta automáticamente ni recalcula el ajuste de catorce picos. Véanse las [instrucciones de reproducción](REPRODUCIR_ANALISIS.md).
+
+En la comprobación pública anterior, 30 de 37 enlaces externos respondieron. Cuatro páginas JPL, el DOI del artículo, ScienceDirect y LinkedIn devolvieron restricciones o errores de acceso automático. No se clasificaron como enlaces rotos. Se conservan las fuentes originales y sus créditos.
+
+La revisión funcional y editorial no constituye una nueva validación científica de todas las interpretaciones ni transforma las hipótesis en conclusiones oficiales.

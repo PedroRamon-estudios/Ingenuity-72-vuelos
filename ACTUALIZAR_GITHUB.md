@@ -1,43 +1,35 @@
-# Publicar la edición bilingüe en el repositorio existente
+# Actualizar GitHub con la edición 1.4.2
 
-La web española ya está publicada y conserva esta dirección:
+La web ya está publicada en español e inglés. Este paquete completo corrige los rótulos de las gráficas inglesas y actualiza la documentación.
 
-https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/
+## Paso a paso
 
-Esta entrega añade la versión inglesa sin crear otro repositorio ni cambiar la visibilidad.
+1. Descarga el ZIP y descomprímelo en una carpeta nueva.
+2. Abre tu [repositorio Ingenuity-72-vuelos](https://github.com/PedroRamon-estudios/Ingenuity-72-vuelos), en la rama que utiliza tu publicación actual.
+3. Pulsa **Add file → Upload files**. No utilices «Create new file».
+4. Sube los archivos y carpetas que hay dentro del ZIP, a la raíz del repositorio. `index.html` e `index-en.html` deben quedar en el mismo nivel que ahora. No subas solamente el ZIP ni una carpeta exterior que englobe todo.
+5. Si GitHub limita la cantidad de archivos, haz la carga en grupos: primero `assets`, después `datos` y `analisis`, y después los archivos de la raíz. Conserva sus rutas. Deja los dos `index` para la última carga si divides la actualización.
+6. Escribe **Actualizar Ingenuity a v1.4.2: español e inglés revisados** y pulsa **Commit changes** en cada carga.
+7. Espera a que termine correctamente el último despliegue de GitHub Pages en **Actions**.
+8. Abre [la web española](https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/) y [la inglesa](https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/index-en.html). Pulsa **Ctrl + F5** si ves una copia antigua.
 
-## Actualización desde GitHub
+Los archivos con el mismo nombre y la misma ruta se actualizan. Los nuevos se añaden. No se duplican por volver a subirlos correctamente. No cambies los nombres ni añadas sufijos como «(1)» a los archivos del sitio.
 
-1. Descarga y descomprime el paquete completo. Dentro deben aparecer `index.html`, `index-en.html`, la documentación y las carpetas `assets`, `datos` y `analisis`.
-2. Abre https://github.com/PedroRamon-estudios/Ingenuity-72-vuelos y entra en la rama que ya publica tu web.
-3. Pulsa **Add file → Upload files**.
-4. Arrastra el contenido descomprimido a la raíz del repositorio. No arrastres la carpeta exterior ni subas únicamente el ZIP: `index-en.html` debe quedar junto a `index.html`.
-5. Comprueba que se añaden también las páginas `*.en.html`, los documentos `*.en.md`, los siete CSV `*.en.csv`, `assets/social-card-en.png`, `assets/social-card-en.svg` y `assets/docs/` con sus fuentes y licencia.
-6. Escribe como mensaje: `Publicar edición bilingüe de Ingenuity v1.4.1` y pulsa **Commit changes**.
-7. Espera a que termine correctamente el despliegue de GitHub Pages en **Actions**. La configuración de Pages que ya funciona no necesita cambiarse.
-8. Abre la web, comprueba el selector **Español | English** y visita la nueva dirección inglesa:
+## Qué comprobar
 
-   https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/index-en.html
+- El pie de ambas páginas muestra **Edición 1.4.2** o **Edition 1.4.2**.
+- El selector Español | English cambia de idioma.
+- La figura del vuelo 9 y las dos gráficas acústicas están rotuladas en inglés al abrir la página inglesa.
+- Los documentos de método y fórmulas se abren como páginas legibles en ambos idiomas.
+- El mapa salta al vuelo elegido y la ficha del explorador permanece independiente.
+- Los cuatro audios cargan y los CSV se descargan.
 
-Si la carga web no admite todos los archivos en una sola operación, haz varios grupos conservando las rutas. No borres las carpetas existentes. Otra opción es copiar el contenido del paquete sobre la carpeta del repositorio en GitHub Desktop, revisar los cambios, confirmar y pulsar **Push origin**.
+Las comprobaciones del paquete están en [Revisión de publicación](REVISION_PUBLICACION.md). Preparar y descargar este ZIP no actualiza por sí solo GitHub: la nueva edición aparece cuando se completa la carga y el despliegue.
 
-## Comprobación tras la publicación
+## Alternativa con GitHub Desktop
 
-- Cambia de idioma en ambas direcciones.
-- Selecciona vuelos en la gráfica y la tabla: la ficha cambia y el mapa sigue independiente.
-- Pulsa vuelos del índice del mapa y mueve su barra de tiempo.
-- Escucha los cuatro audios y abre los documentos ingleses y los CSV.
-- Comprueba la guía de fórmulas y la portada al compartir.
-- Para renovar la vista previa de LinkedIn, usa https://www.linkedin.com/post-inspector/ con la dirección que vayas a compartir.
+Copia el contenido descomprimido sobre la carpeta local del repositorio, conservando las rutas. Revisa los cambios, confirma el commit y pulsa **Push origin**. No es necesario crear otro repositorio ni cambiar la configuración de Pages que ya funciona.
 
-El enlace español ya puede difundirse. La dirección inglesa debe anunciarse después de completar esta actualización.
+## Difusión
 
-## Versión estable
-
-La edición se identifica como **v1.4.1**, para distinguirla de la v1.3 española. Una vez comprobado el despliegue, puede crearse una release con esa etiqueta y adjuntar este ZIP. Preparar el paquete no crea por sí solo una release en GitHub.
-
-## Qué conserva
-
-Los 72 vuelos y sus datos numéricos, las marcas del mapa, los cuatro audios, el vídeo, las imágenes del estudio, los créditos y las condiciones de uso. La corrección de funcionamiento se limita al aviso que aparece si el navegador impide reproducir el mapa: ahora consulta el vuelo del propio mapa, no el del explorador independiente.
-
-La revisión de la publicación anterior está detallada en `REVISION_PUBLICACION.md`.
+Puedes compartir una sola dirección: el visitante elige el idioma en la propia web. No tiene que descargar ni ejecutar un HTML. Ambos enlaces siguen siendo los mismos. Si la vista previa de LinkedIn conserva una imagen antigua, vuelve a consultar la dirección mediante su [Post Inspector](https://www.linkedin.com/post-inspector/).
