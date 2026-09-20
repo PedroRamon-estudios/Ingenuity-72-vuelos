@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "Si utiliza este log ampliado en una publicación, docencia o investigación, cite el proyecto con esta referencia."
+title: "Ingenuity: log ampliado de 72 vuelos, imágenes y audio de Marte"
+type: software
+authors:
+  - family-names: "Montserrat Cabrera"
+    given-names: "Pedro Ramón"
+version: "1.4.0"
+date-released: "2026-09-19"
+url: "https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/"
+repository-code: "https://github.com/pedroramon-estudios/Ingenuity-72-vuelos"
+abstract: >-
+  Log técnico ampliado e interactivo que reúne el registro oficial de los 72
+  vuelos de Ingenuity, el mapa NASA/JPL-Caltech, un análisis exploratorio de
+  referencias visuales, audios SuperCam de los vuelos 4, 5, 6 y 8, fórmulas,
+  contrastes con evitación de peligros, el ensayo terrestre de JPL y su
+  estructura armónica, e hipótesis de investigación claramente
+  separadas de los hechos oficiales, incluida la evaluación del historial de
+  carga de los vuelos 62, 68 y 69 a 10 m/s.
+keywords:
+  - Ingenuity
+  - Mars Helicopter
+  - Mars 2020
+  - Perseverance
+  - visual navigation
+  - planetary rotorcraft
+  - SuperCam acoustics
+  - open data
+  - accident investigation

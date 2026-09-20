@@ -1,0 +1,20 @@
+﻿recording,event,time_s,reference,note
+jpl_test,harmonic_minimum,15.74,measured,Near start of climb
+jpl_test,harmonic_minimum,17.79,measured,During climb
+jpl_test,harmonic_minimum,21.38,measured,Near turn towards target
+jpl_test,harmonic_minimum,24.45,measured,Near start of translation
+jpl_test,harmonic_minimum,47.49,measured,Near 180-degree turn
+jpl_test,harmonic_minimum,49.79,measured,During turn
+jpl_test,harmonic_minimum,52.99,measured,Near return
+jpl_test,harmonic_minimum,59.26,measured,Near second hover
+jpl_test,harmonic_minimum,62.59,measured,Second hover
+jpl_test,harmonic_minimum,64.51,measured,Second hover
+jpl_test,harmonic_minimum,67.97,measured,Near turn to original heading
+jpl_test,harmonic_minimum,71.94,measured,During turn/before landing
+jpl_test,harmonic_minimum,74.50,measured,Near start of landing
+flight_5,minimum_84_hz,36.3,measured,Published: 36 s
+flight_5,minimum_84_hz,46.8,measured,Published: 47 s
+flight_5,minimum_84_hz,57.5,measured,Published: 57 s
+flight_5,minimum_84_hz,71.7,measured,Published: 72 s
+flight_5,minimum_84_hz,88.2,measured,Published: 88 s
+flight_5,minimum_84_hz,103.7,measured,Published: 104 s
