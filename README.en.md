@@ -70,7 +70,7 @@ The static site needs no database or application installation and can be hosted 
 | `LICENSE`, `NOTICE.md` | Original terms and third-party attribution; English counterparts included |
 | `.nojekyll` | Prevents Jekyll processing |
 
-All seven CSVs have English `.en.csv` counterparts with unchanged numerical data. Original annotated analytical images are retained; English captions explain their content. English document HTML counterparts use `.en.html`.
+All seven CSVs have English `.en.csv` counterparts with unchanged numerical data. The flight 9 figure has an English title and explanatory note, with the original frames preserved. Other archived analytical plots retain their original labels, accompanied by English captions and complete axis/legend keys. English document HTML counterparts use `.en.html`.
 
 ## Updating GitHub Pages
 

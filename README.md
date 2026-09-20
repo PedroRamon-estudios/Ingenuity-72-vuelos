@@ -2,7 +2,7 @@
 
 [Español](index.html) · [English](index-en.html) · [English documentation](README.en.md)
 
-## Edición bilingüe v1.4.0 — 19 de septiembre de 2026
+## Edición bilingüe v1.4.1 — 19 de septiembre de 2026
 
 Esta edición incorpora la web, los controles, las fichas de los 72 vuelos, la documentación y los siete CSV en inglés. El selector «Español | English» conserva la dirección española actual. La guía de actualización está en [ACTUALIZAR_GITHUB.md](ACTUALIZAR_GITHUB.md) y las comprobaciones de esta entrega en [REVISION_PUBLICACION.md](REVISION_PUBLICACION.md). Los apartados siguientes conservan el historial de la revisión española.
 

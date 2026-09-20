@@ -1,3 +1,7 @@
+# Revisión de la edición v1.4.1 — 20 de septiembre de 2026
+
+Se ha corregido la figura del vuelo 9 en la web y en el análisis inglés: título y nota explicativa aparecen ahora en inglés. La edición española conserva su imagen original. Los fotogramas, tiempos y marcas NASA/JPL permanecen intactos. Se repitieron las pruebas funcionales de los controles y se revisó visualmente la figura corregida. El nuevo intento de abrir Chromium no pudo completarse por un fallo de arranque del navegador en el entorno de revisión; las comprobaciones de navegador descritas más abajo corresponden a la edición anterior.
+
 # Revisión de publicación — 19 de septiembre de 2026
 
 ## Resultado de la comparación con GitHub Pages
@@ -12,7 +16,7 @@ SHA-256 del `index.html` español publicado y del ZIP de partida:
 
 `da5638c7f497c95a998a7cf23faf27b39e0f11abf8e34e76ddb83afe3ef042e3`
 
-## Edición bilingüe v1.4.0 preparada
+## Edición bilingüe v1.4.1 preparada
 
 - Selector Español | English.
 - Página inglesa con los 72 vuelos, notas, controles, mensajes, accesibilidad y metadatos.
@@ -61,6 +65,6 @@ Todos los archivos multimedia originales mantienen exactamente sus bytes. Los va
 
 ## Estado de publicación
 
-La **versión española v1.3 está publicada y comprobada**. La **edición bilingüe v1.4.0 está preparada para subir**. Esta entrega no ha realizado un commit, un push, una release ni un despliegue en la cuenta de GitHub.
+La **versión española v1.3 está publicada y comprobada**. La **edición bilingüe v1.4.1 está preparada para subir**. Esta entrega no ha realizado un commit, un push, una release ni un despliegue en la cuenta de GitHub.
 
 Las instrucciones están en `ACTUALIZAR_GITHUB.md`. Tras subir los archivos, hay que comprobar que el despliegue termina correctamente antes de anunciar la dirección inglesa.

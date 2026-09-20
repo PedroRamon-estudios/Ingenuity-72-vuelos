@@ -13,7 +13,7 @@ Esta entrega añade la versión inglesa sin crear otro repositorio ni cambiar la
 3. Pulsa **Add file → Upload files**.
 4. Arrastra el contenido descomprimido a la raíz del repositorio. No arrastres la carpeta exterior ni subas únicamente el ZIP: `index-en.html` debe quedar junto a `index.html`.
 5. Comprueba que se añaden también las páginas `*.en.html`, los documentos `*.en.md`, los siete CSV `*.en.csv`, `assets/social-card-en.png`, `assets/social-card-en.svg` y `assets/docs/` con sus fuentes y licencia.
-6. Escribe como mensaje: `Publicar edición bilingüe de Ingenuity v1.4.0` y pulsa **Commit changes**.
+6. Escribe como mensaje: `Publicar edición bilingüe de Ingenuity v1.4.1` y pulsa **Commit changes**.
 7. Espera a que termine correctamente el despliegue de GitHub Pages en **Actions**. La configuración de Pages que ya funciona no necesita cambiarse.
 8. Abre la web, comprueba el selector **Español | English** y visita la nueva dirección inglesa:
 
@@ -34,7 +34,7 @@ El enlace español ya puede difundirse. La dirección inglesa debe anunciarse de
 
 ## Versión estable
 
-La edición se identifica como **v1.4.0**, para distinguirla de la v1.3 española. Una vez comprobado el despliegue, puede crearse una release con esa etiqueta y adjuntar este ZIP. Preparar el paquete no crea por sí solo una release en GitHub.
+La edición se identifica como **v1.4.1**, para distinguirla de la v1.3 española. Una vez comprobado el despliegue, puede crearse una release con esa etiqueta y adjuntar este ZIP. Preparar el paquete no crea por sí solo una release en GitHub.
 
 ## Qué conserva
 

@@ -35,7 +35,7 @@ Sources: [NASA Science Photojournal](https://science.nasa.gov/photojournal/ingen
 
 The associated technical publication describes a different pipeline from our exploratory counter: successive monocular images → 3D reconstruction by Structure from Motion → multiresolution elevation map → slope, roughness and quality/uncertainty evaluation → binary safe/hazardous map → candidates using a distance transform. A later paper adds multiple candidate peaks, shifts towards smoother, less uncertain regions and final selection.
 
-![Six reprocessed flight 9 frames showing red hazards and green candidates](assets/analisis/hazard-vuelo9-superposiciones.png)
+![Six reprocessed flight 9 frames showing red hazards and green candidates](assets/analisis/hazard-vuelo9-superposiciones-en.svg)
 
 Technical sources: [Multi-Resolution Elevation Mapping and Safe Landing Site Detection with Applications to Planetary Rotorcraft](https://arxiv.org/abs/2111.06271), [Optimizing Terrain Mapping and Landing Site Detection for Autonomous UAVs](https://arxiv.org/abs/2205.03522).
 
