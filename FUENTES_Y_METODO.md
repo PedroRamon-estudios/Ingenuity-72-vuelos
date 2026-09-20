@@ -2,7 +2,7 @@
 
 ## Qué reúne esta página
 
-La cronología cruza cinco niveles de información:
+La cronología cruza siete niveles de información:
 
 1. **Datos oficiales de los vuelos:** número, sol, fecha, distancia, altura máxima, velocidad y duración.
 2. **Contexto espacial:** animación oficial NASA/JPL-Caltech de la localización de los 72 vuelos.
@@ -75,7 +75,7 @@ Información visible directamente en las imágenes públicas o publicada oficial
 
 ### Reproducido
 
-Resultados que pueden volver a calcularse aplicando el mismo procedimiento al montaje: segmentación, referencias, cobertura y puntuación relativa.
+Resultados obtenidos nuevamente con un procedimiento descrito. La tabla final es auditable; la regeneración completa de las referencias, la cobertura y la puntuación visual queda limitada por la ausencia del programa original de extracción y sus parámetros, como se explica en la guía metodológica.
 
 ### Hipótesis
 

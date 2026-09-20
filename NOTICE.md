@@ -27,6 +27,10 @@ Este repositorio es público para que pueda consultarse, estudiarse, enlazarse y
 
 Los créditos detallados, enlaces de autoridad, método y límites se mantienen en [`FUENTES_Y_METODO.md`](FUENTES_Y_METODO.md).
 
+## Representación de fórmulas
+
+Las páginas de lectura inglesas incorporan KaTeX y sus fuentes tipográficas. Su licencia MIT y aviso de copyright se conservan en `assets/docs/KATEX-LICENSE.txt`. Esas condiciones corresponden a dichos componentes y no alteran las del estudio original.
+
 ## Independencia
 
 Este es un proyecto personal e independiente. No está afiliado a NASA/JPL ni implica su aprobación. El nombre del autor no puede usarse para sugerir aval de una reutilización no autorizada.

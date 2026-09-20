@@ -177,8 +177,8 @@
       .ivy-root { border: 0 !important; box-shadow: none !important; }
     }
   </style>
-</head>
-<body>
+<link rel="alternate" hreflang="es" href="https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/"><link rel="alternate" hreflang="en" href="https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/index-en.html"><link rel="alternate" hreflang="x-default" href="https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/"><style>.language-switch{display:flex;justify-content:flex-end;gap:.6rem;align-items:center;padding:.6rem 1rem;flex-wrap:wrap;font:600 14px system-ui}.language-switch a{color:#174c41;padding:.45rem .7rem;border:1px solid #547366;border-radius:6px;text-decoration:none}.language-switch a[aria-current="page"]{background:#174c41;color:white}.language-switch a:focus-visible{outline:3px solid #cb8700;outline-offset:3px}</style></head>
+<body><nav class="language-switch" aria-label="Idioma"><a href="index.html" lang="es" hreflang="es" aria-current="page">Español</a><a href="index-en.html" lang="en" hreflang="en">English</a></nav>
 <a class="skip-link" href="#explorador">Saltar al explorador</a>
 <main class="site-shell">
   <header class="site-header">
@@ -1008,7 +1008,7 @@
     const playback = mapPlayer.play();
     if (playback && typeof playback.catch === 'function') {
       playback.catch(error => {
-        if (error.name === 'AbortError' || selected !== Number(number)) return;
+        if (error.name === 'AbortError' || mapStatus.dataset.flight !== String(number)) return;
         mapStatus.textContent = `Vuelo ${number} situado en ${fmtMapTime(time)} · pulsa ▶ en el reproductor para continuar.`;
       });
     }

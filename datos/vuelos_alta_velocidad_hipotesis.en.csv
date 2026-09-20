@@ -1,0 +1,4 @@
+﻿flight;date;max_ground_speed_ms;distance_m;duration_s;type;approx_revolutions_at_2537rpm;total_time_percentage;evidence_status;note
+62;2023-10-12;10;268;121.1;Envelope expansion;5121;1.57;Confirmed;First 10 m/s demonstration at 18 m during horizontal flight
+68;2023-12-15;10;702;131.1;Sys-ID;5543;1.70;Confirmed;Long out-and-back flight with deliberate dynamic excitation
+69;2023-12-20;10;705;135.4;Sys-ID;5725;1.75;Confirmed;"Second test; at least one leg was intended to exceed 10 m/s airspeed"

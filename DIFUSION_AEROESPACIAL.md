@@ -53,10 +53,10 @@ This project brings together, in a single interactive timeline, the official log
 ## Secuencia práctica de publicación
 
 1. Publicar primero la versión completa en GitHub Pages y comprobar todos los enlaces.
-2. Crear una versión o *release* estable `v1.3.0`, conservando el ZIP y su fecha.
+2. Crear una versión o *release* estable `v1.4.0`, conservando el ZIP y su fecha.
 3. Usar la opción **Cite this repository**, habilitada por `CITATION.cff`.
 4. Compartir la web —no sólo una captura— en LinkedIn y en grupos profesionales aeroespaciales donde el autor ya participe.
-5. Preparar una versión bilingüe breve para profesionales de navegación visual, robótica planetaria, helicópteros y ciencia de datos.
+5. Utilizar la versión bilingüe breve para profesionales de navegación visual, robótica planetaria, helicópteros y ciencia de datos.
 6. Si se desea una referencia académica permanente, archivar una versión cerrada en un repositorio que emita DOI, respetando las condiciones de los materiales de terceros.
 7. Mantener un historial de cambios: cada hipótesis nueva debe indicar fecha, fuente, método y qué evidencia podría refutarla.
 

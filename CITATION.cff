@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: "Montserrat Cabrera"
     given-names: "Pedro Ramón"
-version: "1.3.0"
+version: "1.4.0"
 date-released: "2026-09-19"
 url: "https://pedroramon-estudios.github.io/Ingenuity-72-vuelos/"
 repository-code: "https://github.com/pedroramon-estudios/Ingenuity-72-vuelos"

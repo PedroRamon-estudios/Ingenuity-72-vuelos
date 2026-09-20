@@ -1,5 +1,11 @@
 # Ingenuity: log ampliado de 72 vuelos, imágenes y audio de Marte
 
+[Español](index.html) · [English](index-en.html) · [English documentation](README.en.md)
+
+## Edición bilingüe v1.4.0 — 19 de septiembre de 2026
+
+Esta edición incorpora la web, los controles, las fichas de los 72 vuelos, la documentación y los siete CSV en inglés. El selector «Español | English» conserva la dirección española actual. La guía de actualización está en [ACTUALIZAR_GITHUB.md](ACTUALIZAR_GITHUB.md) y las comprobaciones de esta entrega en [REVISION_PUBLICACION.md](REVISION_PUBLICACION.md). Los apartados siguientes conservan el historial de la revisión española.
+
 ## Revisión del ensayo JPL y documentación — 19 de septiembre de 2026
 
 Esta revisión incorpora en la web el vídeo oficial **NASA Ingenuity Mars Helicopter Testing Media Reel** de JPLraw, abierto directamente en el tramo del ensayo de cámara (2:28). El vídeo se integra desde la fuente oficial: requiere conexión a internet y evita redistribuir la grabación de pantalla utilizada durante el análisis.
@@ -29,7 +35,7 @@ Descomprime el paquete completo y abre `index.html`. Conserva las carpetas junto
 
 Comprobaciones de esta versión: sintaxis JavaScript válida; 72 marcas conservadas (vuelo 1: 0,2 s; vuelo 72: 56,6 s); llamadas del explorador separadas de las llamadas del mapa; vídeo local íntegro de 69,1 s; cuatro audios locales íntegros de 167,03 s; estructura completa del paquete y prueba de integridad del ZIP. La validación anterior en Chromium confirmó la apertura directa y bajo una subruta equivalente a la del repositorio, los 72 botones, los seis filtros, la carga del vídeo y los cuatro audios, además de la adaptación a 390 px.
 
-Estas pruebas verifican navegación y reproducción; no constituyen una nueva validación científica de los datos ni una prueba en todos los navegadores. La copia publicada en GitHub no se ha modificado durante esta revisión.
+Estas pruebas verifican navegación y reproducción; no constituyen una nueva validación científica de los datos ni una prueba en todos los navegadores. Aquella revisión no modificó directamente GitHub. En la comprobación del 19 de septiembre, los 33 archivos públicos del paquete español coincidían byte por byte con los servidos por GitHub Pages; la nueva edición bilingüe debe subirse para quedar publicada.
 
 ![Portada del explorador de los 72 vuelos](assets/social-card.png)
 
