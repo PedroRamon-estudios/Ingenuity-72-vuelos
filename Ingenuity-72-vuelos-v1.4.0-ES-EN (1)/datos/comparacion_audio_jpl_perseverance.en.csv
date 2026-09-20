@@ -1,6 +1,0 @@
-﻿recording,source,measured_format,blade_passing_frequency_hz,equivalent_rpm,tone_start_s,tone_end_s,approx_tonal_duration_s,robust_harmonics,interpretation
-jpl_test,JPLraw media reel nAQxNd3uBN0; supplied capture,AAC mono 48000 Hz,75.8813,2276.44,5.0,85.0,80.0,14,14 fitted peaks; amplitude affected by YouTube/mobile capture
-flight_4,NASA PDS SuperCam p02,WAV mono float32 25000 Hz,84.3048,2529.1,21.5,143.4,121.9,2,Clear fundamental; weak second harmonic; Doppler and modulation
-flight_5,NASA PDS SuperCam p02,WAV mono float32 25000 Hz,84.4002,2532.0,14.3,130.0,115.7,2,Six minima reproduced; weak 168 Hz
-flight_6,NASA PDS SuperCam p02,WAV mono float32 25000 Hz,84.4002,2532.0,23.6,68.6,45.0,1,Signal fades with distance; 168 Hz not robust
-flight_8,NASA PDS SuperCam p02,WAV mono float32 25000 Hz,84.4002,2532.0,29.7,55.3,25.6,2,84 and 168 Hz; wind/EMI after tonal segment
